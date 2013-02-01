@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
+		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
+		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
+		50017E0616BBBF8A00F0C093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0416BBBF8A00F0C093 /* InfoPlist.strings */; };
+		50017E0816BBBF8A00F0C093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E0716BBBF8A00F0C093 /* main.m */; };
+		50017E0C16BBBF8A00F0C093 /* AlarmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */; };
+		50017E0E16BBBF8A00F0C093 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0D16BBBF8A00F0C093 /* Default.png */; };
+		50017E1016BBBF8A00F0C093 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0F16BBBF8A00F0C093 /* Default@2x.png */; };
+		50017E1216BBBF8A00F0C093 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50017E1116BBBF8A00F0C093 /* Default-568h@2x.png */; };
+		50017E1516BBBF8A00F0C093 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */; };
+		50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E1716BBBF8A00F0C093 /* AlarmViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PersonAlarm-Info.plist"; sourceTree = "<group>"; };
+		50017E0516BBBF8A00F0C093 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50017E0716BBBF8A00F0C093 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50017E0916BBBF8A00F0C093 /* PersonAlarm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PersonAlarm-Prefix.pch"; sourceTree = "<group>"; };
+		50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmAppDelegate.h; sourceTree = "<group>"; };
+		50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmAppDelegate.m; sourceTree = "<group>"; };
+		50017E0D16BBBF8A00F0C093 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		50017E0F16BBBF8A00F0C093 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		50017E1116BBBF8A00F0C093 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		50017E1416BBBF8A00F0C093 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		50017E1616BBBF8A00F0C093 /* AlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
+		50017E1716BBBF8A00F0C093 /* AlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50017DF416BBBF8A00F0C093 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */,
+				50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */,
+				50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50017DEC16BBBF8A00F0C093 = {
+			isa = PBXGroup;
+			children = (
+				50017E0116BBBF8A00F0C093 /* PersonAlarm */,
+				50017DFA16BBBF8A00F0C093 /* Frameworks */,
+				50017DF816BBBF8A00F0C093 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50017DF816BBBF8A00F0C093 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50017DF716BBBF8A00F0C093 /* PersonAlarm.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50017DFA16BBBF8A00F0C093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50017DFB16BBBF8A00F0C093 /* UIKit.framework */,
+				50017DFD16BBBF8A00F0C093 /* Foundation.framework */,
+				50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50017E0116BBBF8A00F0C093 /* PersonAlarm */ = {
+			isa = PBXGroup;
+			children = (
+				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
+				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
+				50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */,
+				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
+				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
+				50017E0216BBBF8A00F0C093 /* Supporting Files */,
+			);
+			path = PersonAlarm;
+			sourceTree = "<group>";
+		};
+		50017E0216BBBF8A00F0C093 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */,
+				50017E0416BBBF8A00F0C093 /* InfoPlist.strings */,
+				50017E0716BBBF8A00F0C093 /* main.m */,
+				50017E0916BBBF8A00F0C093 /* PersonAlarm-Prefix.pch */,
+				50017E0D16BBBF8A00F0C093 /* Default.png */,
+				50017E0F16BBBF8A00F0C093 /* Default@2x.png */,
+				50017E1116BBBF8A00F0C093 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50017DF616BBBF8A00F0C093 /* PersonAlarm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50017E1B16BBBF8A00F0C093 /* Build configuration list for PBXNativeTarget "PersonAlarm" */;
+			buildPhases = (
+				50017DF316BBBF8A00F0C093 /* Sources */,
+				50017DF416BBBF8A00F0C093 /* Frameworks */,
+				50017DF516BBBF8A00F0C093 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PersonAlarm;
+			productName = PersonAlarm;
+			productReference = 50017DF716BBBF8A00F0C093 /* PersonAlarm.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50017DEE16BBBF8A00F0C093 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Alarm;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Chalmers;
+			};
+			buildConfigurationList = 50017DF116BBBF8A00F0C093 /* Build configuration list for PBXProject "PersonAlarm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50017DEC16BBBF8A00F0C093;
+			productRefGroup = 50017DF816BBBF8A00F0C093 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50017DF616BBBF8A00F0C093 /* PersonAlarm */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50017DF516BBBF8A00F0C093 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50017E0616BBBF8A00F0C093 /* InfoPlist.strings in Resources */,
+				50017E0E16BBBF8A00F0C093 /* Default.png in Resources */,
+				50017E1016BBBF8A00F0C093 /* Default@2x.png in Resources */,
+				50017E1216BBBF8A00F0C093 /* Default-568h@2x.png in Resources */,
+				50017E1516BBBF8A00F0C093 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50017DF316BBBF8A00F0C093 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50017E0816BBBF8A00F0C093 /* main.m in Sources */,
+				50017E0C16BBBF8A00F0C093 /* AlarmAppDelegate.m in Sources */,
+				50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50017E0416BBBF8A00F0C093 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50017E0516BBBF8A00F0C093 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50017E1416BBBF8A00F0C093 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50017E1916BBBF8A00F0C093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50017E1A16BBBF8A00F0C093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50017E1C16BBBF8A00F0C093 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
+				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50017E1D16BBBF8A00F0C093 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
+				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50017DF116BBBF8A00F0C093 /* Build configuration list for PBXProject "PersonAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50017E1916BBBF8A00F0C093 /* Debug */,
+				50017E1A16BBBF8A00F0C093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50017E1B16BBBF8A00F0C093 /* Build configuration list for PBXNativeTarget "PersonAlarm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50017E1C16BBBF8A00F0C093 /* Debug */,
+				50017E1D16BBBF8A00F0C093 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50017DEE16BBBF8A00F0C093 /* Project object */;
+}
