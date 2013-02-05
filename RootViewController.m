@@ -52,7 +52,7 @@
     // Return the model controller object, creating it if necessary.
     // In more complex implementations, the model controller may be passed to the view controller.
     if (!_modelController) {
-        _modelController = [[ModelController alloc] initWithStoryboard:self.storyboard];
+        _modelController = [[ModelController alloc] init];
     }
     return _modelController;
 }
