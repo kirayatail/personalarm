@@ -13,7 +13,6 @@
 #import "AlarmController.h"
 #import "TelephoneAlarm.h"
 @interface AlarmController() <NSObject>
-@property (nonatomic, strong) TelephoneAlarm* phoneAlarm;
 
 @end
 

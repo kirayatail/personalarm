@@ -14,6 +14,14 @@
 @implementation TelephoneAlarm
 @synthesize datasource = _datasource;
 
+-(id)init {
+    if((self = [super init])){
+        self.datasource = [[TelephoneDatasource alloc] init];
+    }
+    
+    return self;
+}
+
 -(void)trigger {
     // TODO: check if datasource content is valid
     NSString *number = self.datasource.phonenumber;
