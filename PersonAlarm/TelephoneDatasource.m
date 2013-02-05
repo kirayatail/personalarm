@@ -35,8 +35,6 @@
     if (self.phonenumber != phonenumber){
         [numbers setObject:phonenumber forKey:@"Number"];
     } 
-        
-    
 }
 
 

@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
+@class TelephoneAlarm;
+
 @protocol AlarmMethod <NSObject>
 -(void)trigger;
 -(void)stop;
@@ -14,6 +17,7 @@
 
 
 @interface AlarmController : NSObject
+@property (nonatomic, strong) TelephoneAlarm* phoneAlarm;
 -(void)triggerAlarm;
 
 -(void)stop;
