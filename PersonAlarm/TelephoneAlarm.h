@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AlarmController.h"
+#import "TelephoneDatasource.h"
 
-@interface TelephoneAlarm : NSObject
+@interface TelephoneAlarm : NSObject<AlarmMethod>
+@property (nonatomic, strong) TelephoneDatasource * datasource;
 
 @end
