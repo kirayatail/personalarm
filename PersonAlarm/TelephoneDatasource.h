@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *phonenumber;
 
+-(id)init;
+
 @end
