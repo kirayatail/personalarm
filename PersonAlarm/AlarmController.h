@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@protocol AlarmMethod <NSObject>
+-(void)trigger;
+-(void)stop;
+@end
+
 
 @interface AlarmController : NSObject
 -(void)triggerAlarm;
