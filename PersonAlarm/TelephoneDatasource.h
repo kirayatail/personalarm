@@ -10,4 +10,6 @@
 
 @interface TelephoneDatasource : NSObject
 
+@property (nonatomic, strong) NSString *phonenumber;
+
 @end
