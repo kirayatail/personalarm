@@ -11,10 +11,25 @@
 */
 
 #import "AlarmController.h"
+#import "TelephoneAlarm.h"
+@interface AlarmController() <NSObject>
+@property (nonatomic, strong) TelephoneAlarm* phoneAlarm;
+
+@end
 
 @implementation AlarmController
+@synthesize phoneAlarm = _phoneAlarm;
+
+-(id)init {
+    if ((self = [super init])) {
+        self.phoneAlarm = [[TelephoneAlarm alloc] init];
+    }
+    
+    return self;
+}
+
 -(void)triggerAlarm {
-    // Start each chosen alarm
+    [self.phoneAlarm trigger];
 }
 
 -(void)stop {
