@@ -8,6 +8,25 @@
 
 #import "TelephoneDatasource.h"
 
+@interface TelephoneDatasource ()
+
+@end
+
 @implementation TelephoneDatasource
+
+@synthesize phonenumber = _phonenumber;
+
+-(void) setPhonenumber:(NSString *)phonenumber {
+    NSUserDefaults *numbers = [NSUserDefaults standardUserDefaults];
+    
+    //If the phonenumber is new, set it to userdefault
+    if (self.phonenumber != phonenumber){
+        [numbers setObject:phonenumber forKey:@"Number"];
+    } 
+        
+    
+}
+
+
 
 @end
