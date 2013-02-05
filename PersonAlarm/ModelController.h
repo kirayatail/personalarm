@@ -15,6 +15,4 @@
 
 - (NSUInteger) indexOfViewController:(UIViewController *) viewController;
 
-- (id) initWithStoryboard:(UIStoryboard *) storyboard;
-
 @end
