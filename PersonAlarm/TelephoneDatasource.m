@@ -20,23 +20,23 @@
     
     // Get phonenumber from userdefault
     if (self = [super init]){
-        NSUserDefaults *numbers = [NSUserDefaults standardUserDefaults];
-        _phonenumber = [numbers objectForKey:@"Number"];
-        
+        _phonenumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"Number"];
     }
-    
     return self;
 }
 
--(void) setPhonenumber:(NSString *)phonenumber {
+
+-(void) setPhonenumber:(NSString *)phonenumber
+{
     NSUserDefaults *numbers = [NSUserDefaults standardUserDefaults];
     
-    //If the phonenumber is new, set it to userdefault
-    if (self.phonenumber != phonenumber){
+    //If the phonenumber is new, set it to userdefault and save it to instance variable.
+    if (phonenumber != self.phonenumber){
         [numbers setObject:phonenumber forKey:@"Number"];
-    } 
+        [numbers synchronize];
+        _phonenumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"Number"];
+    }
 }
-
 
 
 @end
