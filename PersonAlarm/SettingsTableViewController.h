@@ -10,7 +10,7 @@
 #import "MessageSettingsViewController.h"
 #import "CallSettingsViewController.h"
 
-@interface SettingsViewController : UIViewController<MessageSettingsViewControllerDelegate,
-    CallSettingsViewControllerDelegate>
+@interface SettingsTableViewController : UITableViewController<MessageSettingsViewControllerDelegate,
+    CallSettingsViewControllerDelegate, UITableViewDataSource>
 
 @end
