@@ -20,7 +20,7 @@
 		50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E1716BBBF8A00F0C093 /* AlarmViewController.m */; };
 		5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328616C119E500D7CDF6 /* RootViewController.m */; };
 		5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328916C11C0300D7CDF6 /* ModelController.m */; };
-		5DD1329016C121E700D7CDF6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */; };
+		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
 		5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */; };
 		5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD816C4F7EB00B362AE /* TelephoneAlarm.m */; };
 		5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73ADA16C4F7EB00B362AE /* AlarmController.m */; };
@@ -49,8 +49,8 @@
 		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5DD1328816C11C0300D7CDF6 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		5DD1328916C11C0300D7CDF6 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = PersonAlarm/SettingsViewController.h; sourceTree = "<group>"; };
-		5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = PersonAlarm/SettingsViewController.m; sourceTree = "<group>"; };
+		5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = PersonAlarm/SettingsTableViewController.h; sourceTree = "<group>"; };
+		5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = PersonAlarm/SettingsTableViewController.m; sourceTree = "<group>"; };
 		5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelephoneDatasource.m; path = PersonAlarm/TelephoneDatasource.m; sourceTree = "<group>"; };
 		5DF73AD716C4F7EB00B362AE /* TelephoneDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TelephoneDatasource.h; path = PersonAlarm/TelephoneDatasource.h; sourceTree = "<group>"; };
 		5DF73AD816C4F7EB00B362AE /* TelephoneAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelephoneAlarm.m; path = PersonAlarm/TelephoneAlarm.m; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 		5D01B09F16C4F5F9001BF4EA /* GUI Control */ = {
 			isa = PBXGroup;
 			children = (
-				5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */,
-				5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */,
+				5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */,
+				5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */,
 				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
 				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
 				5DD1328516C119E500D7CDF6 /* RootViewController.h */,
@@ -237,7 +237,7 @@
 				50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */,
 				5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */,
 				5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */,
-				5DD1329016C121E700D7CDF6 /* SettingsViewController.m in Sources */,
+				5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */,
 				5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */,
 				5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */,
 				5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */,

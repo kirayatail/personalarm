@@ -8,7 +8,7 @@
 
 #import "ModelController.h"
 #import "AlarmViewController.h"
-#import "SettingsViewController.h"
+#import "SettingsTableViewController.h"
 
 @interface ModelController ()
 
