@@ -34,7 +34,7 @@
     if (phonenumber != self.phonenumber){
         [numbers setObject:phonenumber forKey:@"Number"];
         [numbers synchronize];
-        _phonenumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"Number"];
+        _phonenumber = [numbers objectForKey:@"Number"];
     }
 }
 
