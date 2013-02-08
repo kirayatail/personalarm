@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MessageSettingsViewController.h"
+#import "CallSettingsViewController.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController<MessageSettingsViewControllerDelegate,
+    CallSettingsViewControllerDelegate>
 
 @end

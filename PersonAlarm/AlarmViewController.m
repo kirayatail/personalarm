@@ -7,12 +7,22 @@
 //
 
 #import "AlarmViewController.h"
+#import "AlarmController.h"
 
 @interface AlarmViewController ()
+
+@property (nonatomic, strong) AlarmController *alarmController;
 
 @end
 
 @implementation AlarmViewController
+
+@synthesize alarmController = _alarmController;
+
+- (IBAction)alarmPressed:(id)sender {
+    self.alarmController = [[AlarmController alloc] init];
+    [self.alarmController triggerAlarm];
+}
 
 - (void)viewDidLoad
 {
