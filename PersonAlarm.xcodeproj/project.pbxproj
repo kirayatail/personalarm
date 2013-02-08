@@ -24,6 +24,8 @@
 		5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */; };
 		5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD816C4F7EB00B362AE /* TelephoneAlarm.m */; };
 		5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73ADA16C4F7EB00B362AE /* AlarmController.m */; };
+		5DF73AE216C4F90100B362AE /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */; };
+		5DF73AE516C5073F00B362AE /* CallSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,10 @@
 		5DF73AD916C4F7EB00B362AE /* TelephoneAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TelephoneAlarm.h; path = PersonAlarm/TelephoneAlarm.h; sourceTree = "<group>"; };
 		5DF73ADA16C4F7EB00B362AE /* AlarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlarmController.m; path = PersonAlarm/AlarmController.m; sourceTree = "<group>"; };
 		5DF73ADB16C4F7EB00B362AE /* AlarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlarmController.h; path = PersonAlarm/AlarmController.h; sourceTree = "<group>"; };
+		5DF73AE016C4F90100B362AE /* MessageSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSettingsViewController.h; sourceTree = "<group>"; };
+		5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingsViewController.m; sourceTree = "<group>"; };
+		5DF73AE316C5073F00B362AE /* CallSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSettingsViewController.h; sourceTree = "<group>"; };
+		5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,10 @@
 				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
 				5DD1328516C119E500D7CDF6 /* RootViewController.h */,
 				5DD1328616C119E500D7CDF6 /* RootViewController.m */,
+				5DF73AE016C4F90100B362AE /* MessageSettingsViewController.h */,
+				5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */,
+				5DF73AE316C5073F00B362AE /* CallSettingsViewController.h */,
+				5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */,
 			);
 			name = "GUI Control";
 			path = ..;
@@ -231,6 +241,8 @@
 				5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */,
 				5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */,
 				5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */,
+				5DF73AE216C4F90100B362AE /* MessageSettingsViewController.m in Sources */,
+				5DF73AE516C5073F00B362AE /* CallSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
