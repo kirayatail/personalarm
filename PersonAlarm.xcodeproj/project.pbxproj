@@ -38,14 +38,14 @@
 		50017E0F16BBBF8A00F0C093 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		50017E1116BBBF8A00F0C093 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		50017E1416BBBF8A00F0C093 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		50017E1616BBBF8A00F0C093 /* AlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
-		50017E1716BBBF8A00F0C093 /* AlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
-		5DD1328516C119E500D7CDF6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../RootViewController.h; sourceTree = "<group>"; };
-		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../RootViewController.m; sourceTree = "<group>"; };
+		50017E1616BBBF8A00F0C093 /* AlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlarmViewController.h; path = PersonAlarm/AlarmViewController.h; sourceTree = "<group>"; };
+		50017E1716BBBF8A00F0C093 /* AlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AlarmViewController.m; path = PersonAlarm/AlarmViewController.m; sourceTree = "<group>"; };
+		5DD1328516C119E500D7CDF6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5DD1328816C11C0300D7CDF6 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
 		5DD1328916C11C0300D7CDF6 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = PersonAlarm/SettingsViewController.h; sourceTree = "<group>"; };
+		5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = PersonAlarm/SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,16 +92,9 @@
 		50017E0116BBBF8A00F0C093 /* PersonAlarm */ = {
 			isa = PBXGroup;
 			children = (
-				5DD1328516C119E500D7CDF6 /* RootViewController.h */,
-				5DD1328616C119E500D7CDF6 /* RootViewController.m */,
+				5D01B09F16C4F5F9001BF4EA /* GUI Control */,
 				5DD1328816C11C0300D7CDF6 /* ModelController.h */,
 				5DD1328916C11C0300D7CDF6 /* ModelController.m */,
-				5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */,
-				5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */,
-				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
-				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
-				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
-				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
 				50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */,
 				50017E0216BBBF8A00F0C093 /* Supporting Files */,
 			);
@@ -111,6 +104,8 @@
 		50017E0216BBBF8A00F0C093 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
+				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
 				50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */,
 				50017E0416BBBF8A00F0C093 /* InfoPlist.strings */,
 				50017E0716BBBF8A00F0C093 /* main.m */,
@@ -120,6 +115,20 @@
 				50017E1116BBBF8A00F0C093 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D01B09F16C4F5F9001BF4EA /* GUI Control */ = {
+			isa = PBXGroup;
+			children = (
+				5DD1328E16C121E700D7CDF6 /* SettingsViewController.h */,
+				5DD1328F16C121E700D7CDF6 /* SettingsViewController.m */,
+				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
+				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
+				5DD1328516C119E500D7CDF6 /* RootViewController.h */,
+				5DD1328616C119E500D7CDF6 /* RootViewController.m */,
+			);
+			name = "GUI Control";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
