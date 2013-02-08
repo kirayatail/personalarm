@@ -13,11 +13,11 @@
 		50017E0616BBBF8A00F0C093 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0416BBBF8A00F0C093 /* InfoPlist.strings */; };
 		50017E0816BBBF8A00F0C093 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E0716BBBF8A00F0C093 /* main.m */; };
 		50017E0C16BBBF8A00F0C093 /* AlarmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */; };
-		50017E0E16BBBF8A00F0C093 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0D16BBBF8A00F0C093 /* Default.png */; };
-		50017E1016BBBF8A00F0C093 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50017E0F16BBBF8A00F0C093 /* Default@2x.png */; };
 		50017E1516BBBF8A00F0C093 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */; };
 		50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50017E1716BBBF8A00F0C093 /* AlarmViewController.m */; };
-		50DD541B16C53460002CF0E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD541A16C53460002CF0E6 /* Default-568h@2x.png */; };
+		50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542216C539D6002CF0E6 /* Default-568h@2x.png */; };
+		50DD542616C539D6002CF0E6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542316C539D6002CF0E6 /* Default.png */; };
+		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
 		5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328616C119E500D7CDF6 /* RootViewController.m */; };
 		5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328916C11C0300D7CDF6 /* ModelController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -39,12 +39,12 @@
 		50017E0916BBBF8A00F0C093 /* PersonAlarm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PersonAlarm-Prefix.pch"; sourceTree = "<group>"; };
 		50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmAppDelegate.h; sourceTree = "<group>"; };
 		50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmAppDelegate.m; sourceTree = "<group>"; };
-		50017E0D16BBBF8A00F0C093 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		50017E0F16BBBF8A00F0C093 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		50017E1416BBBF8A00F0C093 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		50017E1616BBBF8A00F0C093 /* AlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AlarmViewController.h; path = PersonAlarm/AlarmViewController.h; sourceTree = "<group>"; };
 		50017E1716BBBF8A00F0C093 /* AlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AlarmViewController.m; path = PersonAlarm/AlarmViewController.m; sourceTree = "<group>"; };
-		50DD541A16C53460002CF0E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		50DD542216C539D6002CF0E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		50DD542316C539D6002CF0E6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		50DD542416C539D6002CF0E6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		5DD1328516C119E500D7CDF6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5DD1328816C11C0300D7CDF6 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
@@ -120,15 +120,15 @@
 		50017E0216BBBF8A00F0C093 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				50DD541A16C53460002CF0E6 /* Default-568h@2x.png */,
 				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
 				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
 				50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */,
 				50017E0416BBBF8A00F0C093 /* InfoPlist.strings */,
 				50017E0716BBBF8A00F0C093 /* main.m */,
 				50017E0916BBBF8A00F0C093 /* PersonAlarm-Prefix.pch */,
-				50017E0D16BBBF8A00F0C093 /* Default.png */,
-				50017E0F16BBBF8A00F0C093 /* Default@2x.png */,
+				50DD542216C539D6002CF0E6 /* Default-568h@2x.png */,
+				50DD542316C539D6002CF0E6 /* Default.png */,
+				50DD542416C539D6002CF0E6 /* Default@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -218,10 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50017E0616BBBF8A00F0C093 /* InfoPlist.strings in Resources */,
-				50017E0E16BBBF8A00F0C093 /* Default.png in Resources */,
-				50017E1016BBBF8A00F0C093 /* Default@2x.png in Resources */,
 				50017E1516BBBF8A00F0C093 /* MainStoryboard.storyboard in Resources */,
-				50DD541B16C53460002CF0E6 /* Default-568h@2x.png in Resources */,
+				50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */,
+				50DD542616C539D6002CF0E6 /* Default.png in Resources */,
+				50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
