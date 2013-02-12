@@ -26,7 +26,66 @@
 		5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73ADA16C4F7EB00B362AE /* AlarmController.m */; };
 		5DF73AE216C4F90100B362AE /* MessageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */; };
 		5DF73AE516C5073F00B362AE /* CallSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */; };
+		5DFBC18216CA429F008A9F23 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC17916CA40D7008A9F23 /* libRestKit.a */; };
+		5DFBC18416CA42A7008A9F23 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC18316CA42A7008A9F23 /* CFNetwork.framework */; };
+		5DFBC18616CA42C3008A9F23 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC18516CA42C3008A9F23 /* CoreData.framework */; };
+		5DFBC18816CA42CB008A9F23 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC18716CA42CB008A9F23 /* MobileCoreServices.framework */; };
+		5DFBC18A16CA42D3008A9F23 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC18916CA42D3008A9F23 /* Security.framework */; };
+		5DFBC18C16CA42DA008A9F23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFBC18B16CA42DA008A9F23 /* SystemConfiguration.framework */; };
+		5DFBC18F16CAC932008A9F23 /* libRestKit.a in Copy RestKit Framework */ = {isa = PBXBuildFile; fileRef = 5DFBC17916CA40D7008A9F23 /* libRestKit.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DFBC17816CA40D7008A9F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		5DFBC17A16CA40D7008A9F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		5DFBC17C16CA40D7008A9F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		5DFBC17E16CA40D7008A9F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		5DFBC18016CA428E008A9F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5DFBC18D16CA42F2008A9F23 /* Copy RestKit Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5DFBC18F16CAC932008A9F23 /* libRestKit.a in Copy RestKit Framework */,
+			);
+			name = "Copy RestKit Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +120,12 @@
 		5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSettingsViewController.m; sourceTree = "<group>"; };
 		5DF73AE316C5073F00B362AE /* CallSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallSettingsViewController.h; sourceTree = "<group>"; };
 		5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallSettingsViewController.m; sourceTree = "<group>"; };
+		5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		5DFBC18316CA42A7008A9F23 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5DFBC18516CA42C3008A9F23 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5DFBC18716CA42CB008A9F23 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		5DFBC18916CA42D3008A9F23 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5DFBC18B16CA42DA008A9F23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +133,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFBC18C16CA42DA008A9F23 /* SystemConfiguration.framework in Frameworks */,
+				5DFBC18A16CA42D3008A9F23 /* Security.framework in Frameworks */,
+				5DFBC18816CA42CB008A9F23 /* MobileCoreServices.framework in Frameworks */,
+				5DFBC18616CA42C3008A9F23 /* CoreData.framework in Frameworks */,
+				5DFBC18416CA42A7008A9F23 /* CFNetwork.framework in Frameworks */,
+				5DFBC18216CA429F008A9F23 /* libRestKit.a in Frameworks */,
 				50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */,
 				50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */,
 				50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */,
@@ -80,6 +151,12 @@
 		50017DEC16BBBF8A00F0C093 = {
 			isa = PBXGroup;
 			children = (
+				5DFBC18B16CA42DA008A9F23 /* SystemConfiguration.framework */,
+				5DFBC18916CA42D3008A9F23 /* Security.framework */,
+				5DFBC18716CA42CB008A9F23 /* MobileCoreServices.framework */,
+				5DFBC18516CA42C3008A9F23 /* CoreData.framework */,
+				5DFBC18316CA42A7008A9F23 /* CFNetwork.framework */,
+				5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */,
 				50017E0116BBBF8A00F0C093 /* PersonAlarm */,
 				50017DFA16BBBF8A00F0C093 /* Frameworks */,
 				50017DF816BBBF8A00F0C093 /* Products */,
@@ -165,6 +242,17 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		5DFBC17216CA40D6008A9F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBC17916CA40D7008A9F23 /* libRestKit.a */,
+				5DFBC17B16CA40D7008A9F23 /* RestKitTests.octest */,
+				5DFBC17D16CA40D7008A9F23 /* RestKit.framework */,
+				5DFBC17F16CA40D7008A9F23 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,10 +263,12 @@
 				50017DF316BBBF8A00F0C093 /* Sources */,
 				50017DF416BBBF8A00F0C093 /* Frameworks */,
 				50017DF516BBBF8A00F0C093 /* Resources */,
+				5DFBC18D16CA42F2008A9F23 /* Copy RestKit Framework */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5DFBC18116CA428E008A9F23 /* PBXTargetDependency */,
 			);
 			name = PersonAlarm;
 			productName = PersonAlarm;
@@ -205,12 +295,49 @@
 			mainGroup = 50017DEC16BBBF8A00F0C093;
 			productRefGroup = 50017DF816BBBF8A00F0C093 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5DFBC17216CA40D6008A9F23 /* Products */;
+					ProjectRef = 5DFBC17116CA40D6008A9F23 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50017DF616BBBF8A00F0C093 /* PersonAlarm */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5DFBC17916CA40D7008A9F23 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 5DFBC17816CA40D7008A9F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5DFBC17B16CA40D7008A9F23 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 5DFBC17A16CA40D7008A9F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5DFBC17D16CA40D7008A9F23 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 5DFBC17C16CA40D7008A9F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5DFBC17F16CA40D7008A9F23 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 5DFBC17E16CA40D7008A9F23 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		50017DF516BBBF8A00F0C093 /* Resources */ = {
@@ -247,6 +374,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DFBC18116CA428E008A9F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 5DFBC18016CA428E008A9F23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		50017E0416BBBF8A00F0C093 /* InfoPlist.strings */ = {
@@ -323,7 +458,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -334,7 +474,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
