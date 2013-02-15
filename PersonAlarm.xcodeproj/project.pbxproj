@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D58FA9116CE3857000DA50D /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9016CE3857000DA50D /* HTTPController.m */; };
+		3D58FA9516CE447A000DA50D /* UserDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9316CE447A000DA50D /* UserDataModel.xcdatamodeld */; };
+		3D58FA9816CE451B000DA50D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9716CE451B000DA50D /* User.m */; };
 		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
 		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
 		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
@@ -89,6 +92,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D58FA8F16CE3857000DA50D /* HTTPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPController.h; sourceTree = "<group>"; };
+		3D58FA9016CE3857000DA50D /* HTTPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPController.m; sourceTree = "<group>"; };
+		3D58FA9416CE447A000DA50D /* UserDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDataModel.xcdatamodel; sourceTree = "<group>"; };
+		3D58FA9616CE451B000DA50D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3D58FA9716CE451B000DA50D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +159,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D58FA8B16CE3823000DA50D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D58FA8F16CE3857000DA50D /* HTTPController.h */,
+				3D58FA9016CE3857000DA50D /* HTTPController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3D58FA9216CE4448000DA50D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				3D58FA9316CE447A000DA50D /* UserDataModel.xcdatamodeld */,
+				3D58FA9616CE451B000DA50D /* User.h */,
+				3D58FA9716CE451B000DA50D /* User.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		50017DEC16BBBF8A00F0C093 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +214,8 @@
 		50017E0116BBBF8A00F0C093 /* PersonAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				3D58FA9216CE4448000DA50D /* Core Data */,
+				3D58FA8B16CE3823000DA50D /* Controllers */,
 				5DF73ADF16C4F80C00B362AE /* Alarm */,
 				5D01B09F16C4F5F9001BF4EA /* GUI Control */,
 				5DD1328816C11C0300D7CDF6 /* ModelController.h */,
@@ -376,6 +405,9 @@
 				5DF73AE216C4F90100B362AE /* MessageSettingsViewController.m in Sources */,
 				5DF73AE516C5073F00B362AE /* CallSettingsViewController.m in Sources */,
 				5DE3A2DB16CBF0DD0023B6DD /* ProfileViewController.m in Sources */,
+				3D58FA9116CE3857000DA50D /* HTTPController.m in Sources */,
+				3D58FA9516CE447A000DA50D /* UserDataModel.xcdatamodeld in Sources */,
+				3D58FA9816CE451B000DA50D /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +545,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3D58FA9316CE447A000DA50D /* UserDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3D58FA9416CE447A000DA50D /* UserDataModel.xcdatamodel */,
+			);
+			currentVersion = 3D58FA9416CE447A000DA50D /* UserDataModel.xcdatamodel */;
+			path = UserDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50017DEE16BBBF8A00F0C093 /* Project object */;
 }
