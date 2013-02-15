@@ -14,6 +14,20 @@
 
 @implementation ProfileViewController
 
+@synthesize delegate = _delegate;
+
+
+- (IBAction)donePressed:(id)sender {
+    // Update information in the database
+    
+    [self.delegate profileViewController:self didPressDone:YES];
+}
+
+- (IBAction)cancelPressed:(id)sender {
+    [self.delegate profileViewController:self didPressCancel:YES];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MessageSettingsViewController.h"
 #import "CallSettingsViewController.h"
+#import "ProfileViewController.h"
 
 @interface SettingsTableViewController : UITableViewController<MessageSettingsViewControllerDelegate,
-    CallSettingsViewControllerDelegate, UITableViewDataSource>
+    CallSettingsViewControllerDelegate, UITableViewDataSource, ProfileViewControllerDelegate>
 
 @end

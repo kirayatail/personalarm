@@ -26,6 +26,8 @@
         [segue.destinationViewController setDelegate:self];
     } else if ([segue.identifier isEqualToString:@"Show Call Settings"]) {
         [segue.destinationViewController setDelegate:self];
+    } else if ([segue.identifier isEqualToString:@"Show Profile Settings"]) {
+        [segue.destinationViewController setDelegate:self];
     }
 }
 
@@ -61,6 +63,19 @@
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
+
+- (void) profileViewController:(ProfileViewController *) profileViewController didPressDone:(BOOL) pressed
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
+- (void) profileViewController:(ProfileViewController *) profileViewController didPressCancel:(BOOL) pressed
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+    }];
+}
+
 /*
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -33,8 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    // self.textField.text =
+    NSString* phoneNumber =  [[NSUserDefaults standardUserDefaults]objectForKey:@"Number"];
+    [self.textField setText:phoneNumber];
 }
 
 

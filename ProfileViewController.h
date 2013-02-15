@@ -20,4 +20,6 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (nonatomic, assign) id <ProfileViewControllerDelegate> delegate;
+
 @end
