@@ -11,6 +11,13 @@
 
 @interface SettingsTableViewController ()
 
+#define SETTINGS_SECTION 0
+#define GENERAL_SECTION 1
+#define MESSAGE_SETTINGS 0
+#define CALL_SETTINGS 1
+#define PROFILE_SETTINGS 0
+#define FRIEND_SETTINGS 1
+
 @property (nonatomic, strong) TelephoneDatasource *datasource;
 
 @end
@@ -38,6 +45,8 @@
     self.tableView.dataSource = self;
 }
 
+#pragma mark MessageSettingsViewController delegate methods
+
 - (void) messageSettingsViewController:(MessageSettingsViewController *) messageSettingsViewController didPressDone:(BOOL) pressed
 {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -49,6 +58,8 @@
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }
+
+#pragma mark CallSettingsViewController delegate methods
 
 - (void) callSettingsViewController:(CallSettingsViewController *) callSettingsViewController didPressDone:(BOOL) pressed enteredNumber:(NSString *)phoneNumber
 {
@@ -64,6 +75,8 @@
     }];
 }
 
+#pragma mark ProfileViewController delegate methods
+
 - (void) profileViewController:(ProfileViewController *) profileViewController didPressDone:(BOOL) pressed
 {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -76,37 +89,26 @@
     }];
 }
 
-/*
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
-    static NSString *CellIdentifier = @"messageCell";
-  / if(indexPath.row == 1) {
-        CellIdentifier = @"messageCell";
-    } else if(indexPath.row) {
-        CellIdentifier = @"callCell";
-    }
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+#pragma mark -
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0) {
+    if(indexPath.row == MESSAGE_SETTINGS && indexPath.section == SETTINGS_SECTION) {
         [self performSegueWithIdentifier:@"Show Message Settings" sender:self];
-    } else if(indexPath.row == 1) {
+    } else if(indexPath.row == CALL_SETTINGS && indexPath.section == SETTINGS_SECTION) {
         [self performSegueWithIdentifier:@"Show Call Settings" sender:self];
+    } else if (indexPath.row == PROFILE_SETTINGS && indexPath.section == GENERAL_SECTION) {
+        [self performSegueWithIdentifier:@"Show Profile Settings" sender:self];
+    } else if (indexPath.row == FRIEND_SETTINGS && indexPath.section == GENERAL_SECTION) {
+        // Add the view controller and segue for friend settings!!
+        [self performSegueWithIdentifier:@"Show Friend Settings" sender:self];
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
     return 2;
 }
 
