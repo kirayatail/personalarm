@@ -14,4 +14,5 @@
 
 -(id)init;
 
++(BOOL) phoneNumberIsValid:(NSString *)phoneNumber;
 @end

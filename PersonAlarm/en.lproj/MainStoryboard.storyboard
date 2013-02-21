@@ -254,9 +254,6 @@
     <classes>
         <class className="AlarmViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="alarmPressed:"/>
-            </relationships>
         </class>
         <class className="CallSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
