@@ -52,6 +52,7 @@
 {
     self.datasource = [[TelephoneDatasource alloc]init];
     self.datasource.phonenumber = phoneNumber;
+    NSLog(@"%@", phoneNumber);
     [self dismissViewControllerAnimated:YES completion:^{
     }];
 }

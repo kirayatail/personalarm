@@ -59,14 +59,16 @@
     } else {
         //TODO: Notify user that the contact is invalid?
         phone = @"No phone number";
-    }
+    }   
     self.textField.text = phone;
     CFRelease(phoneNumbers);
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-   return NO;
+    return NO;
+    
 }
+
 
 
 -(BOOL) peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
@@ -74,7 +76,7 @@
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
-   return NO;
+    return NO;
 }
 -(void) peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
 {
