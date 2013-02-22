@@ -133,11 +133,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybO-Df-wCg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="50Y-Ot-yX7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Get!">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getPressed:" destination="grh-ia-KDv" eventType="touchUpInside" id="sWu-pT-D5z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aNJ-zk-ldJ" firstAttribute="top" secondItem="ID5-y0-7yS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="09k-Qe-kS9"/>
                             <constraint firstAttribute="trailing" secondItem="aNJ-zk-ldJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0gL-nO-Pya"/>
+                            <constraint firstItem="ybO-Df-wCg" firstAttribute="top" secondItem="sy6-q7-NRh" secondAttribute="top" constant="252" id="375-oa-oOA"/>
                             <constraint firstItem="LrF-tC-Bcl" firstAttribute="top" secondItem="sy6-q7-NRh" secondAttribute="top" type="default" id="6K4-Ih-SH6"/>
                             <constraint firstItem="LrF-tC-Bcl" firstAttribute="trailing" secondItem="sy6-q7-NRh" secondAttribute="trailing" type="default" id="F7z-tD-R0M"/>
                             <constraint firstItem="aNJ-zk-ldJ" firstAttribute="leading" secondItem="sy6-q7-NRh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jdd-3S-wwD"/>
@@ -147,6 +164,7 @@
                             <constraint firstItem="noB-S8-Cra" firstAttribute="top" secondItem="sy6-q7-NRh" secondAttribute="top" constant="73" id="R4P-XL-mJ1"/>
                             <constraint firstAttribute="trailing" secondItem="ID5-y0-7yS" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZYI-JL-EBO"/>
                             <constraint firstItem="noB-S8-Cra" firstAttribute="leading" secondItem="sy6-q7-NRh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fGy-sl-S3Y"/>
+                            <constraint firstItem="ybO-Df-wCg" firstAttribute="centerX" secondItem="aNJ-zk-ldJ" secondAttribute="centerX" type="default" id="mPN-jv-wG9"/>
                             <constraint firstItem="LrF-tC-Bcl" firstAttribute="leading" secondItem="sy6-q7-NRh" secondAttribute="leading" type="default" id="wKO-b9-mS9"/>
                         </constraints>
                     </view>
@@ -344,39 +362,6 @@
             <point key="canvasLocation" x="530" y="-2"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AlarmViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
-        </class>
-        <class className="CallSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MessageSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="RootViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
-        </class>
-        <class className="SettingsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

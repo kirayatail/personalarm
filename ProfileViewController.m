@@ -39,6 +39,10 @@
     [self.delegate profileViewController:self didPressCancel:YES];
 }
 
+- (IBAction)getPressed:(id)sender {
+    HTTPController* httpController = [[HTTPController alloc]init];
+    [httpController userWithID:@"0701438017"];
+}
 
 - (void)viewDidLoad
 {
