@@ -7,18 +7,30 @@
 //
 
 #import "ProfileViewController.h"
+#import "HTTPController.h"
 
 @interface ProfileViewController ()
+
+@property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 @end
 
 @implementation ProfileViewController
 
 @synthesize delegate = _delegate;
+@synthesize firstNameTextField = _firstNameTextField;
+@synthesize lastNameTextField = _lastNameTextField;
+@synthesize phoneNumberTextField = _phoneNumberTextField;
 
 
 - (IBAction)donePressed:(id)sender {
-    // Update information in the database
+    // Post new profile information to the database
+    HTTPController *httpController = [[HTTPController alloc] init];
+    [httpController addUserWithFirstName:self.firstNameTextField.text
+                                lastName:self.lastNameTextField.text
+                             phoneNumber:self.phoneNumberTextField.text];
     
     [self.delegate profileViewController:self didPressDone:YES];
 }

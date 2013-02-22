@@ -11,7 +11,7 @@
 
 @interface HTTPController : RKObjectManager
 
--(void) addUser:(NSString*)firstName surname:(NSString*)surname phoneNumber:(NSString*)phoneNumber;
+-(void) addUserWithFirstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber;
 
 //-(User*) getUserWithPhoneNumberAsID:(NSString*) phoneNumber; //Make NSManagedObject of User later..
 

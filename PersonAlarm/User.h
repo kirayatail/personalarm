@@ -2,18 +2,16 @@
 //  User.h
 //  PersonAlarm
 //
-//  Created by William Gabrielsson on 2013-02-15.
+//  Created by Simon Olsson on 2013-02-22.
 //  Copyright (c) 2013 Chalmers. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
+@interface User : NSObject
 
-@interface User : NSManagedObject
-
-@property (nonatomic, retain) NSString * firstName;
-@property (nonatomic, retain) NSString * phoneNumber;
-@property (nonatomic, retain) NSString * surname;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSString *phoneNumber;
 
 @end

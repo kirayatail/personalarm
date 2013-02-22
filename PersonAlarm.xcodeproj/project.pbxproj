@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D58FA9116CE3857000DA50D /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9016CE3857000DA50D /* HTTPController.m */; };
 		3D58FA9516CE447A000DA50D /* UserDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9316CE447A000DA50D /* UserDataModel.xcdatamodeld */; };
-		3D58FA9816CE451B000DA50D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D58FA9716CE451B000DA50D /* User.m */; };
 		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
 		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
 		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
@@ -21,6 +20,7 @@
 		50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542216C539D6002CF0E6 /* Default-568h@2x.png */; };
 		50DD542616C539D6002CF0E6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542316C539D6002CF0E6 /* Default.png */; };
 		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
+		5D060DB216D761AC00BC8978 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D060DB116D761AC00BC8978 /* User.m */; };
 		5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328616C119E500D7CDF6 /* RootViewController.m */; };
 		5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328916C11C0300D7CDF6 /* ModelController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -95,8 +95,6 @@
 		3D58FA8F16CE3857000DA50D /* HTTPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPController.h; sourceTree = "<group>"; };
 		3D58FA9016CE3857000DA50D /* HTTPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPController.m; sourceTree = "<group>"; };
 		3D58FA9416CE447A000DA50D /* UserDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDataModel.xcdatamodel; sourceTree = "<group>"; };
-		3D58FA9616CE451B000DA50D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		3D58FA9716CE451B000DA50D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +111,8 @@
 		50DD542216C539D6002CF0E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		50DD542316C539D6002CF0E6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		50DD542416C539D6002CF0E6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		5D060DB016D761AC00BC8978 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		5D060DB116D761AC00BC8978 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5DD1328516C119E500D7CDF6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5DD1328816C11C0300D7CDF6 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				3D58FA9316CE447A000DA50D /* UserDataModel.xcdatamodeld */,
-				3D58FA9616CE451B000DA50D /* User.h */,
-				3D58FA9716CE451B000DA50D /* User.m */,
+				5D060DB016D761AC00BC8978 /* User.h */,
+				5D060DB116D761AC00BC8978 /* User.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -407,7 +407,7 @@
 				5DE3A2DB16CBF0DD0023B6DD /* ProfileViewController.m in Sources */,
 				3D58FA9116CE3857000DA50D /* HTTPController.m in Sources */,
 				3D58FA9516CE447A000DA50D /* UserDataModel.xcdatamodeld in Sources */,
-				3D58FA9816CE451B000DA50D /* User.m in Sources */,
+				5D060DB216D761AC00BC8978 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

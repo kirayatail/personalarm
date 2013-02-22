@@ -121,19 +121,26 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="noB-S8-Cra">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="noB-S8-Cra">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ID5-y0-7yS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ID5-y0-7yS">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-zk-ldJ">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aNJ-zk-ldJ" firstAttribute="top" secondItem="ID5-y0-7yS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="09k-Qe-kS9"/>
+                            <constraint firstAttribute="trailing" secondItem="aNJ-zk-ldJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="0gL-nO-Pya"/>
                             <constraint firstItem="LrF-tC-Bcl" firstAttribute="top" secondItem="sy6-q7-NRh" secondAttribute="top" type="default" id="6K4-Ih-SH6"/>
                             <constraint firstItem="LrF-tC-Bcl" firstAttribute="trailing" secondItem="sy6-q7-NRh" secondAttribute="trailing" type="default" id="F7z-tD-R0M"/>
+                            <constraint firstItem="aNJ-zk-ldJ" firstAttribute="leading" secondItem="sy6-q7-NRh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jdd-3S-wwD"/>
                             <constraint firstItem="ID5-y0-7yS" firstAttribute="leading" secondItem="sy6-q7-NRh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N7u-g2-Ofk"/>
                             <constraint firstAttribute="trailing" secondItem="noB-S8-Cra" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ObW-9g-bcq"/>
                             <constraint firstItem="ID5-y0-7yS" firstAttribute="top" secondItem="noB-S8-Cra" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ofn-YD-dN4"/>
@@ -144,6 +151,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wHL-XC-xql"/>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="noB-S8-Cra" id="dvV-cQ-SrK"/>
+                        <outlet property="lastNameTextField" destination="ID5-y0-7yS" id="624-c1-H7P"/>
+                        <outlet property="phoneNumberTextField" destination="aNJ-zk-ldJ" id="FL0-dJ-Tm6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1V-zV-LC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,17 +351,11 @@
         <class className="CallSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MessageSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="action" name="donePressed:"/>
-            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -359,6 +365,9 @@
             <relationships>
                 <relationship kind="action" name="cancelPressed:"/>
                 <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="RootViewController" superclassName="UIViewController">

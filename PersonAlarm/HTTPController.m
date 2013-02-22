@@ -8,35 +8,45 @@
 
 #import "HTTPController.h"
 #import "User.h"
+#import <RestKit/CoreData.h>
 
 @implementation HTTPController
 
--(void) addUser:(NSString *)firstName surname:(NSString*)surname phoneNumber:(NSString *)phoneNumber
+-(void) addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName phoneNumber:(NSString *)phoneNumber
 {
     RKObjectMapping* responseMapping = [RKObjectMapping mappingForClass:[User class]];
-    [responseMapping addAttributeMappingsFromArray:@[@"firstName", @"surname", @"phoneNumber"]];
+//    [responseMapping addAttributeMappingsFromArray:@[@"firstName", @"lastName", @"phoneNumber"]];
+    [responseMapping addAttributeMappingsFromDictionary:@{
+        @"firstName"    :   @"firstname",
+        @"lastName"     :   @"lastname",
+        @"phoneNumber"  :   @"phone"
+     }];
+    
     NSIndexSet* statusCodes = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
     RKResponseDescriptor* userDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping pathPattern:@"/users" keyPath:@"users" statusCodes:statusCodes]; //Change pathPattern
     
     RKObjectMapping* requestMapping = [RKObjectMapping requestMapping];
-    [requestMapping addAttributeMappingsFromArray:@[@"firstName", @"surname", @"phoneNumber"]];
-    
+//    [requestMapping addAttributeMappingsFromArray:@[@"firstName", @"lastName", @"phoneNumber"]];
+    [requestMapping addAttributeMappingsFromDictionary:@{
+     @"firstName"    :   @"firstname",
+     @"lastName"     :   @"lastname",
+     @"phoneNumber"  :   @"phone"
+     }];
+
     RKRequestDescriptor* requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping
                                                                                    objectClass:[User class] rootKeyPath:@"user"];
     
-    RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"URL STRING"]]; //Insert later
+    RKObjectManager* manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://obscure-beach-9317.herokuapp.com"]]; //Insert later
     [manager addRequestDescriptor:requestDescriptor];
     [manager addResponseDescriptor:userDescriptor];
     
     User* user = [User new]; //Check this
+    
     user.firstName = firstName;
-    user.surname = surname;
+    user.lastName = lastName;
     user.phoneNumber = phoneNumber;
     
     [manager postObject:user path:@"/users" parameters:nil success:nil failure:nil];
-    
-    
-    
 }
 
 
