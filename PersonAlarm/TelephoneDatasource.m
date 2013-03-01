@@ -22,6 +22,7 @@
     if (self = [super init]){
         _phonenumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"Number"];
     }
+    
     return self;
 }
 
@@ -36,6 +37,23 @@
         [numbers synchronize];
         _phonenumber = [numbers objectForKey:@"Number"];
     }
+}
+
++ (BOOL) phoneNumberIsValid:(NSString *)phoneNumber
+{    
+    //This is the string that is going to be compared to the input string
+    NSString *testString = [NSString string];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:phoneNumber];
+    
+    //This is the character set containing all digits. It is used to filter the input string
+    NSCharacterSet *skips = [NSCharacterSet characterSetWithCharactersInString:@"+1234567890"];
+    
+    //This goes through the input string and puts all the
+    //characters that are digits into the new string
+    [scanner scanCharactersFromSet:skips intoString:&testString];
+    
+    return ([phoneNumber length] == [testString length]) && ([phoneNumber length] >= 10);
 }
 
 

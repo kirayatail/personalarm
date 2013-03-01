@@ -24,9 +24,15 @@
 
 -(void)trigger {
     // TODO: check if datasource content is valid
-    NSString *number = self.datasource.phonenumber;
-    
+    NSString *number = [self phoneNumberWithoutHyphensAndSpaces:self.datasource.phonenumber];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"tel://" stringByAppendingString:number]]];
+}
+
+
+-(NSString*) phoneNumberWithoutHyphensAndSpaces:(NSString*) phoneNumber
+{
+    NSString* temp = [phoneNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    return [temp stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
 -(void)stop {
