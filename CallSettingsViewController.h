@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
 @class CallSettingsViewController;
 
@@ -18,7 +20,7 @@
 
 @end
 
-@interface CallSettingsViewController : UIViewController
+@interface CallSettingsViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate>
 
 @property (nonatomic, assign) id <CallSettingsViewControllerDelegate> delegate;
 

@@ -1,4 +1,2 @@
 personalarm
 ===========
-simon olsson
-Hejehje
