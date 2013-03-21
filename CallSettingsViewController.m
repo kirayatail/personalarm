@@ -24,22 +24,18 @@
 @synthesize textField = _textField;
 @synthesize datasource = _datasource;
 
-- (IBAction)cancelPressed:(id)sender
-{
-    [self.delegate callSettingsViewController:self didPressCancel:YES];
-}
 
-- (IBAction)donePressed:(id)sender
-{
-    BOOL valid = [TelephoneDatasource phoneNumberIsValid:self.textField.text];
-    
-    if(valid) {
-        [self.delegate callSettingsViewController:self didPressDone:YES enteredNumber:self.textField.text];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid phone number" message:@"Please enter a valid phone number" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-}
+//- (IBAction)donePressed:(id)sender
+//{
+//    BOOL valid = [TelephoneDatasource phoneNumberIsValid:self.textField.text];
+//    
+//    if(valid) {
+//        [self.delegate callSettingsViewController:self didPressDone:YES enteredNumber:self.textField.text];
+//    } else {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid phone number" message:@"Please enter a valid phone number" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+//        [alert show];
+//    }
+//}
 
 - (void)viewDidLoad
 {

@@ -16,15 +16,6 @@
 
 @synthesize delegate = _delegate;
 
-- (IBAction)donePressed:(id)sender
-{
-    [self.delegate messageSettingsViewController:self didPressDone:YES];
-}
-- (IBAction)cancelPressed:(id)sender
-{
-    [self.delegate messageSettingsViewController:self didPressCancel:YES];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
