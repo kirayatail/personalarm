@@ -17,6 +17,7 @@
 
 @implementation SettingsTableViewController
 
+
 @synthesize datasource = _datasource;
 
 //- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -61,6 +62,16 @@
 {
     [self dismissViewControllerAnimated:YES completion:^{
     }];
+}
+
+-(void) messageSettingsViewController:(MessageSettingsViewController *)messageSettingsViewController didPressCancel:(BOOL)pressed
+{
+    //Do nothing..
+}
+
+-(void) messageSettingsViewController:(MessageSettingsViewController *)messageSettingsViewController didPressDone:(BOOL)pressed
+{
+    //Do nothing
 }
 
 
