@@ -20,8 +20,7 @@
 		50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542216C539D6002CF0E6 /* Default-568h@2x.png */; };
 		50DD542616C539D6002CF0E6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542316C539D6002CF0E6 /* Default.png */; };
 		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
-		5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328616C119E500D7CDF6 /* RootViewController.m */; };
-		5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328916C11C0300D7CDF6 /* ModelController.m */; };
+		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
 		5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */; };
 		5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD816C4F7EB00B362AE /* TelephoneAlarm.m */; };
@@ -108,10 +107,8 @@
 		50DD542216C539D6002CF0E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		50DD542316C539D6002CF0E6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		50DD542416C539D6002CF0E6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
-		5DD1328516C119E500D7CDF6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		5DD1328616C119E500D7CDF6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		5DD1328816C11C0300D7CDF6 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		5DD1328916C11C0300D7CDF6 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = PersonAlarm/SettingsTableViewController.h; sourceTree = "<group>"; };
 		5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = PersonAlarm/SettingsTableViewController.m; sourceTree = "<group>"; };
 		5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelephoneDatasource.m; path = PersonAlarm/TelephoneDatasource.m; sourceTree = "<group>"; };
@@ -194,8 +191,6 @@
 			children = (
 				5DF73ADF16C4F80C00B362AE /* Alarm */,
 				5D01B09F16C4F5F9001BF4EA /* GUI Control */,
-				5DD1328816C11C0300D7CDF6 /* ModelController.h */,
-				5DD1328916C11C0300D7CDF6 /* ModelController.m */,
 				50017E1316BBBF8A00F0C093 /* MainStoryboard.storyboard */,
 				50017E0216BBBF8A00F0C093 /* Supporting Files */,
 			);
@@ -225,12 +220,12 @@
 				5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */,
 				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
 				50017E1716BBBF8A00F0C093 /* AlarmViewController.m */,
-				5DD1328516C119E500D7CDF6 /* RootViewController.h */,
-				5DD1328616C119E500D7CDF6 /* RootViewController.m */,
 				5DF73AE016C4F90100B362AE /* MessageSettingsViewController.h */,
 				5DF73AE116C4F90100B362AE /* MessageSettingsViewController.m */,
 				5DF73AE316C5073F00B362AE /* CallSettingsViewController.h */,
 				5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */,
+				5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */,
+				5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */,
 			);
 			name = "GUI Control";
 			path = ..;
@@ -370,14 +365,13 @@
 				50017E0816BBBF8A00F0C093 /* main.m in Sources */,
 				50017E0C16BBBF8A00F0C093 /* AlarmAppDelegate.m in Sources */,
 				50017E1816BBBF8A00F0C093 /* AlarmViewController.m in Sources */,
-				5DD1328716C119E500D7CDF6 /* RootViewController.m in Sources */,
-				5DD1328A16C11C0300D7CDF6 /* ModelController.m in Sources */,
 				5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */,
 				5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */,
 				5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */,
 				5DF73ADE16C4F7EB00B362AE /* AlarmController.m in Sources */,
 				5DF73AE216C4F90100B362AE /* MessageSettingsViewController.m in Sources */,
 				5DF73AE516C5073F00B362AE /* CallSettingsViewController.m in Sources */,
+				5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +414,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Max Witt (LJ5Y78SMZ3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -436,7 +430,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "8F0644E4-FB25-4B41-90FD-E691F19A0740";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -450,7 +444,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Max Witt (LJ5Y78SMZ3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -459,7 +453,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "8F0644E4-FB25-4B41-90FD-E691F19A0740";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
