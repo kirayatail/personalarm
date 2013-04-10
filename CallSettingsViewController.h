@@ -14,9 +14,12 @@
 
 @protocol CallSettingsViewControllerDelegate <NSObject>
 
-- (void) callSettingsViewController:(CallSettingsViewController *) callSettingsViewController didPressDone:(BOOL) pressed enteredNumber:(NSString *) phoneNumber;
+- (void) callSettingsViewController:(CallSettingsViewController *)callSettingsViewController
+                       didPressDone:(BOOL)pressed
+                      enteredNumber:(NSString *)phoneNumber;
 
-- (void) callSettingsViewController:(CallSettingsViewController *) callSettingsViewController didPressCancel:(BOOL) pressed;
+- (void) callSettingsViewController:(CallSettingsViewController *)callSettingsViewController
+                     didPressCancel:(BOOL)pressed;
 
 @end
 

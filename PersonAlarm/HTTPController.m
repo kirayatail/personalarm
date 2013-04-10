@@ -30,9 +30,9 @@
     RKObjectMapping* requestMapping = [RKObjectMapping requestMapping];
 //    [requestMapping addAttributeMappingsFromArray:@[@"firstName", @"lastName", @"phoneNumber"]];
     [requestMapping addAttributeMappingsFromDictionary:@{
-     @"firstName"    :   @"firstname",
-     @"lastName"     :   @"lastname",
-     @"phoneNumber"  :   @"phone"
+        @"firstName"    :   @"firstname",
+        @"lastName"     :   @"lastname",
+        @"phoneNumber"  :   @"phone"
      }];
 
     RKRequestDescriptor* requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping
@@ -78,6 +78,8 @@
     
     return user;     
 }
+
+
 
 
 @end

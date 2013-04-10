@@ -23,6 +23,7 @@
 		5D4DC83216FB4512001F247E /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83016FB4512001F247E /* HTTPController.m */; };
 		5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */; };
 		5D4DC83916FB46B7001F247E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83816FB46B7001F247E /* User.m */; };
+		5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E633F16FC49810027B65F /* AddFriendViewController.m */; };
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
 		5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */; };
@@ -115,6 +116,8 @@
 		5D4DC83416FB45C6001F247E /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		5D4DC83716FB46B7001F247E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5D4DC83816FB46B7001F247E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5D8E633E16FC49810027B65F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		5D8E633F16FC49810027B65F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = PersonAlarm/SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				5DF73AE416C5073F00B362AE /* CallSettingsViewController.m */,
 				5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */,
 				5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */,
+				5D8E633E16FC49810027B65F /* AddFriendViewController.h */,
+				5D8E633F16FC49810027B65F /* AddFriendViewController.m */,
 			);
 			name = "GUI Control";
 			path = ..;
@@ -404,6 +409,7 @@
 				5D4DC83216FB4512001F247E /* HTTPController.m in Sources */,
 				5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */,
 				5D4DC83916FB46B7001F247E /* User.m in Sources */,
+				5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
