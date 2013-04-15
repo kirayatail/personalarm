@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DB3452316D3FEA100DCEDE8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */; };
 		3DB3452416D3FEA100DCEDE8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */; };
+		3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC21CAB1717428600DE3C36 /* ModelController.m */; };
 		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
 		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
 		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
@@ -95,6 +96,8 @@
 /* Begin PBXFileReference section */
 		3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		3DC21CAA1717428600DE3C36 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		3DC21CAB1717428600DE3C36 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,6 +254,8 @@
 			children = (
 				5D4DC83016FB4512001F247E /* HTTPController.m */,
 				5D4DC83116FB4512001F247E /* HTTPController.h */,
+				3DC21CAA1717428600DE3C36 /* ModelController.h */,
+				3DC21CAB1717428600DE3C36 /* ModelController.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */,
 				5D4DC83916FB46B7001F247E /* User.m in Sources */,
 				5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */,
+				3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +507,7 @@
 		50017E1C16BBBF8A00F0C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
@@ -510,6 +517,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9DEB8496-1BE6-4199-B31D-3879B4FEB08A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -517,6 +525,7 @@
 		50017E1D16BBBF8A00F0C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PersonAlarm/PersonAlarm-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
@@ -526,6 +535,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9DEB8496-1BE6-4199-B31D-3879B4FEB08A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

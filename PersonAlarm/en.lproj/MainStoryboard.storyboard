@@ -153,43 +153,27 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="rcO-fY-jg3">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" textLabel="CFs-Ww-dK4" style="IBUITableViewCellStyleDefault" id="tt9-NP-bbr">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Friend name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-Ww-dK4">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addCell" textLabel="FSj-Oh-vLU" style="IBUITableViewCellStyleDefault" id="IBW-1C-k3I">
-                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Add friend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FSj-Oh-vLU">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Friend name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CFs-Ww-dK4">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="dBx-iM-5bP" kind="push" identifier="Add Friend" id="TJO-3B-dVW"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -198,64 +182,37 @@
                             <outlet property="delegate" destination="6wn-mO-rFU" id="6mw-o1-jRR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="7IK-y5-CRA"/>
+                    <navigationItem key="navigationItem" title="Friends" id="7IK-y5-CRA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kze-eI-rCL">
+                            <connections>
+                                <action selector="addFriendPressed:" destination="6wn-mO-rFU" id="r8a-gA-o6N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="rcO-fY-jg3" id="ijn-UI-tT1"/>
+                        <outlet property="searchDisplayController" destination="0iJ-l7-qym" id="OIg-Kt-V3n"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCN-rB-Eml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="OFn-Cu-TKw">
+                    <connections>
+                        <outlet property="delegate" destination="6wn-mO-rFU" id="hkI-Cw-VkR"/>
+                        <outlet property="searchContentsController" destination="6wn-mO-rFU" id="NUH-rr-mBS"/>
+                        <outlet property="searchResultsDataSource" destination="6wn-mO-rFU" id="DT3-PY-Jwo"/>
+                        <outlet property="searchResultsDelegate" destination="6wn-mO-rFU" id="Ky6-WZ-ZAS"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="0iJ-l7-qym">
+                    <connections>
+                        <outlet property="delegate" destination="6wn-mO-rFU" id="Lcw-p8-lIN"/>
+                        <outlet property="searchContentsController" destination="6wn-mO-rFU" id="Erv-33-w1e"/>
+                        <outlet property="searchResultsDataSource" destination="6wn-mO-rFU" id="Rkq-KC-Zpn"/>
+                        <outlet property="searchResultsDelegate" destination="6wn-mO-rFU" id="kcF-eD-u4z"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2827" y="818"/>
-        </scene>
-        <!--Add Friend View Controller - Add Friend-->
-        <scene sceneID="Qwi-Lf-XOs">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="dBx-iM-5bP" customClass="AddFriendViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GB1-jM-Lsy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Friend email..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKm-Tk-KxI">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5Ua-gO-3qb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeI-mg-fGa">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="A5r-77-oRU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addPressed:" destination="dBx-iM-5bP" eventType="touchUpInside" id="xwP-C1-Gx3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aeI-mg-fGa" firstAttribute="baseline" secondItem="xKm-Tk-KxI" secondAttribute="baseline" type="default" id="1ON-ZS-zlR"/>
-                            <constraint firstItem="xKm-Tk-KxI" firstAttribute="top" secondItem="GB1-jM-Lsy" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Dyb-6f-CQd"/>
-                            <constraint firstAttribute="trailing" secondItem="aeI-mg-fGa" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Kfu-qQ-Lik"/>
-                            <constraint firstItem="xKm-Tk-KxI" firstAttribute="bottom" secondItem="aeI-mg-fGa" secondAttribute="bottom" type="default" id="Qxn-BX-JT5"/>
-                            <constraint firstItem="xKm-Tk-KxI" firstAttribute="leading" secondItem="GB1-jM-Lsy" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="XYO-o2-Nmb"/>
-                            <constraint firstItem="aeI-mg-fGa" firstAttribute="top" secondItem="GB1-jM-Lsy" secondAttribute="top" constant="20" symbolic="YES" type="default" id="aqa-gt-inT"/>
-                            <constraint firstItem="aeI-mg-fGa" firstAttribute="leading" secondItem="xKm-Tk-KxI" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vHt-3F-hIG"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Friend" id="D6C-OZ-d8f"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="emailTextField" destination="xKm-Tk-KxI" id="KZU-E7-nyO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nTB-Rd-ebn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3600" y="776"/>
         </scene>
         <!--Message Settings View Controller - Messages-->
         <scene sceneID="pAs-M3-c2h">
@@ -331,6 +288,33 @@
             <point key="canvasLocation" x="2301" y="818"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AlarmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
+        </class>
+        <class className="CallSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FriendsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addFriendPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="MessageSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

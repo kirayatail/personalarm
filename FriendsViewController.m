@@ -7,27 +7,24 @@
 //
 
 #import "FriendsViewController.h"
-
+#import "User.h"
+#import "ModelController.h"
 @interface FriendsViewController ()
-
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, assign) id <FriendsViewControllerDelegate> delegate;
+@property(nonatomic, strong) ModelController* modelController;
 @end
 
 @implementation FriendsViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+ 
 
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.modelController = [[ModelController alloc]init];
+    self.delegate = self.modelController;
 
 }
 
@@ -37,22 +34,58 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)addFriendPressed:(UIBarButtonItem *)sender {
+    
+}
+
+
+-(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    User* user =  [self.delegate friendsViewController:self getUserwithIdentification:self.searchBar.text];
+    NSLog(@"%@", user.name);
+    
+    
+}
+#pragma mark UITableViewDelegate methods
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 1;
 }
+-(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    
+    if(section == 0) {
+        return @"Friends";
+    } else if(section == 1){
+        return @"Pending";
+    }
+    return @"Error";
+}
+
+
+
+
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"addCell";
+    static NSString *CellIdentifier = @"friendCell";
+    NSString* cellText = @"";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    [cell.textLabel setText:@"Add friend"];
+    //Only for demo purposes
+    if(indexPath.section == 0) {
+        cellText = @"Friend 1";
+    } else if(indexPath.section == 1) {
+        cellText = @"Friend 2";
+    }
+    [cell.textLabel setText:cellText];
+
     
     return cell;
 }
