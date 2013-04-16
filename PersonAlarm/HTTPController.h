@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 #import "User.h"
+#import "AlarmViewController.h"
 
-@interface HTTPController : RKObjectManager
+@interface HTTPController : RKObjectManager<AlarmViewControllerDelegate>
 
 -(void) addUserWithFirstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber;
 

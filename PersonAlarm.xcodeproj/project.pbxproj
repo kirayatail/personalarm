@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D62A34A171BDD9600F5DA0E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D62A349171BDD9600F5DA0E /* ProfileViewController.m */; };
 		3DB3452316D3FEA100DCEDE8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */; };
 		3DB3452416D3FEA100DCEDE8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */; };
 		3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC21CAB1717428600DE3C36 /* ModelController.m */; };
@@ -94,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D62A348171BDD9500F5DA0E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = PersonAlarm/ProfileViewController.h; sourceTree = "<group>"; };
+		3D62A349171BDD9600F5DA0E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = PersonAlarm/ProfileViewController.m; sourceTree = "<group>"; };
 		3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3DC21CAA1717428600DE3C36 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 		5D01B09F16C4F5F9001BF4EA /* GUI Control */ = {
 			isa = PBXGroup;
 			children = (
+				3D62A348171BDD9500F5DA0E /* ProfileViewController.h */,
+				3D62A349171BDD9600F5DA0E /* ProfileViewController.m */,
 				5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */,
 				5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */,
 				50017E1616BBBF8A00F0C093 /* AlarmViewController.h */,
@@ -416,6 +421,7 @@
 				5D4DC83916FB46B7001F247E /* User.m in Sources */,
 				5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */,
 				3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */,
+				3D62A34A171BDD9600F5DA0E /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

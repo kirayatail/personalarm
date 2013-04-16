@@ -79,6 +79,12 @@
     return user;     
 }
 
+-(BOOL)alarmViewController:(AlarmViewController *)alarmViewController addUserWithName:(NSString *)userName password:(NSString *)password email:(NSString *)email
+{
+    //TODO: Insert code here
+    return NO;
+}
+
 
 
 

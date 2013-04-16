@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface AlarmViewController : UIViewController
-
+#import "ProfileViewController.h"
+@class AlarmViewController;
+@protocol AlarmViewControllerDelegate
+-(BOOL) alarmViewController:(AlarmViewController*)alarmViewController   
+            addUserWithName:(NSString*)userName
+                   password:(NSString*)password
+                      email:(NSString*)email;
+@end
+@interface AlarmViewController : UIViewController<ProfileViewControllerDelegate>
+@property (nonatomic, retain) id<AlarmViewControllerDelegate> delegate;
 
 
 @end

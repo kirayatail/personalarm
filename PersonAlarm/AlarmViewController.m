@@ -8,17 +8,18 @@
 
 #import "AlarmViewController.h"
 #import "AlarmController.h"
-
+#import "HTTPController.h"
+#import "ProfileViewController.h"
 @interface AlarmViewController ()
 
 @property (nonatomic, strong) AlarmController *alarmController;
-
+@property (nonatomic, strong) HTTPController* httpController;
 @end
 
 @implementation AlarmViewController
-
+@synthesize httpController = _httpController;
 @synthesize alarmController = _alarmController;
-
+@synthesize delegate = _delegate;
 - (IBAction)alarmPressed:(id)sender {
     self.alarmController = [[AlarmController alloc] init];
     [self.alarmController triggerAlarm];
@@ -27,7 +28,62 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.httpController = [[HTTPController alloc]init];
+    self.delegate = self.httpController;
+ 
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"profile"]) {
+        [self showProfileView];
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"Show Profile"])
+    {
+        [segue.destinationViewController setDelegate:self];
+    }
+}
+#pragma mark Profile 
+
+-(void) showProfileView
+{
+    [self performSegueWithIdentifier:@"Show Profile" sender:self];
+}
+
+-(void)profileViewController:(ProfileViewController *)pvc donePressed:(BOOL)didPressDone userName:(NSString *)name password:(NSString *)password email:(NSString *)email
+{
+    [self.delegate alarmViewController:self addUserWithName:name password:password email:email];
+    if(![self userInfoIsValid:name email:email password:password]) {
+        [pvc showAlertWithMessage:@"The message"];
+    } else {
+        //TODO: Connect to web service and add user information
+        //If success, also add the information to user defaults  
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:name forKey:@"username"];
+        [prefs synchronize];
+        [prefs setObject:email forKey:@"email"];
+        [prefs synchronize];
+        [prefs setObject:password forKey:@"password"];
+        [prefs synchronize];
+        [prefs setBool:YES forKey:@"profile"];
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+}
+-(BOOL) userInfoIsValid:(NSString*) name email:(NSString*) email password:(NSString*)password
+{
+    if([email isEqualToString:@""] || [name isEqualToString:@""] || [password isEqualToString:@""])
+    {
+        return NO;
+    }
+    return YES;
 }
 
 @end
