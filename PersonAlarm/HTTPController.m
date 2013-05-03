@@ -60,6 +60,20 @@ static HTTPController * _instance;
     //TODO: Connect to web service
 }
 
+-(void) friendsViewControllerGetFriendRequests:(FriendsViewController *)friendsViewController success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+{
+    //TODO: Connect to web service
+}
+
+-(void) friendsViewController:(FriendsViewController *)friendsViewController respondToFriendRequest:(NSString *)friendRequestID accept:(BOOL)value
+{
+    //TODO: Connect to web service
+}
+
+
+
+
+
 
 
 #pragma mark Other

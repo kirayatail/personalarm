@@ -26,6 +26,7 @@ typedef void (^AddFriendViewControllerFailureBlock)(WebServiceResponse);
         sendFriendRequestToUser:(NSString*)email
                         success: (AddFriendViewControllerSuccessBlock)success
                         failure: (AddFriendViewControllerFailureBlock)failure;
+
 @end
 
 @interface AddFriendViewController : UIViewController<UISearchBarDelegate>
