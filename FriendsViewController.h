@@ -7,20 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NetworkConstants.h"
 #import "User.h"
 @class FriendsViewController;
 @protocol FriendsViewControllerDelegate<NSObject>
 
--(User*) friendsViewController:(FriendsViewController*)friendsviewController
-     getUserwithIdentification:(NSString*) identification;
+typedef void (^GetFriendsSuccessBlock)(NSArray* friends);
+typedef void (^FriendsViewControllerSuccessBlock)(NSArray* friends);
+typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
 
--(BOOL) friendsViewController:(FriendsViewController*)friendsViewController
-                    addFriend:(User*) theFriend;
+-(void) friendsViewControllerGetFriends:(FriendsViewController*) friendsViewController
+                        success:(GetFriendsSuccessBlock)success
+                        failure:(FriendsViewControllerFailureBlock)failure;
 
--(BOOL) friendsViewController:(FriendsViewController*)friendsViewController
-                 deleteFriend:(User*) theFriend;
 
--(NSArray*) friendsForUser;
+-(void) friendsViewController:(FriendsViewController*) friendsViewController
+                 deleteFriend:(NSString*)friendID
+                      success:(FriendsViewControllerSuccessBlock)success
+                      failure:(FriendsViewControllerFailureBlock)failure;
 
 @end
 

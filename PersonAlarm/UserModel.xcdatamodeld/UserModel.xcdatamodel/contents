@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pending" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="isFriendOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="hasFriend" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="deviceToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,8 +13,10 @@
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rememberToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="serverID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasFriend" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="isFriendOf" inverseEntity="Friend" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-2232" positionY="-486" width="128" height="133"/>
+        <element name="Friend" positionX="-2972" positionY="-1710" width="128" height="103"/>
+        <element name="User" positionX="-3249" positionY="-1584" width="128" height="148"/>
     </elements>
 </model>

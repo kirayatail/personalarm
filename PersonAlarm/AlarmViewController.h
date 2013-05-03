@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "ProfileViewController.h"
+#import "NetworkConstants.h"
 @class AlarmViewController;
 @protocol AlarmViewControllerDelegate
--(BOOL) alarmViewController:(AlarmViewController*)alarmViewController   
-            addUserWithName:(NSString*)userName
-                   password:(NSString*)password
-                      email:(NSString*)email;
+typedef void (^AlarmViewControllerSuccessBlock)(void);
+typedef void (^AlarmViewControllerFailureBlock)(WebServiceResponse);
+
+-(void) alarmViewController:(AlarmViewController*) aVC
+        createUserWithName:(NSString*)userName
+                    success:(AlarmViewControllerSuccessBlock)success
+                    failure:(AlarmViewControllerFailureBlock)failure;
+
 @end
 @interface AlarmViewController : UIViewController<ProfileViewControllerDelegate>
 @property (nonatomic, retain) id<AlarmViewControllerDelegate> delegate;

@@ -224,14 +224,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="rcO-fY-jg3">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" textLabel="CFs-Ww-dK4" style="IBUITableViewCellStyleDefault" id="tt9-NP-bbr">
-                                <rect key="frame" x="0.0" y="80" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -257,11 +252,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kze-eI-rCL">
                             <connections>
                                 <action selector="addFriendPressed:" destination="6wn-mO-rFU" id="r8a-gA-o6N"/>
+                                <segue destination="UTR-Kb-4Ys" kind="push" identifier="Show AFVC" id="Hnl-s4-nyT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="rcO-fY-jg3" id="ijn-UI-tT1"/>
                         <outlet property="searchDisplayController" destination="0iJ-l7-qym" id="OIg-Kt-V3n"/>
                     </connections>
                 </tableViewController>
@@ -284,6 +279,55 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2827" y="818"/>
+        </scene>
+        <!--Add Friend View Controller - Add Friend-->
+        <scene sceneID="hZH-NE-2Kx">
+            <objects>
+                <viewController id="UTR-Kb-4Ys" customClass="AddFriendViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MKM-Fw-Ht6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Friend's email..." translatesAutoresizingMaskIntoConstraints="NO" id="WVc-59-zLr">
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbV-7D-Gkh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PYs-Vh-Ogt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriend:" destination="UTR-Kb-4Ys" eventType="touchUpInside" id="PvS-F6-4pb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YbV-7D-Gkh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="24D-FG-81H"/>
+                            <constraint firstItem="WVc-59-zLr" firstAttribute="trailing" secondItem="MKM-Fw-Ht6" secondAttribute="trailing" type="default" id="H9y-D5-Mdt"/>
+                            <constraint firstItem="WVc-59-zLr" firstAttribute="top" secondItem="MKM-Fw-Ht6" secondAttribute="top" type="default" id="WVI-2U-7hP"/>
+                            <constraint firstItem="WVc-59-zLr" firstAttribute="leading" secondItem="MKM-Fw-Ht6" secondAttribute="leading" type="default" id="Zcu-qV-m97"/>
+                            <constraint firstItem="YbV-7D-Gkh" firstAttribute="leading" secondItem="MKM-Fw-Ht6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lN7-xO-E0Y"/>
+                            <constraint firstItem="YbV-7D-Gkh" firstAttribute="top" secondItem="MKM-Fw-Ht6" secondAttribute="top" constant="72" id="znT-wH-Nse"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Friend" id="BIo-2U-fu1"/>
+                    <connections>
+                        <outlet property="resultButton" destination="YbV-7D-Gkh" id="iFv-d8-f85"/>
+                        <outlet property="searchField" destination="WVc-59-zLr" id="Ezg-ar-q7H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wv7-W5-rGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3330" y="771"/>
         </scene>
         <!--Message Settings View Controller - Messages-->
         <scene sceneID="pAs-M3-c2h">
@@ -379,6 +423,15 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AddFriendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addFriend:"/>
+                <relationship kind="action" name="addPressed:"/>
+                <relationship kind="outlet" name="resultButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
         <class className="AlarmViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
         </class>

@@ -57,12 +57,14 @@
 
 -(void)profileViewController:(ProfileViewController *)pvc donePressed:(BOOL)didPressDone userName:(NSString *)name password:(NSString *)password email:(NSString *)email
 {
-    [self.delegate alarmViewController:self addUserWithName:name password:password email:email];
-    if(![self userInfoIsValid:name email:email password:password]) {
+    if([self userInfoIsEmpty:name email:email password:password]) {
         [pvc showAlertWithMessage:@"The message"];
     } else {
-        //TODO: Connect to web service and add user information
-        //If success, also add the information to user defaults  
+        [self.delegate alarmViewController:self createUserWithName:@"INSERT_NAME" success:^{
+            //TODO: HANDLE SUCCESS
+        }failure:^(WebServiceResponse response){
+            //TODO: HANDLE ERROR
+        }];
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
         [prefs setObject:name forKey:@"username"];
         [prefs synchronize];
@@ -77,13 +79,13 @@
         }];
     }
 }
--(BOOL) userInfoIsValid:(NSString*) name email:(NSString*) email password:(NSString*)password
+-(BOOL) userInfoIsEmpty:(NSString*) name email:(NSString*) email password:(NSString*)password
 {
     if([email isEqualToString:@""] || [name isEqualToString:@""] || [password isEqualToString:@""])
     {
-        return NO;
+        return YES;
     }
-    return YES;
+    return NO;
 }
 
 @end

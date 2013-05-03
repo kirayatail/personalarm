@@ -8,24 +8,51 @@
 
 #import "FriendsViewController.h"
 #import "User.h"
-#import "ModelController.h"
+#import "HTTPController.h"
+#import "Friend.h"
 @interface FriendsViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, assign) id <FriendsViewControllerDelegate> delegate;
-@property(nonatomic, strong) ModelController* modelController;
+@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
+@property (nonatomic, strong) HTTPController* httpController;  // TODO: Singelton?
+
 @end
 
 @implementation FriendsViewController
- 
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.modelController = [[ModelController alloc]init];
-    self.delegate = self.modelController;
+    _httpController = [HTTPController sharedInstance];
+    [self setUpFetchedResultsController];
 
+}
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+-(void) setUpFetchedResultsController
+{
+    /*
+    //TODO: Implement getters for NSManagedObjectContext* context from App Delegate
+     //TODO: Get Friends from Core Data
+    AlarmAppDelegate *appDelegate =  (AlarmAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext* context = [appDelegate managedObjectContext];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pending == %@", [NSNumber numberWithBool:YES]];
+//    request.predicate = predicate;
+    NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Friend"];
+    NSSortDescriptor* description = [NSSortDescriptor sortDescriptorWithKey:@"pending" ascending:YES];
+    NSError* error;
+    [request setSortDescriptors:[NSArray arrayWithObject:description]];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    [self.fetchedResultsController performFetch:&error];
+     */
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,26 +62,25 @@
 }
 
 
-- (IBAction)addFriendPressed:(UIBarButtonItem *)sender {
-    
-}
-
-
--(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    User* user =  [self.delegate friendsViewController:self getUserwithIdentification:self.searchBar.text];
-    NSLog(@"%@", user.name);
-    
-    
+    if([segue.identifier isEqualToString:@"Show AFVC"]) {
+        [segue.destinationViewController setDelegate:self.httpController];
+    }
 }
-#pragma mark UITableViewDelegate methods
+#pragma mark UITableViewDelegate method
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if(section ==1) {
+        return [[self.fetchedResultsController fetchedObjects]count];
+    } else {
+        return 0;
+    }
+
 }
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -72,18 +98,19 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //This code is for testing purposes, needs to be implemented
+    //TODO: Get friend objects from FetchedResultsController
     static NSString *CellIdentifier = @"friendCell";
     NSString* cellText = @"";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    //Only for demo purposes
-    if(indexPath.section == 0) {
-        cellText = @"Friend 1";
-    } else if(indexPath.section == 1) {
-        cellText = @"Friend 2";
-    }
+    if(indexPath.section == 1) {
+        NSArray* array = [self.fetchedResultsController fetchedObjects];
+        Friend* friend = [array objectAtIndex:indexPath.row];
+        cellText = friend.email;
+    } 
     [cell.textLabel setText:cellText];
 
     

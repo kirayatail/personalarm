@@ -9,10 +9,60 @@
 #import "HTTPController.h"
 #import "User.h"
 #import <RestKit/CoreData.h>
+#import "AlarmAppDelegate.h"
+#import "Friend.h"
 
 @implementation HTTPController
 
-//OBS! Code does not work for now...
+
+
+//OBS! This needs to be implemented..
+
+static HTTPController * _instance;
++(HTTPController*) sharedInstance
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        _instance = [[self alloc] init];
+    });
+    return _instance;
+}
+
+
+#pragma mark AlarmViewControllerDelegate methods
+
+
+
+-(void) alarmViewController:(AlarmViewController *)aVC createUserWithName:(NSString *)userName success:(AlarmViewControllerSuccessBlock)success failure:(AlarmViewControllerFailureBlock)failure
+{
+    //TODO: Connect to web service
+}
+
+#pragma mark AddFriendViewControllerDelegate methods
+
+-(void) addFriendViewController:(AddFriendViewController *)aFVC getUser:(NSString *)user success:(AddFriendViewControllerUserSearchSuccess)success failure:(AddFriendViewControllerFailureBlock)failure{
+    //TODO: Connect to web service
+    
+}
+
+-(void) addFriendViewController:(AddFriendViewController *)aFVC sendFriendRequestToUser:(NSString *)email success:(AlarmViewControllerSuccessBlock)success failure:(AlarmViewControllerFailureBlock)failure
+{
+    //TODO: Connect to web service
+}
+
+#pragma mark FriendsViewControllerDelegate methods
+-(void) friendsViewController:(FriendsViewController *)friendsViewController deleteFriend:(NSString *)friendID success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+{
+    //TODO: Connect to web service
+}
+-(void) friendsViewControllerGetFriends:(FriendsViewController *)friendsViewController success:(GetFriendsSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+{
+    //TODO: Connect to web service
+}
+
+
+
+#pragma mark Other
 
 -(void) addUserWithFirstName:(NSString *)firstName lastName:(NSString *)lastName phoneNumber:(NSString *)phoneNumber
 {    
@@ -79,11 +129,11 @@
     return user;     
 }
 
--(BOOL)alarmViewController:(AlarmViewController *)alarmViewController addUserWithName:(NSString *)userName password:(NSString *)password email:(NSString *)email
-{
-    //TODO: Insert code here
-    return NO;
-}
+
+
+
+
+
 
 
 

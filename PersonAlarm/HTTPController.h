@@ -7,18 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NetworkConstants.h"
 #import <RestKit/RestKit.h>
 #import "User.h"
 #import "AlarmViewController.h"
+#import "AddFriendViewController.h"
+#import "FriendsViewController.h"
+//A singleton class that handles the network communication
+@interface HTTPController : RKObjectManager<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate>
 
-@interface HTTPController : RKObjectManager<AlarmViewControllerDelegate>
++(HTTPController*) sharedInstance; 
 
--(void) addUserWithFirstName:(NSString*)firstName lastName:(NSString*)lastName phoneNumber:(NSString*)phoneNumber;
 
--(User *) userWithID:(NSString *)phoneNumber;
-//-(User*) getUserWithPhoneNumberAsID:(NSString*) phoneNumber; //Make NSManagedObject of User later..
 
-//-(void) deleteUser:(NSString*) phoneNumberAsID; // Phone number is ID now.
+
 
 
 

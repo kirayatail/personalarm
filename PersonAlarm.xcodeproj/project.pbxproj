@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3D62A34A171BDD9600F5DA0E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D62A349171BDD9600F5DA0E /* ProfileViewController.m */; };
+		3D95B6FD17298C7A00D031AF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95B6FC17298C7A00D031AF /* User.m */; };
+		3D95B70017298C7A00D031AF /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D95B6FF17298C7A00D031AF /* Friend.m */; };
 		3DB3452316D3FEA100DCEDE8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */; };
 		3DB3452416D3FEA100DCEDE8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */; };
-		3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC21CAB1717428600DE3C36 /* ModelController.m */; };
 		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
 		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
 		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
@@ -24,7 +25,6 @@
 		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
 		5D4DC83216FB4512001F247E /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83016FB4512001F247E /* HTTPController.m */; };
 		5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */; };
-		5D4DC83916FB46B7001F247E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83816FB46B7001F247E /* User.m */; };
 		5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E633F16FC49810027B65F /* AddFriendViewController.m */; };
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -97,10 +97,13 @@
 /* Begin PBXFileReference section */
 		3D62A348171BDD9500F5DA0E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = PersonAlarm/ProfileViewController.h; sourceTree = "<group>"; };
 		3D62A349171BDD9600F5DA0E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = PersonAlarm/ProfileViewController.m; sourceTree = "<group>"; };
+		3D889C861732A43400071967 /* NetworkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkConstants.h; sourceTree = "<group>"; };
+		3D95B6FB17298C7A00D031AF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3D95B6FC17298C7A00D031AF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3D95B6FE17298C7A00D031AF /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		3D95B6FF17298C7A00D031AF /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		3DC21CAA1717428600DE3C36 /* ModelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		3DC21CAB1717428600DE3C36 /* ModelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,8 +123,6 @@
 		5D4DC83016FB4512001F247E /* HTTPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPController.m; sourceTree = "<group>"; };
 		5D4DC83116FB4512001F247E /* HTTPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPController.h; sourceTree = "<group>"; };
 		5D4DC83416FB45C6001F247E /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
-		5D4DC83716FB46B7001F247E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		5D4DC83816FB46B7001F247E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		5D8E633E16FC49810027B65F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		5D8E633F16FC49810027B65F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -259,8 +260,7 @@
 			children = (
 				5D4DC83016FB4512001F247E /* HTTPController.m */,
 				5D4DC83116FB4512001F247E /* HTTPController.h */,
-				3DC21CAA1717428600DE3C36 /* ModelController.h */,
-				3DC21CAB1717428600DE3C36 /* ModelController.m */,
+				3D889C861732A43400071967 /* NetworkConstants.h */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -268,9 +268,11 @@
 		5D4DC83616FB45CC001F247E /* Core data */ = {
 			isa = PBXGroup;
 			children = (
+				3D95B6FB17298C7A00D031AF /* User.h */,
+				3D95B6FE17298C7A00D031AF /* Friend.h */,
+				3D95B6FF17298C7A00D031AF /* Friend.m */,
+				3D95B6FC17298C7A00D031AF /* User.m */,
 				5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */,
-				5D4DC83716FB46B7001F247E /* User.h */,
-				5D4DC83816FB46B7001F247E /* User.m */,
 			);
 			name = "Core data";
 			sourceTree = "<group>";
@@ -418,10 +420,10 @@
 				5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */,
 				5D4DC83216FB4512001F247E /* HTTPController.m in Sources */,
 				5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */,
-				5D4DC83916FB46B7001F247E /* User.m in Sources */,
 				5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */,
-				3DC21CAC1717428600DE3C36 /* ModelController.m in Sources */,
 				3D62A34A171BDD9600F5DA0E /* ProfileViewController.m in Sources */,
+				3D95B6FD17298C7A00D031AF /* User.m in Sources */,
+				3D95B70017298C7A00D031AF /* Friend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
