@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UIButton *resultButton;
-@property NSString* friendID;
+@property (nonatomic, retain) NSString* friendID;
 
 
 @end
@@ -37,18 +37,17 @@
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    __block AddFriendViewController* blockSelf = self;
     self.resultButton.hidden = NO;
     [self.delegate addFriendViewController:self getUser:@"INSERT_USERNAME" success:^(User* user){
-        //TODO: HANDLE SUCCESS
+        blockSelf.friendID = user.serverID;
     }failure:^(WebServiceResponse response){
         //TODO: HANDLE ERROR
     }];
+  
 }
-
-
-
 - (IBAction)addFriend:(id)sender {
-    [self.delegate addFriendViewController:self sendFriendRequestToUser:@"INSERT_USERNAME" success:^{
+    [self.delegate addFriendViewController:self sendFriendRequestToUser:self.friendID success:^{
             //TODO: HANDLE SUCCESS
     }
     failure:^(WebServiceResponse response){

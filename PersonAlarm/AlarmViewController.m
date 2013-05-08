@@ -60,19 +60,21 @@
     if([self userInfoIsEmpty:name email:email password:password]) {
         [pvc showAlertWithMessage:@"The message"];
     } else {
-        [self.delegate alarmViewController:self createUserWithName:@"INSERT_NAME" success:^{
-            //TODO: HANDLE SUCCESS
+        [self.delegate alarmViewController:self createUserWithName:name email:email success:^(User* user){
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:user.name forKey:@"name"];
+            [prefs synchronize];
+            [prefs setObject:user.email forKey:@"email"];
+            [prefs synchronize];
+            [prefs setObject:user.serverID forKey:@"serverID"];
+            [prefs synchronize];
+            [prefs setBool:YES forKey:@"profile"];
+            [prefs synchronize];
+            [prefs setObject:@"123456789" forKey:@"deviceToken"];
         }failure:^(WebServiceResponse response){
-            //TODO: HANDLE ERROR
+            
         }];
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:name forKey:@"username"];
-        [prefs synchronize];
-        [prefs setObject:email forKey:@"email"];
-        [prefs synchronize];
-        [prefs setObject:password forKey:@"password"];
-        [prefs synchronize];
-        [prefs setBool:YES forKey:@"profile"];
+        
         
         [self dismissViewControllerAnimated:YES completion:^{
             
