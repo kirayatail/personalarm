@@ -13,6 +13,7 @@
 @protocol FriendsViewControllerDelegate<NSObject>
 
 typedef void (^GetFriendsSuccessBlock)(NSArray* friends);
+typedef void (^GetFriendRequestsSuccessBlock)(NSArray* friendRequests);
 typedef void (^FriendsViewControllerSuccessBlock)(void);
 typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
 
@@ -29,7 +30,7 @@ typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
 
 
 -(void) friendsViewControllerGetFriendRequests:(FriendsViewController*) friendsViewController
-                                         success:(FriendsViewControllerSuccessBlock) success
+                                         success:(GetFriendRequestsSuccessBlock) success
                                          failure:(FriendsViewControllerFailureBlock) failure;
 
 -(void) friendsViewController:(FriendsViewController*) friendsViewController

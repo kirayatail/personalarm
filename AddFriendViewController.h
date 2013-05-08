@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "NetworkConstants.h"
 #import "User.h"
+#import <Parse/Parse.h>
 @class AddFriendViewController;
 
 typedef void (^AddFriendViewControllerSuccessBlock)(void);
-typedef void (^AddFriendViewControllerUserSearchSuccess)(User* user);
+typedef void (^AddFriendViewControllerUserSearchSuccess)(NSArray* users);
 typedef void (^AddFriendViewControllerFailureBlock)(WebServiceResponse);
 
 @protocol AddFriendViewControllerDelegate
@@ -23,7 +24,7 @@ typedef void (^AddFriendViewControllerFailureBlock)(WebServiceResponse);
 
 
 -(void) addFriendViewController:(AddFriendViewController*) aFVC
-        sendFriendRequestToUser:(NSString*)email
+        sendFriendRequestToUser:(PFUser*)theFriend
                         success: (AddFriendViewControllerSuccessBlock)success
                         failure: (AddFriendViewControllerFailureBlock)failure;
 

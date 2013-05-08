@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchField;
 @property (weak, nonatomic) IBOutlet UIButton *resultButton;
-@property (nonatomic, retain) NSString* friendID;
+@property (nonatomic, strong) PFUser* theFriend;
 
 
 @end
@@ -21,7 +21,7 @@
 @implementation AddFriendViewController
 @synthesize searchField = _searchField;
 @synthesize  delegate = _delegate;
-@synthesize friendID = _friendID;
+@synthesize theFriend  = _theFriend;
 
 
 - (void)viewDidLoad
@@ -37,17 +37,33 @@
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-    __block AddFriendViewController* blockSelf = self;
+
+    
+    
+    
     self.resultButton.hidden = NO;
-    [self.delegate addFriendViewController:self getUser:@"INSERT_USERNAME" success:^(User* user){
-        blockSelf.friendID = user.serverID;
+    __block AddFriendViewController* afvc = self;
+    [self.delegate addFriendViewController:self getUser:searchBar.text success:^(NSArray* users){
+        PFUser* user = [users objectAtIndex:0];
+        NSLog(@"Length: %d", [users count]);
+        afvc.theFriend = user;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [afvc updateButton];
+        });
+               
+        
     }failure:^(WebServiceResponse response){
         //TODO: HANDLE ERROR
     }];
   
 }
+ -(void) updateButton
+        {
+            [self.resultButton setTitle:self.theFriend.username forState:UIControlStateNormal];
+        }
+    
 - (IBAction)addFriend:(id)sender {
-    [self.delegate addFriendViewController:self sendFriendRequestToUser:self.friendID success:^{
+    [self.delegate addFriendViewController:self sendFriendRequestToUser:self.theFriend success:^{
             //TODO: HANDLE SUCCESS
     }
     failure:^(WebServiceResponse response){

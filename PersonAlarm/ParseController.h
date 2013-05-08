@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AlarmViewController.h"
+#import "AddFriendViewController.h"
+#import "FriendsViewController.h"
 #import <Parse/Parse.h>
-@interface ParseController : NSObject<AlarmViewControllerDelegate>
+@interface ParseController : NSObject<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate>
+
 
 @end

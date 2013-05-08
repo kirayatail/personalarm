@@ -8,13 +8,14 @@
 
 #import "FriendsViewController.h"
 #import "User.h"
-#import "HTTPController.h"
+#import "ParseController.h"
 #import "Friend.h"
 @interface FriendsViewController ()
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, assign) id <FriendsViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
-@property (nonatomic, strong) HTTPController* httpController;  // TODO: Singelton?
+@property (nonatomic, strong) ParseController* parseController;
+@property (nonatomic, strong) NSMutableArray* pendingFriends;
 
 @end
 
@@ -27,33 +28,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _httpController = [HTTPController sharedInstance];
-    [self setUpFetchedResultsController];
-
+    self.parseController = [[ParseController alloc]init];
+    self.delegate = self.parseController;
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-}
--(void) setUpFetchedResultsController
-{
-    /*
-    //TODO: Implement getters for NSManagedObjectContext* context from App Delegate
-     //TODO: Get Friends from Core Data
-    AlarmAppDelegate *appDelegate =  (AlarmAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext* context = [appDelegate managedObjectContext];
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pending == %@", [NSNumber numberWithBool:YES]];
-//    request.predicate = predicate;
-    NSFetchRequest* request = [[NSFetchRequest alloc]initWithEntityName:@"Friend"];
-    NSSortDescriptor* description = [NSSortDescriptor sortDescriptorWithKey:@"pending" ascending:YES];
-    NSError* error;
-    [request setSortDescriptors:[NSArray arrayWithObject:description]];
-    self.fetchedResultsController = [[NSFetchedResultsController alloc]initWithFetchRequest:request managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
-    [self.fetchedResultsController performFetch:&error];
-     */
+    [self updatePendingFriends];
     
 }
+
+-(void) updatePendingFriends
+{
+    __block FriendsViewController* fvc = self;
+    [self.delegate friendsViewControllerGetFriendRequests:self success:^(NSArray* friendRequests){
+        fvc.pendingFriends = [[NSMutableArray alloc]init];
+        fvc.pendingFriends = [friendRequests copy];
+        [fvc.tableView reloadData];
+    }failure:^(WebServiceResponse response){
+        
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,7 +62,7 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"Show AFVC"]) {
-        [segue.destinationViewController setDelegate:self.httpController];
+        [segue.destinationViewController setDelegate:self.parseController];
     }
 }
 #pragma mark UITableViewDelegate method
@@ -75,8 +72,11 @@
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section ==1) {
-        return [[self.fetchedResultsController fetchedObjects]count];
+    if(section ==0) {
+//        return [[self.fetchedResultsController fetchedObjects]count];
+        return 0;
+    } else if (section == 1) {
+        return [self.pendingFriends count];
     } else {
         return 0;
     }
@@ -107,10 +107,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     if(indexPath.section == 1) {
-        NSArray* array = [self.fetchedResultsController fetchedObjects];
-        Friend* friend = [array objectAtIndex:indexPath.row];
-        cellText = friend.email;
-    } 
+        PFUser* friend = [self.pendingFriends objectAtIndex:indexPath.row];
+        cellText = friend.username;
+    }  
     [cell.textLabel setText:cellText];
 
     

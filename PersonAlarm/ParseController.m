@@ -42,5 +42,59 @@
     }];
 }
 
+#pragma mark AddFriendViewController delegate
+
+-(void) addFriendViewController:(AddFriendViewController *)aFVC getUser:(NSString *)user success:(AddFriendViewControllerUserSearchSuccess)success failure:(AddFriendViewControllerFailureBlock)failure
+{
+    PFQuery* query = [PFUser query];
+    [query whereKey:@"username" equalTo:user];
+    NSArray* users = [query findObjects];
+    if(users){
+        success(users);
+    } else{
+        //Handle error
+    }
+}
+
+-(void) addFriendViewController:(AddFriendViewController *)aFVC sendFriendRequestToUser:(PFUser *)receiver success:(AddFriendViewControllerSuccessBlock)success failure:(AddFriendViewControllerFailureBlock)failure
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFObject* friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
+    [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:currentUser.objectId] forKey:@"Sender"];
+    [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:receiver.objectId] forKey:@"Reciever"];
+//    [friendRequest setObject:receiver forKey:@"Reciever"];
+    [friendRequest saveInBackground];
+    success();
+    
+//    [obj setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:userId] forKey:@"user"];
+    
+}
+
+#pragma mark FriendsViewController delegate
+-(void) friendsViewControllerGetFriendRequests:(FriendsViewController *)friendsViewController success:(GetFriendRequestsSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery* query = [PFQuery queryWithClassName:@"FriendRequest"];
+    [query includeKey:@"Sender"];
+    [query includeKey:@"Reciever"];
+   [query whereKey:@"Reciever" equalTo:currentUser];
+    dispatch_queue_t myQueue = dispatch_queue_create("com.mycompany.myqueue", 0);
+    dispatch_async(myQueue, ^{
+        NSArray* pendingFriends =[query findObjects];
+        
+        NSMutableArray* tempArray = [[NSMutableArray alloc]init];
+        for(int i=0; i<[pendingFriends count]; i++){
+            PFObject* theObj = [pendingFriends objectAtIndex:i];
+            PFUser* user = [theObj objectForKey:@"Sender"];
+            [tempArray addObject:user];
+        }
+         success(tempArray);
+    });
+                   
+
+   
+    
+}
+
 
 @end
