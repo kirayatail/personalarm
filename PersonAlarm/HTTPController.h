@@ -14,8 +14,8 @@
 #import "AddFriendViewController.h"
 #import "FriendsViewController.h"
 //A singleton class that handles the network communication
-@interface HTTPController : RKObjectManager<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate>
-
+//@interface HTTPController : RKObjectManager<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate>
+@interface HTTPController : RKObjectManager
 +(HTTPController*) sharedInstance; 
 
 

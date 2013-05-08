@@ -9,7 +9,7 @@
 #ifndef PersonAlarm_NetworkConstants_h
 #define PersonAlarm_NetworkConstants_h
 //Constants used by HTTPController
-typedef enum WebServiceResposes{
+typedef enum WebServiceResponses{
     WEBSERVICE_SUCCESS = 1,
     WEBSERVICE_FAILURE_USER_INFO_NOT_VALID = 2,
     WEBSERVICE_FAILUE_CONNECTION_ERROR = 3

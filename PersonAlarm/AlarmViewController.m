@@ -10,10 +10,13 @@
 #import "AlarmController.h"
 #import "HTTPController.h"
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
+#import "ParseController.h"
 @interface AlarmViewController ()
 
 @property (nonatomic, strong) AlarmController *alarmController;
 @property (nonatomic, strong) HTTPController* httpController;
+@property (nonatomic, strong) ParseController* parseController;
 @end
 
 @implementation AlarmViewController
@@ -28,15 +31,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.httpController = [[HTTPController alloc]init];
-    self.delegate = self.httpController;
- 
+    self.parseController = [[ParseController alloc]init];
+    self.delegate = self.parseController;
+  
+    
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"profile"]) {
+    
+    PFUser*currentUser = [PFUser currentUser];
+    if(currentUser){
+        // Already signed up
+        
+    } else{
         [self showProfileView];
     }
 }
@@ -48,7 +56,7 @@
         [segue.destinationViewController setDelegate:self];
     }
 }
-#pragma mark Profile 
+#pragma mark Profile
 
 -(void) showProfileView
 {
@@ -57,29 +65,17 @@
 
 -(void)profileViewController:(ProfileViewController *)pvc donePressed:(BOOL)didPressDone userName:(NSString *)name password:(NSString *)password email:(NSString *)email
 {
-    if([self userInfoIsEmpty:name email:email password:password]) {
-        [pvc showAlertWithMessage:@"The message"];
-    } else {
-        [self.delegate alarmViewController:self createUserWithName:name email:email success:^(User* user){
-            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setObject:user.name forKey:@"name"];
-            [prefs synchronize];
-            [prefs setObject:user.email forKey:@"email"];
-            [prefs synchronize];
-            [prefs setObject:user.serverID forKey:@"serverID"];
-            [prefs synchronize];
-            [prefs setBool:YES forKey:@"profile"];
-            [prefs synchronize];
-            [prefs setObject:@"123456789" forKey:@"deviceToken"];
-        }failure:^(WebServiceResponse response){
-            
-        }];
-        
-        
-        [self dismissViewControllerAnimated:YES completion:^{
-            
-        }];
-    }
+    [self.delegate alarmViewController:self createUserWithName:name
+                                 email:email
+                              password:password
+                               success:^{
+                                            [self dismissViewControllerAnimated:YES completion:^{
+                                       
+                                   }];
+                                   
+                               }failure:^(WebServiceResponse response){
+                                   
+                               }];
 }
 -(BOOL) userInfoIsEmpty:(NSString*) name email:(NSString*) email password:(NSString*)password
 {
