@@ -59,15 +59,21 @@
 -(void) addFriendViewController:(AddFriendViewController *)aFVC sendFriendRequestToUser:(PFUser *)receiver success:(AddFriendViewControllerSuccessBlock)success failure:(AddFriendViewControllerFailureBlock)failure
 {
     PFUser* currentUser = [PFUser currentUser];
-    PFObject* friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
-    [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:currentUser.objectId] forKey:@"Sender"];
-    [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:receiver.objectId] forKey:@"Reciever"];
-//    [friendRequest setObject:receiver forKey:@"Reciever"];
-    [friendRequest saveInBackground];
-    success();
+
+    //Check if a relation already exists
+    PFQuery *query = [PFQuery queryWithClassName:@"FriendRequest"];
+    [query includeKey:@"Sender"];
+    [query includeKey:@"Reciever"];
+    [query whereKey:@"Reciever" equalTo:receiver];
+    [query whereKey:@"Sender" equalTo:currentUser];
     
-//    [obj setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:userId] forKey:@"user"];
-    
+    if ([[query findObjects] count] == 0) {
+        PFObject* friendRequest = [PFObject objectWithClassName:@"FriendRequest"];
+        [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:currentUser.objectId] forKey:@"Sender"];
+        [friendRequest setObject:[PFUser objectWithoutDataWithClassName:@"_User" objectId:receiver.objectId] forKey:@"Reciever"];
+        [friendRequest saveInBackground];
+        success();
+    }
 }
 
 #pragma mark FriendsViewController delegate
@@ -90,11 +96,9 @@
         }
          success(tempArray);
     });
-                   
-
-   
-    
 }
+
+
 
 
 @end
