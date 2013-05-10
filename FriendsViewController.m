@@ -35,11 +35,6 @@
     [super viewWillAppear:animated];
     [self updatePendingFriends];
     [self updateFriends];
-//    dispatch_async(dispatch_get_main_queue(),^{
-//            [self updateFriends];
-//    });
-
-    
 }
 
 -(NSMutableArray*) friends
@@ -63,24 +58,31 @@
     __block FriendsViewController* fvc = self;
     [self.delegate friendsViewControllerGetFriendRequests:self success:^(NSArray* friendRequests){
         if([friendRequests count] > 0){
-            fvc.friendRequests = [friendRequests copy];
-            
-               [fvc.tableView reloadData];
-            
+            fvc.friendRequests = [friendRequests mutableCopy];
+            //Update tableView
+            [fvc.tableView reloadData];
         } else {
-            [fvc.friendRequests removeLastObject];
+            //There is no pending Friends on remote server
+            //Delete the local list of Friend requests
+            if([fvc.friendRequests count] > 0){
+                [fvc.friendRequests removeAllObjects];
+                //Update tableView
+                [fvc.tableView reloadData];
+            } else {
+                //FriendRequests is already emtpy, do nothing..
+            }
         }
     }failure:^(WebServiceResponse response){
         
     }];
 }
-
 -(void) updateFriends {
     __block FriendsViewController* fvc = self;
     [self.delegate friendsViewControllerGetFriends:self success:^(NSArray* friends){
         if([friends count]> 0){
             fvc.friends = [[NSMutableArray alloc] init];
             fvc.friends = [friends copy];
+            //Update tableView
             [fvc.tableView reloadData];
         }
     }failure:^(WebServiceResponse response) {
@@ -134,8 +136,7 @@
 {
     if (indexPath.section ==  SECTION_FRIEND)
     {
-        PFUser *friend = [self.friends objectAtIndex:indexPath.row];
-//        NSLog(@"Friend pressed: %@", friend.username);
+        //TODO: Handle event
     } else if(indexPath.section == SECTION_PENDING_FRIEND){
         PFObject *friendRequest = [self.friendRequests objectAtIndex:indexPath.row];
         [self.delegate friendsViewController:self acceptFriendRequest:friendRequest success:^{
@@ -149,15 +150,12 @@
 
 -(UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //This code is for testing purposes, needs to be implemented
-    //TODO: Get friend objects from FetchedResultsController
     static NSString *CellIdentifier = @"friendCell";
     NSString* cellText = @"";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
     if (indexPath.section == SECTION_FRIEND) {
         PFUser *friend = [self.friends objectAtIndex:indexPath.row];
         [friend fetchIfNeeded];
