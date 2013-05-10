@@ -82,6 +82,7 @@
         [friendRequest setObject:receiver forKey:FRIEND_REQUEST_RECEIVER];
         [friendRequest setObject:[NSNumber numberWithBool:NO] forKey:FRIEND_REQUEST_ACCEPTED];
         [friendRequest saveInBackground];
+        [self sendPushNotificationToUser:receiver];
         success();
     }
 }
@@ -171,5 +172,17 @@
 -(void) friendsViewController:(FriendsViewController *)friendsViewController deleteFriend:(NSString *)friendID success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
 {
     //TODO: IMPLEMENT!
+}
+
+
+
+#pragma mark Push Notification
+-(void) sendPushNotificationToUser:(PFUser*) user
+{
+    PFPush *push = [[PFPush alloc] init];
+    [push setChannel:user.objectId];
+    [push setMessage:@"Friend request!"];
+    [push sendPushInBackground];
+    
 }
 @end

@@ -42,8 +42,7 @@
     
     PFUser*currentUser = [PFUser currentUser];
     if(currentUser){
-        // Already signed up
-        
+
     } else{
         [self showProfileView];
     }
@@ -69,7 +68,11 @@
                                  email:email
                               password:password
                                success:^{
-                                            [self dismissViewControllerAnimated:YES completion:^{
+                                   //Set the private channel for incoming notifications to the user for incoming notifications
+                                    PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+                                    [currentInstallation addUniqueObject:[PFUser currentUser].objectId forKey:@"channels"];
+                                
+                                   [self dismissViewControllerAnimated:YES completion:^{
                                        
                                    }];
                                    
