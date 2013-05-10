@@ -32,6 +32,8 @@
 
 -(void) viewWillAppear:(BOOL)animated
 {
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+
     [super viewWillAppear:animated];
     [self updatePendingFriends];
     [self updateFriends];

@@ -33,6 +33,12 @@
 		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
 		5D4DC83216FB4512001F247E /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83016FB4512001F247E /* HTTPController.m */; };
 		5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */; };
+		5D6FCC17173CFC5000EC9F4D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC16173CFC5000EC9F4D /* logo.png */; };
+		5D6FCC19173CFDB700EC9F4D /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC18173CFDB700EC9F4D /* logo2.png */; };
+		5D6FCC1B173CFF1F00EC9F4D /* backgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */; };
+		5D6FCC1D173D010100EC9F4D /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1C173D010100EC9F4D /* logo3.png */; };
+		5D6FCC20173D0E5900EC9F4D /* gradient-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */; };
+		5D6FCC27173D104600EC9F4D /* pa-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC26173D104600EC9F4D /* pa-logo.png */; };
 		5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E633F16FC49810027B65F /* AddFriendViewController.m */; };
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -140,6 +146,12 @@
 		5D4DC83016FB4512001F247E /* HTTPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPController.m; sourceTree = "<group>"; };
 		5D4DC83116FB4512001F247E /* HTTPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPController.h; sourceTree = "<group>"; };
 		5D4DC83416FB45C6001F247E /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		5D6FCC16173CFC5000EC9F4D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5D6FCC18173CFDB700EC9F4D /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundImage.png; sourceTree = "<group>"; };
+		5D6FCC1C173D010100EC9F4D /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
+		5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-background.png"; sourceTree = "<group>"; };
+		5D6FCC26173D104600EC9F4D /* pa-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pa-logo.png"; sourceTree = "<group>"; };
 		5D8E633E16FC49810027B65F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		5D8E633F16FC49810027B65F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -251,6 +263,7 @@
 		50017E0216BBBF8A00F0C093 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DC425B5173CF6CA001F7087 /* Images */,
 				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
 				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
 				50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */,
@@ -308,6 +321,19 @@
 				5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */,
 			);
 			name = "Core data";
+			sourceTree = "<group>";
+		};
+		5DC425B5173CF6CA001F7087 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FCC26173D104600EC9F4D /* pa-logo.png */,
+				5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */,
+				5D6FCC1C173D010100EC9F4D /* logo3.png */,
+				5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */,
+				5D6FCC18173CFDB700EC9F4D /* logo2.png */,
+				5D6FCC16173CFC5000EC9F4D /* logo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5DF73ADF16C4F80C00B362AE /* Alarm */ = {
@@ -431,6 +457,12 @@
 				50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */,
 				50DD542616C539D6002CF0E6 /* Default.png in Resources */,
 				50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */,
+				5D6FCC17173CFC5000EC9F4D /* logo.png in Resources */,
+				5D6FCC19173CFDB700EC9F4D /* logo2.png in Resources */,
+				5D6FCC1B173CFF1F00EC9F4D /* backgroundImage.png in Resources */,
+				5D6FCC1D173D010100EC9F4D /* logo3.png in Resources */,
+				5D6FCC20173D0E5900EC9F4D /* gradient-background.png in Resources */,
+				5D6FCC27173D104600EC9F4D /* pa-logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +581,7 @@
 		50017E1C16BBBF8A00F0C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -560,7 +592,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9DEB8496-1BE6-4199-B31D-3879B4FEB08A";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -568,7 +600,7 @@
 		50017E1D16BBBF8A00F0C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -579,7 +611,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9DEB8496-1BE6-4199-B31D-3879B4FEB08A";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
