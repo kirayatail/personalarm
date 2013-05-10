@@ -15,6 +15,13 @@ typedef enum WebServiceResponses{
     WEBSERVICE_FAILUE_CONNECTION_ERROR = 3
 }WebServiceResponse;
 
+//Parse related
+#define RELATIONS_FRIEND @"Friends"
+#define FRIEND_REQUEST_SENDER @"Sender"
+#define FRIEND_REQUEST_ACCEPTED @"Accepted"
+#define FRIEND_REQUEST_RECEIVER @"Receiver"
 
+#define PARSECLASS_FRIEND_REQUEST @"FriendRequest"
+#define PARSECLASS_
 
 #endif

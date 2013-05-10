@@ -112,7 +112,7 @@ static HTTPController * _instance;
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result) {
         User* user;
         user = [result firstObject];
-        success(user);
+//        success(user);
     }
     failure:^(RKObjectRequestOperation *operation, NSError *error) {
         NSLog(@"Failed with error: %@", [error localizedDescription]);

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NetworkConstants.h"
 #import "User.h"
+#import <Parse/Parse.h>
 @class FriendsViewController;
 @protocol FriendsViewControllerDelegate<NSObject>
 
@@ -34,8 +35,9 @@ typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
                                          failure:(FriendsViewControllerFailureBlock) failure;
 
 -(void) friendsViewController:(FriendsViewController*) friendsViewController
-       respondToFriendRequest:(NSString*) friendRequestID
-                       accept:(BOOL)value;
+                acceptFriendRequest:(PFObject*)friendRequest
+                            success:(FriendsViewControllerSuccessBlock)success
+                            failure:(FriendsViewControllerFailureBlock)faiure;
 
 @end
 
