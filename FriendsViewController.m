@@ -81,7 +81,7 @@
     [self.delegate friendsViewControllerGetFriends:self success:^(NSArray* friends){
         if([friends count]> 0){
             fvc.friends = [[NSMutableArray alloc] init];
-            fvc.friends = [friends copy];
+            fvc.friends = [friends mutableCopy];
             //Update tableView
             [fvc.tableView reloadData];
         }
@@ -181,6 +181,17 @@
     if(editingStyle == UITableViewCellEditingStyleDelete){
         if(indexPath.section == SECTION_FRIEND){
             //Delete friend
+            PFUser* friendToBeDeleted = [self.friends objectAtIndex:indexPath.row];
+            [self.delegate friendsViewController:self deleteFriend:friendToBeDeleted  success:^{
+                
+            }failure:^(WebServiceResponse response){
+                //Handle failure
+            }];
+            
+            if([self.friends count] > 0){
+                [self.friends removeObjectAtIndex:indexPath.row];
+                [self.tableView reloadData];
+            }
             
         } else if(indexPath.section == SECTION_PENDING_FRIEND){
             //Decline Friend Request

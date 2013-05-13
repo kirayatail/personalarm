@@ -24,7 +24,7 @@ typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
 
 
 -(void) friendsViewController:(FriendsViewController*) friendsViewController
-                 deleteFriend:(NSString*)friendID
+                 deleteFriend:(PFUser*)theFriend
                       success:(FriendsViewControllerSuccessBlock)success
                       failure:(FriendsViewControllerFailureBlock)failure;
 

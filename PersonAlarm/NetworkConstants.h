@@ -16,12 +16,15 @@ typedef enum WebServiceResponses{
 }WebServiceResponse;
 
 //Parse related
+#define PARSECLASS_FRIEND_REQUEST @"FriendRequest"
 #define RELATIONS_FRIEND @"Friends"
 #define FRIEND_REQUEST_SENDER @"Sender"
 #define FRIEND_REQUEST_ACCEPTED @"Accepted"
 #define FRIEND_REQUEST_RECEIVER @"Receiver"
 
-#define PARSECLASS_FRIEND_REQUEST @"FriendRequest"
-#define PARSECLASS_
+//FriendShipsDeleted
+#define PARSECLASS_FRIENDSHIPS_DELETED @"FriendshipsDeleted"
+#define FRIENDSHIPS_DELETED_FRIEND @"FriendToBeDeleted"
+#define FRIENDSHIPS_DELETED_RECEIVER @"FriendThatHasBeenDeleted"
 
 #endif

@@ -139,6 +139,7 @@
 
 -(void) friendsViewControllerGetFriends:(FriendsViewController *)friendsViewController success:(GetFriendsSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
 {
+    
     //Check if any Friend Requests has been accepted
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_FRIEND_REQUEST];
@@ -166,6 +167,9 @@
             }
         }
     }];
+    
+    //Check if any one-sided Friendships exists
+    [self cleanUpFriends];
     //Query for Friends related by currentUser
     PFRelation* friendsRelation = [currentUser relationforKey:RELATIONS_FRIEND];
     PFQuery* queryFriends = [friendsRelation query];
@@ -180,10 +184,52 @@
     
     
 }
-
--(void) friendsViewController:(FriendsViewController *)friendsViewController deleteFriend:(NSString *)friendID success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+//Check and delete relations to Friend who have ended their Friendship with current user
+-(void) cleanUpFriends
 {
-    //TODO: IMPLEMENT!
+    //Check if currentUser is listed as receiver in any FriendshipsDeleted object
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
+    [query includeKey:FRIENDSHIPS_DELETED_RECEIVER];
+    [query includeKey:FRIENDSHIPS_DELETED_FRIEND];
+    [query whereKey:FRIENDSHIPS_DELETED_RECEIVER equalTo:currentUser];
+    NSArray* result = [query findObjects];
+    if([result count] >0){
+        for(int i=0; i<[result count]; i++){
+            PFObject* deletedFriendShip = [result objectAtIndex:i];
+            PFUser* friendToBeDeleted = [deletedFriendShip objectForKey:FRIENDSHIPS_DELETED_FRIEND];
+            PFRelation* friends = [currentUser relationforKey:RELATIONS_FRIEND];
+            [friends removeObject:friendToBeDeleted];
+            [currentUser saveInBackground];
+        } 
+
+
+    }
+    
+}
+
+-(void) friendsViewController:(FriendsViewController *)friendsViewController deleteFriend:(PFUser *)friend success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFRelation* friends = [currentUser relationforKey:RELATIONS_FRIEND];
+    [friends removeObject:friend];
+    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError* error){
+        if(error)
+        {
+            NSLog(@"Error in ParseCTRLR %@", error.localizedDescription);
+            //Handle error
+        } else if(success) {
+            success();
+        }
+            
+    }];
+    //Let the friend know that a two-sided friendship no longer exists.
+    PFObject* notificationForFriend = [PFObject objectWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
+    [notificationForFriend addObject:currentUser forKey:FRIENDSHIPS_DELETED_RECEIVER];
+    [notificationForFriend addObject:friends forKey:FRIENDSHIPS_DELETED_FRIEND];
+    [notificationForFriend saveInBackground];
+    
+    
 }
 
 
