@@ -39,6 +39,8 @@ typedef void (^FriendsViewControllerFailureBlock)(WebServiceResponse);
                             success:(FriendsViewControllerSuccessBlock)success
                             failure:(FriendsViewControllerFailureBlock)faiure;
 
+-(void) friendsViewController:(FriendsViewController *)friendsViewController declineFriendRequest:(PFObject *)friendRequest success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)faiure;
+
 @end
 
 

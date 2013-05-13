@@ -170,6 +170,42 @@
     return cell;
 }
 
+//Functionality for deleting a tableView
+-(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  YES;
+}
+
+-(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        if(indexPath.section == SECTION_FRIEND){
+            //Delete friend
+            
+        } else if(indexPath.section == SECTION_PENDING_FRIEND){
+            //Decline Friend Request
+           
+            PFObject* friendRequest = [self.friendRequests objectAtIndex:indexPath.row];
+            [self.delegate friendsViewController:self declineFriendRequest:friendRequest success:^{
+                [self.friendRequests removeObjectAtIndex:indexPath.row];
+                [self.tableView reloadData];
+            } failure:^(WebServiceResponse response){
+                //Handle failure
+            }];
+
+        }
+    }
+}
+-(NSString*) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == SECTION_FRIEND){
+        return @"Delete";
+    } else {
+        return @"Decline";
+    }
+}
+
+
 
 
 @end

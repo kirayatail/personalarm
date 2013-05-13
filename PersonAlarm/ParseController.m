@@ -125,6 +125,18 @@
     
 }
 
+-(void) friendsViewController:(FriendsViewController *)friendsViewController declineFriendRequest:(PFObject *)friendRequest success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)faiure
+{
+    //To decline a Friend Request, simply remove the Friend Request
+    [friendRequest deleteInBackgroundWithBlock:^(BOOL succeeded, NSError* error){
+        if(error){
+            NSLog(@"Error in ParseCTRLR decline: %@", error.localizedDescription);
+        } else {
+            success();
+        }
+    }];
+}
+
 -(void) friendsViewControllerGetFriends:(FriendsViewController *)friendsViewController success:(GetFriendsSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
 {
     //Check if any Friend Requests has been accepted
@@ -173,6 +185,7 @@
 {
     //TODO: IMPLEMENT!
 }
+
 
 
 
