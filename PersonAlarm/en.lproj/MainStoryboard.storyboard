@@ -12,13 +12,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-Xh-AG5">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="217" id="Sqk-2W-qQe"/>
-                                    <constraint firstAttribute="width" constant="164" id="icb-KB-7PQ"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1a-3n-f6t">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Alarm">
+                                <state key="normal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,18 +22,19 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="alarmPressed:" destination="2" eventType="touchUpInside" id="Mqf-ri-ALP"/>
+                                    <action selector="alarmDidActivate:" destination="2" eventType="touchUpInside" id="SVI-TK-AFq"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bU1-Xh-AG5" firstAttribute="top" secondItem="3" secondAttribute="top" constant="165" id="cpr-tk-2Zq"/>
-                            <constraint firstItem="bU1-Xh-AG5" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="ncR-nz-JE4"/>
+                            <constraint firstItem="O1a-3n-f6t" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="112" id="heA-eU-D8d"/>
+                            <constraint firstItem="O1a-3n-f6t" firstAttribute="top" secondItem="3" secondAttribute="top" constant="164" id="osA-Bf-uIp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Personalarm" id="u4d-bf-x8A"/>
                     <connections>
+                        <outlet property="alarmSwitch" destination="O1a-3n-f6t" id="euh-jA-cwe"/>
                         <segue destination="jdj-5s-m0z" kind="modal" identifier="Show Profile" modalTransitionStyle="coverVertical" id="IXe-IB-24H"/>
                     </connections>
                 </viewController>
@@ -426,14 +423,17 @@
         <class className="AddFriendViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addFriend:"/>
-                <relationship kind="action" name="addPressed:"/>
                 <relationship kind="outlet" name="resultButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
             </relationships>
         </class>
         <class className="AlarmViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="alarmDidActivate:" candidateClass="UIButton"/>
+                <relationship kind="action" name="logOutButtonTapAction:"/>
+                <relationship kind="outlet" name="alarmSwitch" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="CallSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>

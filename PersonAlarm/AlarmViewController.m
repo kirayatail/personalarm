@@ -11,32 +11,79 @@
 #import "HTTPController.h"
 #import "ProfileViewController.h"
 #import "ParseController.h"
+
 @interface AlarmViewController ()
 
 @property (nonatomic, strong) AlarmController *alarmController;
+@property (strong, nonatomic) IBOutlet UIButton *alarmSwitch;
+
 @property (nonatomic, strong) HTTPController* httpController;
 @property (nonatomic, strong) ParseController* parseController;
+@property BOOL alarmIsActive;
+
 @end
 
 @implementation AlarmViewController
+
 @synthesize httpController = _httpController;
 @synthesize alarmController = _alarmController;
 @synthesize delegate = _delegate;
-
-
-- (IBAction)alarmPressed:(id)sender {
-    self.alarmController = [[AlarmController alloc] init];
-    [self.alarmController triggerAlarm];
-}
+@synthesize alarmSwitch = _alarmSwitch;
+@synthesize alarmIsActive = _alarmIsActive;
 
 - (void)viewDidLoad
 {
+    self.alarmIsActive = NO;
+    /* Set up background image */
+     
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"switch-background.png"]];
+    
+    backgroundImage.frame = self.view.bounds;
+    backgroundImage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    backgroundImage.contentMode = UIViewContentModeScaleAspectFill;
+    
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+    
+    /* ---------------------- */
+    
+    /* Set up alarm switch */
+    
+    UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+    [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+   
+    self.alarmSwitch.imageView.bounds = CGRectMake(0, 0, 70, 70);
+    self.alarmSwitch.contentVerticalAlignment = UIViewContentModeScaleAspectFit;
+    self.alarmSwitch.imageView.frame = CGRectMake(0, 0, 70, 70);
+    
+    if (self.alarmIsActive) {
+        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+        [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+        
+    } else {
+        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
+        [self.alarmSwitch setBackgroundImage:switchOffImage forState:UIControlStateNormal];
+    }
+    
+    
+    /* ------------------- */
+    
     [super viewDidLoad];
     self.parseController = [[ParseController alloc]init];
-    self.delegate = self.parseController;
-    
-    
+    self.delegate = self.parseController;  
 }
+- (IBAction)alarmDidActivate:(UIButton *)sender {
+    if (!self.alarmIsActive) {
+        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+        [sender setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+        self.alarmIsActive = YES;
+    } else {
+        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
+        [sender setBackgroundImage:switchOffImage forState:UIControlStateNormal];
+        self.alarmIsActive = NO;
+    }
+}
+
 
 -(void) viewDidAppear:(BOOL)animated
 {
@@ -64,14 +111,24 @@
         /* --------- Set appearance of login view --------- */
         
         // Create image
-        UIImage *image = [UIImage imageNamed:@"pa-logo.png"];
+        UIImage *image = [UIImage imageNamed:@"logo.png"];
         
         // Create logo
-        UIView *logo = [[UIImageView alloc] initWithImage:image];
+        UIView *loginLogo = [[UIImageView alloc] initWithImage:image];
+        UIView *signupLogo = [[UIImageView alloc] initWithImage:image];
+
         
         // Set the logo
-        [logInViewController.logInView setLogo:logo];
+        [logInViewController.logInView setLogo:loginLogo];
+        [signUpViewController.signUpView setLogo:signupLogo];
         
+        // Set background image for login and signup views
+        UIImageView* loginBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"switch-background.png"]];
+        UIImageView* signupBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"switch-background.png"]];
+
+        
+        [logInViewController.logInView insertSubview:loginBackground atIndex:0];
+        [signUpViewController.signUpView insertSubview:signupBackground atIndex:0];
         
         // Present the log in view controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
