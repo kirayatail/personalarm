@@ -14,8 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) TelephoneDatasource *datasource;
 
-
-
 @end
 
 @implementation CallSettingsViewController

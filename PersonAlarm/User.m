@@ -2,20 +2,22 @@
 //  User.m
 //  PersonAlarm
 //
-//  Created by Simon Olsson on 2013-03-21.
+//  Created by William Gabrielsson on 2013-04-25.
 //  Copyright (c) 2013 Chalmers. All rights reserved.
 //
 
 #import "User.h"
+#import "Friend.h"
 
 
 @implementation User
 
+@dynamic deviceToken;
 @dynamic email;
 @dynamic name;
-@dynamic deviceToken;
-@dynamic rememberToken;
 @dynamic password;
+@dynamic rememberToken;
 @dynamic serverID;
+@dynamic hasFriend;
 
 @end

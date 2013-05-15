@@ -7,14 +7,32 @@
 //
 
 #import "AlarmAppDelegate.h"
+#import <Parse/Parse.h>
+
 
 @implementation AlarmAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"nJBlt4J0vsGWzNbDmOAaRluQi8bN0SB4M73asOCH" clientKey:@"fsCqbOS73hOBz3ZqdFVCNCRnPguWpqL6RXbdQQ7E"];
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     return YES;
 }
+
+-(void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+
+    if([PFUser currentUser]){
+        //Register the user to push notifications
+        PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+        [currentInstallation setDeviceTokenFromData:deviceToken];
+        [currentInstallation addUniqueObject:[PFUser currentUser].objectId forKey:@"channels"];
+        [currentInstallation saveInBackground];
+    }
+}
+
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
