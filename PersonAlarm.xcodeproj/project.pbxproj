@@ -616,11 +616,10 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-<<<<<<< HEAD
+
 				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
-=======
-				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
->>>>>>> parse-gui
+
+
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
