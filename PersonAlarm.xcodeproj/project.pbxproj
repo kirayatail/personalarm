@@ -31,8 +31,20 @@
 		50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542216C539D6002CF0E6 /* Default-568h@2x.png */; };
 		50DD542616C539D6002CF0E6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542316C539D6002CF0E6 /* Default.png */; };
 		50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD542416C539D6002CF0E6 /* Default@2x.png */; };
+		5D1E0AA3174276210000CB42 /* switch-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA0174276200000CB42 /* switch-background.png */; };
+		5D1E0AA917427BC10000CB42 /* Switch-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA717427BC10000CB42 /* Switch-on.png */; };
+		5D1E0AAA17427BC10000CB42 /* Switch-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA817427BC10000CB42 /* Switch-off.png */; };
+		5D43BFC917410992007C13D5 /* pa-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D43BFC817410992007C13D5 /* pa-logo.png */; };
+		5D43BFCC174117B6007C13D5 /* alarm-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D43BFCA174117B6007C13D5 /* alarm-off.png */; };
+		5D43BFCD174117B6007C13D5 /* alarm-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D43BFCB174117B6007C13D5 /* alarm-on.png */; };
+		5D43BFCF17412144007C13D5 /* alarm-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D43BFCE17412144007C13D5 /* alarm-background.png */; };
 		5D4DC83216FB4512001F247E /* HTTPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83016FB4512001F247E /* HTTPController.m */; };
 		5D4DC83516FB45C6001F247E /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */; };
+		5D6FCC17173CFC5000EC9F4D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC16173CFC5000EC9F4D /* logo.png */; };
+		5D6FCC19173CFDB700EC9F4D /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC18173CFDB700EC9F4D /* logo2.png */; };
+		5D6FCC1B173CFF1F00EC9F4D /* backgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */; };
+		5D6FCC1D173D010100EC9F4D /* logo3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1C173D010100EC9F4D /* logo3.png */; };
+		5D6FCC20173D0E5900EC9F4D /* gradient-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */; };
 		5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E633F16FC49810027B65F /* AddFriendViewController.m */; };
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -137,9 +149,21 @@
 		50DD542216C539D6002CF0E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		50DD542316C539D6002CF0E6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		50DD542416C539D6002CF0E6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		5D1E0AA0174276200000CB42 /* switch-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-background.png"; sourceTree = "<group>"; };
+		5D1E0AA717427BC10000CB42 /* Switch-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Switch-on.png"; sourceTree = "<group>"; };
+		5D1E0AA817427BC10000CB42 /* Switch-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Switch-off.png"; sourceTree = "<group>"; };
+		5D43BFC817410992007C13D5 /* pa-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pa-logo.png"; sourceTree = "<group>"; };
+		5D43BFCA174117B6007C13D5 /* alarm-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-off.png"; sourceTree = "<group>"; };
+		5D43BFCB174117B6007C13D5 /* alarm-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-on.png"; sourceTree = "<group>"; };
+		5D43BFCE17412144007C13D5 /* alarm-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-background.png"; sourceTree = "<group>"; };
 		5D4DC83016FB4512001F247E /* HTTPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPController.m; sourceTree = "<group>"; };
 		5D4DC83116FB4512001F247E /* HTTPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPController.h; sourceTree = "<group>"; };
 		5D4DC83416FB45C6001F247E /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		5D6FCC16173CFC5000EC9F4D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5D6FCC18173CFDB700EC9F4D /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
+		5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundImage.png; sourceTree = "<group>"; };
+		5D6FCC1C173D010100EC9F4D /* logo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo3.png; sourceTree = "<group>"; };
+		5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-background.png"; sourceTree = "<group>"; };
 		5D8E633E16FC49810027B65F /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		5D8E633F16FC49810027B65F /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		5D8F517D16F8E2D600F64BE3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -251,6 +275,7 @@
 		50017E0216BBBF8A00F0C093 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DC425B5173CF6CA001F7087 /* Images */,
 				50017E0A16BBBF8A00F0C093 /* AlarmAppDelegate.h */,
 				50017E0B16BBBF8A00F0C093 /* AlarmAppDelegate.m */,
 				50017E0316BBBF8A00F0C093 /* PersonAlarm-Info.plist */,
@@ -308,6 +333,25 @@
 				5D4DC83316FB45C6001F247E /* UserModel.xcdatamodeld */,
 			);
 			name = "Core data";
+			sourceTree = "<group>";
+		};
+		5DC425B5173CF6CA001F7087 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E0AA717427BC10000CB42 /* Switch-on.png */,
+				5D1E0AA817427BC10000CB42 /* Switch-off.png */,
+				5D1E0AA0174276200000CB42 /* switch-background.png */,
+				5D43BFCE17412144007C13D5 /* alarm-background.png */,
+				5D43BFCA174117B6007C13D5 /* alarm-off.png */,
+				5D43BFCB174117B6007C13D5 /* alarm-on.png */,
+				5D43BFC817410992007C13D5 /* pa-logo.png */,
+				5D6FCC1E173D0E5900EC9F4D /* gradient-background.png */,
+				5D6FCC1C173D010100EC9F4D /* logo3.png */,
+				5D6FCC1A173CFF1F00EC9F4D /* backgroundImage.png */,
+				5D6FCC18173CFDB700EC9F4D /* logo2.png */,
+				5D6FCC16173CFC5000EC9F4D /* logo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5DF73ADF16C4F80C00B362AE /* Alarm */ = {
@@ -431,6 +475,18 @@
 				50DD542516C539D6002CF0E6 /* Default-568h@2x.png in Resources */,
 				50DD542616C539D6002CF0E6 /* Default.png in Resources */,
 				50DD542716C539D6002CF0E6 /* Default@2x.png in Resources */,
+				5D6FCC17173CFC5000EC9F4D /* logo.png in Resources */,
+				5D6FCC19173CFDB700EC9F4D /* logo2.png in Resources */,
+				5D6FCC1B173CFF1F00EC9F4D /* backgroundImage.png in Resources */,
+				5D6FCC1D173D010100EC9F4D /* logo3.png in Resources */,
+				5D6FCC20173D0E5900EC9F4D /* gradient-background.png in Resources */,
+				5D43BFC917410992007C13D5 /* pa-logo.png in Resources */,
+				5D43BFCC174117B6007C13D5 /* alarm-off.png in Resources */,
+				5D43BFCD174117B6007C13D5 /* alarm-on.png in Resources */,
+				5D43BFCF17412144007C13D5 /* alarm-background.png in Resources */,
+				5D1E0AA3174276210000CB42 /* switch-background.png in Resources */,
+				5D1E0AA917427BC10000CB42 /* Switch-on.png in Resources */,
+				5D1E0AAA17427BC10000CB42 /* Switch-off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +605,7 @@
 		50017E1C16BBBF8A00F0C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -560,7 +616,11 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
 				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
+=======
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
+>>>>>>> parse-gui
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -568,7 +628,7 @@
 		50017E1D16BBBF8A00F0C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -579,7 +639,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9DEB8496-1BE6-4199-B31D-3879B4FEB08A";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
