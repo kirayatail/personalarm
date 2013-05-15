@@ -24,7 +24,7 @@ typedef enum WebServiceResponses{
 
 //FriendShipsDeleted
 #define PARSECLASS_FRIENDSHIPS_DELETED @"FriendshipsDeleted"
-#define FRIENDSHIPS_DELETED_FRIEND @"FriendToBeDeleted"
+#define FRIENDSHIPS_DELETED_SENDER @"FriendToBeDeleted"
 #define FRIENDSHIPS_DELETED_RECEIVER @"FriendThatHasBeenDeleted"
 
 #endif

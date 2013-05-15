@@ -28,11 +28,19 @@
     [super viewDidLoad];
     self.parseController = [[ParseController alloc]init];
     self.delegate = self.parseController;
+    
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"switch-background.png"]];
+    self.tableView.backgroundView = nil;
+}
+- (IBAction)refresh:(UIBarButtonItem *)sender {
+    [self updateFriends];
+    [self updatePendingFriends];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+
 
     [super viewWillAppear:animated];
     [self updatePendingFriends];
@@ -86,6 +94,11 @@
             fvc.friends = [friends mutableCopy];
             //Update tableView
             [fvc.tableView reloadData];
+        } else if ([fvc.friends count] > 0) {
+            [fvc.friends removeAllObjects];
+            [fvc.tableView reloadData];
+        } else {
+            // DO NASING
         }
     }failure:^(WebServiceResponse response) {
         // Handle error

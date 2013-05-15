@@ -37,10 +37,6 @@
 
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-
-    
-    
-    
     self.resultButton.hidden = NO;
     __block AddFriendViewController* afvc = self;
     [self.delegate addFriendViewController:self getUser:searchBar.text success:^(NSArray* users){

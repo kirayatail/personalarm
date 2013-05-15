@@ -246,6 +246,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Friends" id="7IK-y5-CRA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="zfl-ME-r0s">
+                            <connections>
+                                <action selector="refresh:" destination="6wn-mO-rFU" id="fHg-cG-BO8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kze-eI-rCL">
                             <connections>
                                 <action selector="addFriendPressed:" destination="6wn-mO-rFU" id="r8a-gA-o6N"/>
@@ -430,8 +435,6 @@
         <class className="AlarmViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
             <relationships>
-                <relationship kind="action" name="alarmDidActivate:" candidateClass="UIButton"/>
-                <relationship kind="action" name="logOutButtonTapAction:"/>
                 <relationship kind="outlet" name="alarmSwitch" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -444,6 +447,7 @@
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refresh:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>

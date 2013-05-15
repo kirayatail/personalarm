@@ -191,20 +191,21 @@
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
     [query includeKey:FRIENDSHIPS_DELETED_RECEIVER];
-    [query includeKey:FRIENDSHIPS_DELETED_FRIEND];
+    [query includeKey:FRIENDSHIPS_DELETED_SENDER];
     [query whereKey:FRIENDSHIPS_DELETED_RECEIVER equalTo:currentUser];
     NSArray* result = [query findObjects];
     if([result count] >0){
         for(int i=0; i<[result count]; i++){
             PFObject* deletedFriendShip = [result objectAtIndex:i];
-            PFUser* friendToBeDeleted = [deletedFriendShip objectForKey:FRIENDSHIPS_DELETED_FRIEND];
+            PFUser* friendToBeDeleted = [deletedFriendShip objectForKey:FRIENDSHIPS_DELETED_SENDER];
             PFRelation* friends = [currentUser relationforKey:RELATIONS_FRIEND];
+            [friendToBeDeleted fetchIfNeeded];
             [friends removeObject:friendToBeDeleted];
-            [currentUser saveInBackground];
         } 
-
+        [currentUser saveInBackground];
 
     }
+    
     
 }
 
@@ -219,15 +220,20 @@
             NSLog(@"Error in ParseCTRLR %@", error.localizedDescription);
             //Handle error
         } else if(success) {
+            //Let the friend know that a two-sided friendship no longer exists.
+            PFObject* notificationForFriend = [PFObject objectWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
+            
+            [currentUser fetchIfNeeded];
+            NSLog(@"Username: %@", currentUser.username);
+            
+            [notificationForFriend setObject:currentUser forKey:FRIENDSHIPS_DELETED_SENDER];
+            [notificationForFriend setObject:friend forKey:FRIENDSHIPS_DELETED_RECEIVER];
+            [notificationForFriend saveInBackground];
             success();
         }
             
     }];
-    //Let the friend know that a two-sided friendship no longer exists.
-    PFObject* notificationForFriend = [PFObject objectWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
-    [notificationForFriend addObject:currentUser forKey:FRIENDSHIPS_DELETED_RECEIVER];
-    [notificationForFriend addObject:friends forKey:FRIENDSHIPS_DELETED_FRIEND];
-    [notificationForFriend saveInBackground];
+   
     
     
 }
