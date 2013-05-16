@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
     self.searchField.delegate = self;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"switch-background.png"]];
+    self.searchField.barStyle = UIBarStyleBlackOpaque;
 }
 
 -(void) viewWillAppear:(BOOL)animated

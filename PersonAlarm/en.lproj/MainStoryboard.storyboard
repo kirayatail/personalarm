@@ -32,7 +32,7 @@
                             <constraint firstItem="O1a-3n-f6t" firstAttribute="top" secondItem="3" secondAttribute="top" constant="164" id="osA-Bf-uIp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Personalarm" id="u4d-bf-x8A"/>
+                    <navigationItem key="navigationItem" title="PersonAlarm" id="u4d-bf-x8A"/>
                     <connections>
                         <outlet property="alarmSwitch" destination="O1a-3n-f6t" id="euh-jA-cwe"/>
                         <segue destination="jdj-5s-m0z" kind="modal" identifier="Show Profile" modalTransitionStyle="coverVertical" id="IXe-IB-24H"/>
@@ -303,7 +303,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal">
-                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -366,11 +366,11 @@
             </objects>
             <point key="canvasLocation" x="2102" y="-2"/>
         </scene>
-        <!--Navigation Controller - Settings-->
+        <!--Navigation Controller - Sessions-->
         <scene sceneID="YTL-7G-YDQ">
             <objects>
                 <navigationController id="BNV-IE-OO7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="sessions-icon-30.png" id="RrJ-c6-hTu"/>
+                    <tabBarItem key="tabBarItem" title="Sessions" image="sessions-icon-30.png" id="RrJ-c6-hTu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QrB-Wm-7vs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
