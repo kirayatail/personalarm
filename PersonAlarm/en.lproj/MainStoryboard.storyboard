@@ -370,7 +370,7 @@
         <scene sceneID="YTL-7G-YDQ">
             <objects>
                 <navigationController id="BNV-IE-OO7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="RrJ-c6-hTu"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="sessions-icon-30.png" id="RrJ-c6-hTu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QrB-Wm-7vs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -389,7 +389,7 @@
         <scene sceneID="OUa-4S-nSN">
             <objects>
                 <navigationController id="kfM-oT-gBM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="g4X-Sl-psR"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends-icon-30.png" id="g4X-Sl-psR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BDr-rF-FVf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -408,7 +408,7 @@
         <scene sceneID="1De-Jx-slR">
             <objects>
                 <navigationController id="ofI-X7-e5i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarm" id="uuo-bU-xds"/>
+                    <tabBarItem key="tabBarItem" title="Alarm" image="alarm-icon-30.png" id="uuo-bU-xds"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xmo-bb-TfT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -424,6 +424,11 @@
             <point key="canvasLocation" x="2644" y="-550"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm-icon-30.png" width="30" height="30"/>
+        <image name="friends-icon-30.png" width="30" height="30"/>
+        <image name="sessions-icon-30.png" width="30" height="30"/>
+    </resources>
     <classes>
         <class className="AddFriendViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
@@ -447,7 +452,6 @@
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="refresh:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>
         </class>

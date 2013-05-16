@@ -157,7 +157,7 @@
         [self.delegate friendsViewController:self acceptFriendRequest:friendRequest success:^{
                 [self updateFriends];
         } failure:^(WebServiceResponse response) {
-            // Handle error
+            //TODO: Handle error
         }];
     }
 }
@@ -222,6 +222,7 @@
         }
     }
 }
+
 -(NSString*) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == SECTION_FRIEND){
@@ -231,7 +232,29 @@
     }
 }
 
-
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];
+    tempView.backgroundColor=[UIColor clearColor];
+    
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,44)];
+    tempLabel.backgroundColor=[UIColor clearColor];
+    tempLabel.shadowColor = [UIColor blackColor];
+    tempLabel.shadowOffset = CGSizeMake(0,2);
+    tempLabel.textColor = [UIColor whiteColor]; //here you can change the text color of header.
+    tempLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
+    tempLabel.font = [UIFont boldSystemFontOfSize:17];
+    
+    if (section == 0) {
+        tempLabel.text=@"Friends";
+    } else {
+        tempLabel.text=@"Pending friends";
+    }
+    
+    [tempView addSubview:tempLabel];
+    
+    return tempView;
+}
 
 
 @end
