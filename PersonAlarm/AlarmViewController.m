@@ -49,21 +49,21 @@
     
     /* Set up alarm switch */
     
-    UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
-    [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
-   
-    self.alarmSwitch.imageView.bounds = CGRectMake(0, 0, 70, 70);
-    self.alarmSwitch.contentVerticalAlignment = UIViewContentModeScaleAspectFit;
-    self.alarmSwitch.imageView.frame = CGRectMake(0, 0, 70, 70);
-    
-    if (self.alarmIsActive) {
-        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
-        [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
-        
-    } else {
-        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
-        [self.alarmSwitch setBackgroundImage:switchOffImage forState:UIControlStateNormal];
-    }
+//    UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+//    [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+//   
+//    self.alarmSwitch.imageView.bounds = CGRectMake(0, 0, 70, 70);
+//    self.alarmSwitch.contentVerticalAlignment = UIViewContentModeScaleAspectFit;
+//    self.alarmSwitch.imageView.frame = CGRectMake(0, 0, 70, 70);
+//    
+//    if (self.alarmIsActive) {
+//        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+//        [self.alarmSwitch setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+//        
+//    } else {
+//        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
+//        [self.alarmSwitch setBackgroundImage:switchOffImage forState:UIControlStateNormal];
+//    }
     
     
     /* ------------------- */
@@ -73,15 +73,15 @@
     self.delegate = self.parseController;  
 }
 - (IBAction)alarmDidActivate:(UIButton *)sender {
-    if (!self.alarmIsActive) {
-        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
-        [sender setBackgroundImage:switchOnImage forState:UIControlStateNormal];
-        self.alarmIsActive = YES;
-    } else {
-        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
-        [sender setBackgroundImage:switchOffImage forState:UIControlStateNormal];
-        self.alarmIsActive = NO;
-    }
+//    if (!self.alarmIsActive) {
+//        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
+//        [sender setBackgroundImage:switchOnImage forState:UIControlStateNormal];
+//        self.alarmIsActive = YES;
+//    } else {
+//        UIImage* switchOffImage = [UIImage imageNamed:@"Switch-off.png"];
+//        [sender setBackgroundImage:switchOffImage forState:UIControlStateNormal];
+//        self.alarmIsActive = NO;
+//    }
 }
 
 

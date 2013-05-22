@@ -1,0 +1,16 @@
+//
+//  SessionsTableViewController.h
+//  PersonAlarm
+//
+//  Created by Simon Olsson on 2013-05-16.
+//  Copyright (c) 2013 Chalmers. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "SessionMapViewController.h"
+
+@interface SessionsTableViewController : UITableViewController
+
+
+
+@end
