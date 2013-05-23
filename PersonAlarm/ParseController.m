@@ -60,7 +60,6 @@
 -(void) addFriendViewController:(AddFriendViewController *)aFVC sendFriendRequestToUser:(PFUser *)receiver success:(AddFriendViewControllerSuccessBlock)success failure:(AddFriendViewControllerFailureBlock)failure
 {
     PFUser* currentUser = [PFUser currentUser];
-    
     //Check if the sender already has sent an identical Friend Request
     PFQuery *query1 = [PFQuery queryWithClassName:@"FriendRequest"];
     [query1 includeKey:FRIEND_REQUEST_SENDER];
@@ -209,6 +208,8 @@
     
 }
 
+
+
 -(void) friendsViewController:(FriendsViewController *)friendsViewController deleteFriend:(PFUser *)friend success:(FriendsViewControllerSuccessBlock)success failure:(FriendsViewControllerFailureBlock)failure
 {
     PFUser* currentUser = [PFUser currentUser];
@@ -237,6 +238,88 @@
     
     
 }
+
+
+#pragma mark SessionsTableViewController
+
+//Retrieve accepted Sessions where 'current user' is the sender. 
+-(void) sessionsTableViewControllerActiveSessions:(SessionsTableViewController *)sessionsTVC success:(SessionsSuccess)result failure:(ActiveSessionsFailure)response
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
+    [query includeKey:SESSION_SENDER];
+    [query includeKey:SESSION_ACCEPTED];
+    [query whereKey:SESSION_SENDER equalTo:currentUser];
+    [query whereKey:SESSION_ACCEPTED equalTo:[NSNumber numberWithBool:YES]];
+    NSArray* activeSessions = [query findObjects];
+    result(activeSessions);
+}
+
+
+
+-(void) sessionsTableViewControllerPendingSessions:(SessionsTableViewController *)sessionsTVC success:(SessionsSuccess)result failure:(ActiveSessionsFailure)response
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
+    [query includeKey:SESSION_RECEIVER];
+    [query whereKey:SESSION_RECEIVER equalTo:currentUser];
+    NSArray* pendingSessions = [query findObjects];
+    result(pendingSessions);
+}
+
+
+-(void) sessionsTableViewControllerCreateSessions:(SessionsTableViewController *)sessionsTVC success:(CreateSessionsSuccess)result failure:(ActiveSessionsFailure)response
+{
+    PFUser* currentUser = [PFUser currentUser];
+    //TODO: Update current friends
+
+    
+    PFRelation* friendsRelation = [currentUser relationforKey:RELATIONS_FRIEND];
+    PFQuery* queryFriends = [friendsRelation query];
+    [queryFriends findObjectsInBackgroundWithBlock:^(NSArray* friends, NSError* error){
+        if(error){
+            NSLog(@"Error #3 in friendsViewControllerGetFriends: %@", error.localizedDescription);
+            //Handle error
+        } else {
+            for(int i=0; i<[friends count]; i++){
+                PFUser* theFriend = [friends objectAtIndex:i];
+                PFObject* session = [PFObject objectWithClassName:PARSECLASS_SESSION];
+                [session setObject:theFriend forKey:SESSION_RECEIVER];
+                [session setObject:currentUser forKey:SESSION_SENDER];
+                [session setObject:[NSNumber numberWithBool:NO] forKey:SESSION_ACCEPTED];
+                [session saveInBackground];
+            }
+        }
+    }];
+}
+
+#pragma mark UserAnnotationDataSource
+-(CLLocationCoordinate2D) userAnnotationDataSource:(UserAnnotation *)userAnnotation getPositionForUser:(PFUser *)user
+{
+    //Fetch the unique session object
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
+    [query includeKey:SESSION_RECEIVER];
+    [query includeKey:SESSION_ACCEPTED];
+    [query includeKey:SESSION_SENDER];
+    [query includeKey:SESSION_SENDER_LOCATION_LATITUD];
+    [query includeKey:SESSION_SENDER_LOCATION_LONGITUD];
+    [query whereKey:SESSION_SENDER equalTo:user];
+    [query whereKey:SESSION_RECEIVER equalTo:[PFUser currentUser]];
+    NSArray* result = [query findObjects];
+    PFObject* session = [result lastObject];
+    [session fetchIfNeeded];
+    
+    //Retrive the coordinate
+    CLLocationCoordinate2D coordinate;
+    double longitud = [[session objectForKey:SESSION_SENDER_LOCATION_LONGITUD] doubleValue];
+    double latitud = [[session objectForKey:SESSION_SENDER_LOCATION_LATITUD] doubleValue];
+    coordinate.longitude = longitud;
+    coordinate.latitude = latitud;
+    return coordinate;
+    
+}
+
+
 
 
 

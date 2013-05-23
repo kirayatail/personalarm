@@ -7,25 +7,33 @@
 //
 
 #import "SessionsTableViewController.h"
+#import "ParseController.h"
 
 @interface SessionsTableViewController ()
-
+@property (nonatomic, strong) NSMutableArray* activeSessions;
+@property (nonatomic, strong) ParseController* controller;
 @end
 
 @implementation SessionsTableViewController
+@synthesize activeSessions = _activeSessions;
+@synthesize controller = _controller;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.controller = [[ParseController alloc]init];
+    self.delegate = self.controller;
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"switch-background.png"]];
     self.tableView.backgroundView = nil;
+}
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+-(NSMutableArray*) activeSessions
+{
+    if(_activeSessions == nil){
+        _activeSessions = [[NSMutableArray alloc]init];
+    }
+    return _activeSessions;
 }
 
 
@@ -37,6 +45,37 @@
     [super viewWillAppear:animated];
 
  
+}
+- (IBAction)donePressed:(UIBarButtonItem *)sender {
+    [self startSessions];
+}
+
+
+
+-(void) startSessions
+{
+    [self.delegate sessionsTableViewControllerCreateSessions:self success:^{
+    
+        
+    }failure:^(WebServiceResponse response){
+        
+    }];
+}
+
+
+-(void) updateSessionTable
+{
+    [self.delegate sessionsTableViewControllerActiveSessions:self success:^(NSArray* result){
+        if([result count] >0 ){
+            self.activeSessions = [result mutableCopy];
+        } else
+     {
+         //No one is following. 
+     }
+        
+    }failure:^(WebServiceResponse response){
+        //Handle error
+    }];
 }
 
 #pragma mark - Table view data source
@@ -139,7 +178,6 @@
     }
     return @"Error";
 }
-
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *tempView=[[UIView alloc]initWithFrame:CGRectMake(0,200,300,244)];

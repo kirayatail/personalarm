@@ -20,6 +20,8 @@
 		3D97BADC173A4A0400B35326 /* ParseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97BADB173A4A0400B35326 /* ParseController.m */; };
 		3DB3452316D3FEA100DCEDE8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */; };
 		3DB3452416D3FEA100DCEDE8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */; };
+		3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF65D75174CFD2600631D27 /* earth-icon.png */; };
+		3DF65D7F174E026200631D27 /* UserAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF65D7E174E026200631D27 /* UserAnnotation.m */; };
 		50017DFC16BBBF8A00F0C093 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFB16BBBF8A00F0C093 /* UIKit.framework */; };
 		50017DFE16BBBF8A00F0C093 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFD16BBBF8A00F0C093 /* Foundation.framework */; };
 		50017E0016BBBF8A00F0C093 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50017DFF16BBBF8A00F0C093 /* CoreGraphics.framework */; };
@@ -34,7 +36,6 @@
 		5D1E0AA3174276210000CB42 /* switch-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA0174276200000CB42 /* switch-background.png */; };
 		5D1E0AA917427BC10000CB42 /* Switch-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA717427BC10000CB42 /* Switch-on.png */; };
 		5D1E0AAA17427BC10000CB42 /* Switch-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E0AA817427BC10000CB42 /* Switch-off.png */; };
-		5D2100E7174520D1005F6AFD /* panic-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D2100E6174520D1005F6AFD /* panic-button.png */; };
 		5D2808801744CEC200E96F04 /* alarm-icon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D28087D1744CEC200E96F04 /* alarm-icon-30.png */; };
 		5D2808821744CEC200E96F04 /* sessions-icon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D28087F1744CEC200E96F04 /* sessions-icon-30.png */; };
 		5D2808841744D09800E96F04 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D2808831744D09800E96F04 /* Icon.png */; };
@@ -48,8 +49,6 @@
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DBCC8E41744E63300E89406 /* SessionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8E31744E63300E89406 /* SessionsTableViewController.m */; };
 		5DBCC8ED174503D600E89406 /* earth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCC8EC174503D600E89406 /* earth-icon.png */; };
-		5DBCC8EF174508FB00E89406 /* friends-icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCC8EE174508FB00E89406 /* friends-icon-20.png */; };
-		5DBCC8F11745093800E89406 /* friends-icon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCC8F01745093800E89406 /* friends-icon-30.png */; };
 		5DBCC8F417450A2B00E89406 /* SessionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */; };
 		5DBCC8F617450A8600E89406 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBCC8F517450A8600E89406 /* MapKit.framework */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -138,6 +137,9 @@
 		3D97BADB173A4A0400B35326 /* ParseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseController.m; sourceTree = "<group>"; };
 		3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		3DF65D75174CFD2600631D27 /* earth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth-icon.png"; sourceTree = "<group>"; };
+		3DF65D7D174E026200631D27 /* UserAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAnnotation.h; sourceTree = "<group>"; };
+		3DF65D7E174E026200631D27 /* UserAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAnnotation.m; sourceTree = "<group>"; };
 		50017DF716BBBF8A00F0C093 /* PersonAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50017DFB16BBBF8A00F0C093 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50017DFD16BBBF8A00F0C093 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,7 +159,6 @@
 		5D1E0AA0174276200000CB42 /* switch-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-background.png"; sourceTree = "<group>"; };
 		5D1E0AA717427BC10000CB42 /* Switch-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Switch-on.png"; sourceTree = "<group>"; };
 		5D1E0AA817427BC10000CB42 /* Switch-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Switch-off.png"; sourceTree = "<group>"; };
-		5D2100E6174520D1005F6AFD /* panic-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "panic-button.png"; path = "../../../Desktop/panic-button.png"; sourceTree = "<group>"; };
 		5D28087D1744CEC200E96F04 /* alarm-icon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alarm-icon-30.png"; sourceTree = "<group>"; };
 		5D28087F1744CEC200E96F04 /* sessions-icon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sessions-icon-30.png"; sourceTree = "<group>"; };
 		5D2808831744D09800E96F04 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -175,8 +176,6 @@
 		5DBCC8E21744E63300E89406 /* SessionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsTableViewController.h; sourceTree = "<group>"; };
 		5DBCC8E31744E63300E89406 /* SessionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsTableViewController.m; sourceTree = "<group>"; };
 		5DBCC8EC174503D600E89406 /* earth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth-icon.png"; path = "../../../Desktop/earth-icon.png"; sourceTree = "<group>"; };
-		5DBCC8EE174508FB00E89406 /* friends-icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friends-icon-20.png"; path = "../../../Desktop/friends-icon-20.png"; sourceTree = "<group>"; };
-		5DBCC8F01745093800E89406 /* friends-icon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friends-icon-30.png"; path = "../../../Desktop/friends-icon-30.png"; sourceTree = "<group>"; };
 		5DBCC8F217450A2B00E89406 /* SessionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionMapViewController.h; sourceTree = "<group>"; };
 		5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMapViewController.m; sourceTree = "<group>"; };
 		5DBCC8F517450A8600E89406 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -308,6 +307,8 @@
 		5D01B09F16C4F5F9001BF4EA /* GUI Control */ = {
 			isa = PBXGroup;
 			children = (
+				3DF65D7D174E026200631D27 /* UserAnnotation.h */,
+				3DF65D7E174E026200631D27 /* UserAnnotation.m */,
 				3D62A348171BDD9500F5DA0E /* ProfileViewController.h */,
 				3D62A349171BDD9600F5DA0E /* ProfileViewController.m */,
 				5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */,
@@ -358,9 +359,7 @@
 		5DC425B5173CF6CA001F7087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5D2100E6174520D1005F6AFD /* panic-button.png */,
-				5DBCC8F01745093800E89406 /* friends-icon-30.png */,
-				5DBCC8EE174508FB00E89406 /* friends-icon-20.png */,
+				3DF65D75174CFD2600631D27 /* earth-icon.png */,
 				5DBCC8EC174503D600E89406 /* earth-icon.png */,
 				5D28087D1744CEC200E96F04 /* alarm-icon-30.png */,
 				5D28087F1744CEC200E96F04 /* sessions-icon-30.png */,
@@ -506,9 +505,7 @@
 				5D2808841744D09800E96F04 /* Icon.png in Resources */,
 				5D2808861744D09C00E96F04 /* Icon@2x.png in Resources */,
 				5DBCC8ED174503D600E89406 /* earth-icon.png in Resources */,
-				5DBCC8EF174508FB00E89406 /* friends-icon-20.png in Resources */,
-				5DBCC8F11745093800E89406 /* friends-icon-30.png in Resources */,
-				5D2100E7174520D1005F6AFD /* panic-button.png in Resources */,
+				3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +535,7 @@
 				3D97BADC173A4A0400B35326 /* ParseController.m in Sources */,
 				5DBCC8E41744E63300E89406 /* SessionsTableViewController.m in Sources */,
 				5DBCC8F417450A2B00E89406 /* SessionMapViewController.m in Sources */,
+				3DF65D7F174E026200631D27 /* UserAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +627,7 @@
 		50017E1C16BBBF8A00F0C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -640,7 +638,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
+				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -649,7 +647,7 @@
 		50017E1D16BBBF8A00F0C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -660,7 +658,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
+				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

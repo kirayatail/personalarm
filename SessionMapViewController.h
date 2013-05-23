@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 
 @interface SessionMapViewController : UIViewController
+
 
 
 @end

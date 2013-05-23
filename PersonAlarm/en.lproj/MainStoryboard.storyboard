@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="AlarmViewController" title="AlarmViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2" customClass="AlarmViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1a-3n-f6t">
@@ -58,7 +58,7 @@
             <objects>
                 <viewController id="jdj-5s-m0z" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F8l-1E-4v9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zlz-Cv-njI">
@@ -135,7 +135,7 @@
             <objects>
                 <viewController storyboardIdentifier="CallSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IFD-7K-ZHx" customClass="CallSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CcW-8I-D3d">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -150,7 +150,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MZt-54-dTq" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="07W-aK-MAe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -229,7 +229,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="FriendsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6wn-mO-rFU" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6wi-kO-HPS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -298,7 +298,7 @@
             <objects>
                 <viewController id="UTR-Kb-4Ys" customClass="AddFriendViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MKM-Fw-Ht6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Friend's email..." translatesAutoresizingMaskIntoConstraints="NO" id="WVc-59-zLr">
@@ -347,7 +347,7 @@
             <objects>
                 <viewController storyboardIdentifier="MessageSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M60-Gq-T65" customClass="MessageSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tCR-cd-0bN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -382,7 +382,7 @@
             <objects>
                 <tableViewController id="yNU-GZ-OMj" customClass="SessionsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lwc-ZS-1Q5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" barStyle="blackOpaque" id="fon-ge-j4e">
@@ -392,8 +392,11 @@
                                 <navigationItem title="Sessions" id="vq1-nC-abv">
                                     <barButtonItem key="leftBarButtonItem" title="I'm done!" id="D9c-T5-Ffs">
                                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="donePressed:" destination="yNU-GZ-OMj" id="otA-Lr-hda"/>
+                                        </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" image="earth-icon.png" style="plain" id="Gkq-Yc-IQm">
+                                    <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="Gkq-Yc-IQm">
                                         <connections>
                                             <segue destination="KVf-j1-nhe" kind="push" identifier="show session map" id="8zF-OF-T9L"/>
                                         </connections>
@@ -427,16 +430,7 @@
                             <outlet property="delegate" destination="yNU-GZ-OMj" id="JNB-zJ-Gnc"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="lgD-du-Wg4"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="cj5-6k-xHc"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="mWn-GY-1tz"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Y43-gY-djk"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="A7l-ZT-TId"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7NF-OO-9gm"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="kC3-Z9-Fex"/>
-                        <barButtonItem width="50" style="plain" systemItem="fixedSpace" id="u9U-kw-8Yo"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sessions" id="Ht9-eA-XRT"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -449,7 +443,7 @@
             <objects>
                 <viewController id="KVf-j1-nhe" customClass="SessionMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hnz-mf-7sO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="LfT-3O-dys">
@@ -546,68 +540,14 @@
     </scenes>
     <resources>
         <image name="alarm-icon-30.png" width="30" height="30"/>
-        <image name="earth-icon.png" width="20" height="20"/>
         <image name="friends-icon-20.png" width="20" height="20"/>
         <image name="friends-icon-30.png" width="30" height="30"/>
         <image name="panic-button.png" width="341" height="352"/>
         <image name="sessions-icon-30.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AddFriendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="resultButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="AlarmViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="alarmSwitch" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CallSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="FriendsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="MessageSettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SessionMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="SessionsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionsTableViewController.h"/>
-        </class>
-        <class className="SettingsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

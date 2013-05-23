@@ -27,4 +27,13 @@ typedef enum WebServiceResponses{
 #define FRIENDSHIPS_DELETED_SENDER @"FriendToBeDeleted"
 #define FRIENDSHIPS_DELETED_RECEIVER @"FriendThatHasBeenDeleted"
 
+#define PARSECLASS_SESSION @"Session"
+#define SESSION_RECEIVER @"Receiver"
+#define SESSION_SENDER @"Sender"
+#define SESSION_ACCEPTED @"Accepted"
+#define SESSION_SENDER_LOCATION_LONGITUD @"Location_Longitud"
+#define SESSION_SENDER_LOCATION_LATITUD @"Location_Latitud"
+
+
+
 #endif
