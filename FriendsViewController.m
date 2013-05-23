@@ -43,8 +43,13 @@
 
 
     [super viewWillAppear:animated];
-    [self updatePendingFriends];
-    [self updateFriends];
+    dispatch_queue_t queue = dispatch_queue_create("FetchFriendsQueue", NULL);
+    
+    dispatch_async(queue, ^(void){
+        [self updateFriends];
+        [self updatePendingFriends];
+        [self.tableView reloadData];
+    });
 }
 
 -(NSMutableArray*) friends

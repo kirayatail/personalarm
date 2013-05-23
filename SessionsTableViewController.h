@@ -25,7 +25,7 @@ typedef void (^ActiveSessionsFailure)(WebServiceResponse response);
 
 @end
 
-@interface SessionsTableViewController : UITableViewController
+@interface SessionsTableViewController : UITableViewController<CLLocationManagerDelegate>
 @property (nonatomic, retain) id<SessionsTableViewControllerDelegate> delegate;
 
 

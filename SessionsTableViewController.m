@@ -11,12 +11,25 @@
 
 @interface SessionsTableViewController ()
 @property (nonatomic, strong) NSMutableArray* activeSessions;
+@property (nonatomic, strong) NSMutableArray* pendingSessions;
 @property (nonatomic, strong) ParseController* controller;
+@property (nonatomic, strong) CLLocationManager* clm;
 @end
 
 @implementation SessionsTableViewController
 @synthesize activeSessions = _activeSessions;
+@synthesize pendingSessions = _pendingSessions;
 @synthesize controller = _controller;
+@synthesize clm = _clm;
+
+-(CLLocationManager *) clm
+{
+    if (_clm == nil)
+    {
+        _clm = [[CLLocationManager alloc] init];
+    }
+    return _clm;
+}
 
 - (void)viewDidLoad
 {
@@ -43,19 +56,23 @@
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
     
     [super viewWillAppear:animated];
-
- 
+    
+    dispatch_queue_t queue = dispatch_queue_create("FetchSessionsQueue", NULL);
+   
+    dispatch_async(queue, ^(void){
+        [self updateSessionTable];
+        [self.tableView reloadData];
+    });
 }
 - (IBAction)donePressed:(UIBarButtonItem *)sender {
     [self startSessions];
 }
 
-
-
 -(void) startSessions
 {
     [self.delegate sessionsTableViewControllerCreateSessions:self success:^{
-    
+        self.clm.delegate = self;
+        [self.clm startUpdatingLocation];
         
     }failure:^(WebServiceResponse response){
         
@@ -66,7 +83,7 @@
 -(void) updateSessionTable
 {
     [self.delegate sessionsTableViewControllerActiveSessions:self success:^(NSArray* result){
-        if([result count] >0 ){
+        if([result count] > 0 ){
             self.activeSessions = [result mutableCopy];
         } else
      {
@@ -75,6 +92,18 @@
         
     }failure:^(WebServiceResponse response){
         //Handle error
+    }];
+    
+    [self.delegate sessionsTableViewControllerPendingSessions:self success:^(NSArray* result){
+        if ([result count] > 0)
+        {
+            self.pendingSessions = [result mutableCopy];
+        } else
+        {
+            // No pending sessions
+        }
+    } failure:^(WebServiceResponse response){
+        // Handle error
     }];
 }
 
@@ -86,14 +115,17 @@
     return 2;
 }
 
+#define SECTION_FOLLOWING_YOU 0
+#define SECTION_SESSION_REQUESTS 1
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
     
-    if (section == 0) {
-        return 1;
-    } else if (section == 1) {
-        return 1;
+    if (section == SECTION_FOLLOWING_YOU) {
+        return [self.activeSessions count];
+    } else if (section == SECTION_SESSION_REQUESTS) {
+        return [self.pendingSessions count];
     } else {
         return 0;
     }
@@ -104,11 +136,27 @@
     static NSString *CellIdentifier = @"sessionCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if (indexPath.section == 0) {
-        [cell.textLabel setText:@"Friend 1"];
-    } else if (indexPath.section == 1) {
-        [cell.textLabel setText:@"Pending session"];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (indexPath.section == SECTION_FOLLOWING_YOU) {
+        PFObject* session = [self.activeSessions objectAtIndex:indexPath.row];
+        PFUser* follower = [session objectForKey:SESSION_RECEIVER];
+        
+        [follower fetchIfNeeded];
+        
+        [cell.textLabel setText:follower.username];
+    } else if (indexPath.section == SECTION_SESSION_REQUESTS) {
+        PFObject* session = [self.pendingSessions objectAtIndex:indexPath.row];
+        PFUser* sender = [session objectForKey:SESSION_SENDER];
+        
+        [sender fetchIfNeeded];
+        
+        [cell.textLabel setText:sender.username];
+        
+        BOOL accepted = [[session objectForKey:SESSION_ACCEPTED] boolValue];
+        if (accepted)
+        {
+             // Set checkmark if the session is accepted
+            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        }
     }
     
     // Configure the cell...
@@ -116,64 +164,15 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 -(NSString*) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     
-    if(section == 0) {
+    if(section == SECTION_FOLLOWING_YOU) {
         return @"Following you";
-    } else if(section == 1){
+    } else if(section == SECTION_SESSION_REQUESTS){
         return @"Session requests";
     }
     return @"Error";
@@ -191,15 +190,41 @@
     tempLabel.font = [UIFont fontWithName:@"Helvetica" size:17];
     tempLabel.font = [UIFont boldSystemFontOfSize:17];
     
+    
     if (section == 0) {
         tempLabel.text=@"Following you";
     } else {
         tempLabel.text=@"Session requests";
     }
-    
+     
     [tempView addSubview:tempLabel];
     
     return tempView;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == SECTION_FOLLOWING_YOU)
+    {
+        // DOO NASING FORE NAUW
+    } else if (indexPath.section == SECTION_SESSION_REQUESTS) {
+        // Set the session as accepted
+        
+        PFObject* session = [self.pendingSessions objectAtIndex:indexPath.row];
+        
+        [session setObject:[NSNumber numberWithBool:YES] forKey:SESSION_ACCEPTED];
+        
+        [session saveInBackground];
+    }
+}
+
+#pragma mark CLLocationManagerDelegate methods
+
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation* currentPosition = [locations lastObject];
+    
+    [ParseController updateCurrentPosition:currentPosition];
 }
 
 @end

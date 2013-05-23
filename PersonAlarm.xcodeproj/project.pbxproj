@@ -48,7 +48,6 @@
 		5D8E634016FC49810027B65F /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E633F16FC49810027B65F /* AddFriendViewController.m */; };
 		5D8F517F16F8E2D600F64BE3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */; };
 		5DBCC8E41744E63300E89406 /* SessionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8E31744E63300E89406 /* SessionsTableViewController.m */; };
-		5DBCC8ED174503D600E89406 /* earth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCC8EC174503D600E89406 /* earth-icon.png */; };
 		5DBCC8F417450A2B00E89406 /* SessionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */; };
 		5DBCC8F617450A8600E89406 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBCC8F517450A8600E89406 /* MapKit.framework */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
@@ -175,7 +174,6 @@
 		5D8F517E16F8E2D600F64BE3 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		5DBCC8E21744E63300E89406 /* SessionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsTableViewController.h; sourceTree = "<group>"; };
 		5DBCC8E31744E63300E89406 /* SessionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsTableViewController.m; sourceTree = "<group>"; };
-		5DBCC8EC174503D600E89406 /* earth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "earth-icon.png"; path = "../../../Desktop/earth-icon.png"; sourceTree = "<group>"; };
 		5DBCC8F217450A2B00E89406 /* SessionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionMapViewController.h; sourceTree = "<group>"; };
 		5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMapViewController.m; sourceTree = "<group>"; };
 		5DBCC8F517450A8600E89406 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -360,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				3DF65D75174CFD2600631D27 /* earth-icon.png */,
-				5DBCC8EC174503D600E89406 /* earth-icon.png */,
 				5D28087D1744CEC200E96F04 /* alarm-icon-30.png */,
 				5D28087F1744CEC200E96F04 /* sessions-icon-30.png */,
 				5D1E0AA717427BC10000CB42 /* Switch-on.png */,
@@ -504,7 +501,6 @@
 				5D2808821744CEC200E96F04 /* sessions-icon-30.png in Resources */,
 				5D2808841744D09800E96F04 /* Icon.png in Resources */,
 				5D2808861744D09C00E96F04 /* Icon@2x.png in Resources */,
-				5DBCC8ED174503D600E89406 /* earth-icon.png in Resources */,
 				3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +623,7 @@
 		50017E1C16BBBF8A00F0C093 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -638,7 +634,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -647,7 +643,7 @@
 		50017E1D16BBBF8A00F0C093 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: William Gabrielsson (V82EUM975Q)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Simon Olsson (6EMLH8B74Q)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -658,7 +654,7 @@
 				INFOPLIST_FILE = "PersonAlarm/PersonAlarm-Info.plist";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E97EC31C-DAE6-4B72-B722-52896FF18964";
+				PROVISIONING_PROFILE = "67951A44-9AF8-418D-B042-3430470218A1";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

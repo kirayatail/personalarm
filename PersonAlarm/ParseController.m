@@ -248,7 +248,7 @@
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_SENDER];
-    [query includeKey:SESSION_ACCEPTED];
+//    [query includeKey:SESSION_ACCEPTED];
     [query whereKey:SESSION_SENDER equalTo:currentUser];
     [query whereKey:SESSION_ACCEPTED equalTo:[NSNumber numberWithBool:YES]];
     NSArray* activeSessions = [query findObjects];
@@ -262,6 +262,7 @@
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_RECEIVER];
+//    [query includeKey:SESSION_ACCEPTED];
     [query whereKey:SESSION_RECEIVER equalTo:currentUser];
     NSArray* pendingSessions = [query findObjects];
     result(pendingSessions);
@@ -320,10 +321,6 @@
 }
 
 
-
-
-
-
 #pragma mark Push Notification
 -(void) sendPushNotificationToUser:(PFUser*) user
 {
@@ -333,4 +330,32 @@
     [push sendPushInBackground];
     
 }
+
+#pragma mark UpdateCurrentPosition
++ (void) updateCurrentPosition:(CLLocation *)currentPosition
+{
+    // Get all sessions where current user is the sender
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
+    [query includeKey:SESSION_ACCEPTED];
+    [query includeKey:SESSION_SENDER];
+    [query includeKey:SESSION_SENDER_LOCATION_LATITUD];
+    [query includeKey:SESSION_SENDER_LOCATION_LONGITUD];
+    [query whereKey:SESSION_SENDER equalTo:[PFUser currentUser]];
+    
+    NSArray* result = [query findObjects];
+    
+    // Update session objects with the current position
+    for (PFObject* session in result)
+    {
+        double latitude = currentPosition.coordinate.latitude;
+        double longitude = currentPosition.coordinate.longitude;
+        
+        [session setObject:[NSNumber numberWithDouble:latitude] forKey:SESSION_SENDER_LOCATION_LATITUD];
+        [session setObject:[NSNumber numberWithDouble:longitude] forKey:SESSION_SENDER_LOCATION_LONGITUD];
+        
+        [session saveInBackground];
+    }
+}
+
+
 @end
