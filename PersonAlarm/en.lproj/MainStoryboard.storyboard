@@ -396,7 +396,7 @@
                                             <action selector="donePressed:" destination="yNU-GZ-OMj" id="otA-Lr-hda"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="Gkq-Yc-IQm">
+                                    <barButtonItem key="rightBarButtonItem" image="earth-icon.png" style="plain" id="Gkq-Yc-IQm">
                                         <connections>
                                             <segue destination="KVf-j1-nhe" kind="push" identifier="show session map" id="8zF-OF-T9L"/>
                                         </connections>
@@ -540,6 +540,7 @@
     </scenes>
     <resources>
         <image name="alarm-icon-30.png" width="30" height="30"/>
+        <image name="earth-icon.png" width="20" height="20"/>
         <image name="friends-icon-20.png" width="20" height="20"/>
         <image name="friends-icon-30.png" width="30" height="30"/>
         <image name="panic-button.png" width="341" height="352"/>

@@ -50,6 +50,9 @@
 		5DBCC8E41744E63300E89406 /* SessionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8E31744E63300E89406 /* SessionsTableViewController.m */; };
 		5DBCC8F417450A2B00E89406 /* SessionMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */; };
 		5DBCC8F617450A8600E89406 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBCC8F517450A8600E89406 /* MapKit.framework */; };
+		5DBE66EC174E27B4002192CD /* panic-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE66EB174E27B4002192CD /* panic-button.png */; };
+		5DBE66EF174E2D6C002192CD /* friends-icon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE66ED174E2D6C002192CD /* friends-icon-30.png */; };
+		5DBE66F0174E2D6C002192CD /* friends-icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE66EE174E2D6C002192CD /* friends-icon-20.png */; };
 		5DD1329016C121E700D7CDF6 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */; };
 		5DF73ADC16C4F7EB00B362AE /* TelephoneDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */; };
 		5DF73ADD16C4F7EB00B362AE /* TelephoneAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF73AD816C4F7EB00B362AE /* TelephoneAlarm.m */; };
@@ -177,6 +180,9 @@
 		5DBCC8F217450A2B00E89406 /* SessionMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionMapViewController.h; sourceTree = "<group>"; };
 		5DBCC8F317450A2B00E89406 /* SessionMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionMapViewController.m; sourceTree = "<group>"; };
 		5DBCC8F517450A8600E89406 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5DBE66EB174E27B4002192CD /* panic-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "panic-button.png"; path = "../../../Desktop/panic-button.png"; sourceTree = "<group>"; };
+		5DBE66ED174E2D6C002192CD /* friends-icon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friends-icon-30.png"; path = "../../../Desktop/friends-icon-30.png"; sourceTree = "<group>"; };
+		5DBE66EE174E2D6C002192CD /* friends-icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "friends-icon-20.png"; path = "../../../Desktop/friends-icon-20.png"; sourceTree = "<group>"; };
 		5DD1328E16C121E700D7CDF6 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = PersonAlarm/SettingsTableViewController.h; sourceTree = "<group>"; };
 		5DD1328F16C121E700D7CDF6 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = PersonAlarm/SettingsTableViewController.m; sourceTree = "<group>"; };
 		5DF73AD616C4F7EB00B362AE /* TelephoneDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TelephoneDatasource.m; path = PersonAlarm/TelephoneDatasource.m; sourceTree = "<group>"; };
@@ -357,6 +363,9 @@
 		5DC425B5173CF6CA001F7087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE66ED174E2D6C002192CD /* friends-icon-30.png */,
+				5DBE66EE174E2D6C002192CD /* friends-icon-20.png */,
+				5DBE66EB174E27B4002192CD /* panic-button.png */,
 				3DF65D75174CFD2600631D27 /* earth-icon.png */,
 				5D28087D1744CEC200E96F04 /* alarm-icon-30.png */,
 				5D28087F1744CEC200E96F04 /* sessions-icon-30.png */,
@@ -502,6 +511,9 @@
 				5D2808841744D09800E96F04 /* Icon.png in Resources */,
 				5D2808861744D09C00E96F04 /* Icon@2x.png in Resources */,
 				3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */,
+				5DBE66EC174E27B4002192CD /* panic-button.png in Resources */,
+				5DBE66EF174E2D6C002192CD /* friends-icon-30.png in Resources */,
+				5DBE66F0174E2D6C002192CD /* friends-icon-20.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -92,7 +92,6 @@
     //Query FriendRequest where reciever == currentUser && not accepted
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_FRIEND_REQUEST];
-    [query includeKey:FRIEND_REQUEST_ACCEPTED];
     [query includeKey:FRIEND_REQUEST_RECEIVER];
     [query whereKey:FRIEND_REQUEST_RECEIVER equalTo:currentUser];
     [query whereKey:FRIEND_REQUEST_ACCEPTED equalTo:[NSNumber numberWithBool:NO]];
@@ -248,7 +247,6 @@
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_SENDER];
-//    [query includeKey:SESSION_ACCEPTED];
     [query whereKey:SESSION_SENDER equalTo:currentUser];
     [query whereKey:SESSION_ACCEPTED equalTo:[NSNumber numberWithBool:YES]];
     NSArray* activeSessions = [query findObjects];
@@ -262,7 +260,6 @@
     PFUser* currentUser = [PFUser currentUser];
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_RECEIVER];
-//    [query includeKey:SESSION_ACCEPTED];
     [query whereKey:SESSION_RECEIVER equalTo:currentUser];
     NSArray* pendingSessions = [query findObjects];
     result(pendingSessions);
@@ -292,6 +289,7 @@
             }
         }
     }];
+    result();
 }
 
 #pragma mark UserAnnotationDataSource
@@ -300,10 +298,7 @@
     //Fetch the unique session object
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_RECEIVER];
-    [query includeKey:SESSION_ACCEPTED];
     [query includeKey:SESSION_SENDER];
-    [query includeKey:SESSION_SENDER_LOCATION_LATITUD];
-    [query includeKey:SESSION_SENDER_LOCATION_LONGITUD];
     [query whereKey:SESSION_SENDER equalTo:user];
     [query whereKey:SESSION_RECEIVER equalTo:[PFUser currentUser]];
     NSArray* result = [query findObjects];
@@ -336,10 +331,7 @@
 {
     // Get all sessions where current user is the sender
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
-    [query includeKey:SESSION_ACCEPTED];
     [query includeKey:SESSION_SENDER];
-    [query includeKey:SESSION_SENDER_LOCATION_LATITUD];
-    [query includeKey:SESSION_SENDER_LOCATION_LONGITUD];
     [query whereKey:SESSION_SENDER equalTo:[PFUser currentUser]];
     
     NSArray* result = [query findObjects];

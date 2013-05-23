@@ -79,6 +79,13 @@
     }];
 }
 
+-(void) setUpLocationManager
+{
+    self.clm.distanceFilter = 50;
+    self.clm.delegate = self;
+    [self.clm startUpdatingLocation];
+}
+
 
 -(void) updateSessionTable
 {
