@@ -31,43 +31,30 @@
     self.tabBarController.navigationItem.hidesBackButton = NO;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     self.pc = [[ParseController alloc]init];
-    [self initMap];
     
     
-}
-
--(void) initMap
-{
-    for(PFObject* object in self.sessions){
-        UserAnnotation* annotation = [[UserAnnotation alloc]initWithSession:object];
-        annotation.dataSource = self.pc;
-        [self.annotations addObject:annotation];
-    }
-
-    if([self.annotations count] >0){
-        [self.mapView addAnnotations:self.annotations];
-    }
-
 }
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
-//                                                          selector: @selector(updateMap) userInfo: nil repeats: YES];
-    
-    
-
-
-    
+     [self initMap];
 }
 
--(void)updateMap
+-(void) initMap
 {
-    if([self.mapView.annotations count] >0){
-        [self.mapView removeAnnotations:self.annotations];
-        [self.mapView addAnnotations:self.annotations];
-    }
-    NSLog(@"Updated map");
+    dispatch_queue_t addObjects = dispatch_queue_create("AddSessions", NULL); 
+    dispatch_async(addObjects, ^{
+        for(PFObject* object in self.sessions){
+            UserAnnotation* annotation = [[UserAnnotation alloc]initWithSession:object];
+            [self.annotations addObject:annotation];
+        }
+        if([self.annotations count] >0){
+            dispatch_async(dispatch_get_main_queue(), ^() {
+                [self.mapView addAnnotations:self.annotations];
+            });
+
+        }
+    });
 }
 
 -(NSMutableArray*) annotations

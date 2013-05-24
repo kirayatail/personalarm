@@ -299,32 +299,6 @@
     result();
 }
 
-#pragma mark UserAnnotationDataSource
--(CLLocationCoordinate2D) userAnnotationDataSource:(UserAnnotation *)userAnnotation getPositionForUser:(PFUser *)user
-{
-    //Fetch the unique session object
-    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
-    [query includeKey:SESSION_RECEIVER];
-    [query includeKey:SESSION_SENDER];
-    [query whereKey:SESSION_SENDER equalTo:user];
-    [query whereKey:SESSION_RECEIVER equalTo:[PFUser currentUser]];
-    NSArray* result = [query findObjects];
-    PFObject* session = [result lastObject];
-    [session fetchIfNeeded];
-    
-    //Retrive the coordinate
-    CLLocationCoordinate2D coordinate;
-    double longitud = [[session objectForKey:SESSION_SENDER_LOCATION_LONGITUD] doubleValue];
-    double latitud = [[session objectForKey:SESSION_SENDER_LOCATION_LATITUD] doubleValue];
-    coordinate.longitude = longitud;
-    coordinate.latitude = latitud;
-    return coordinate;
-    
-}
-
-
-
-
 
 #pragma mark Push Notification
 

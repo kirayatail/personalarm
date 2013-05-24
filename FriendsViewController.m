@@ -48,7 +48,10 @@
     dispatch_async(queue, ^(void){
         [self updateFriends];
         [self updatePendingFriends];
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
     });
 }
 

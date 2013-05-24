@@ -83,7 +83,10 @@
    
     dispatch_async(queue, ^(void){
         [self updateSessionTable];
-        [self.tableView reloadData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+
     });
     [self.acceptedSessions removeAllObjects];
 }
@@ -173,8 +176,8 @@
         PFObject* session = [self.activeSessions objectAtIndex:indexPath.row];
         [session fetchIfNeeded];
         PFUser* follower = [session objectForKey:SESSION_RECEIVER];
-        
         [follower fetchIfNeeded];
+    
         
         [cell.textLabel setText:follower.username];
     } else if (indexPath.section == SECTION_SESSION_REQUESTS) {

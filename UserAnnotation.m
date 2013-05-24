@@ -35,18 +35,29 @@
 
 -(void) updateCoordinate
 {
-
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
-                                               fromDate:self.oldTime
-                                                 toDate:[NSDate date]
-                                                options:0];
-    double seconds = components.second;
-    if(seconds > 20 ){
-        NSLog(@"UPDATING");
-        [self.session refresh];
+    if(self.oldTime == nil){
         self.oldTime = [NSDate date];
+    } else {
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+                                                   fromDate:self.oldTime
+                                                     toDate:[NSDate date]
+                                                    options:0];
+        double seconds = components.second;
+        if(seconds > 20 ){ //Update every 20 seconds
+            [self.session refreshInBackgroundWithBlock:^(PFObject* object, NSError* error){
+                if(error){
+                    NSLog(@"UserAnnotation: %@", error.localizedDescription);
+                } else {
+                    self.session = object;
+                }
+            }];
+            self.oldTime = [NSDate date];
+        }
+        
     }
+
+   
 
 }
 
