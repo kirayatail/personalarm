@@ -16,7 +16,8 @@
 
 @end
 @interface UserAnnotation : NSObject<MKAnnotation>
-@property (nonatomic, strong) PFUser* user;
+@property (nonatomic, strong) PFObject* session;
 @property (nonatomic, retain) id<UserAnnotationDataSource> dataSource;
 
+-(id) initWithSession:(PFObject*) session;
 @end

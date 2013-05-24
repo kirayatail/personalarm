@@ -12,8 +12,10 @@
 @interface SessionsTableViewController ()
 @property (nonatomic, strong) NSMutableArray* activeSessions;
 @property (nonatomic, strong) NSMutableArray* pendingSessions;
+@property (nonatomic, strong) NSMutableArray* acceptedSessions;
 @property (nonatomic, strong) ParseController* controller;
 @property (nonatomic, strong) CLLocationManager* clm;
+
 @end
 
 @implementation SessionsTableViewController
@@ -21,6 +23,7 @@
 @synthesize pendingSessions = _pendingSessions;
 @synthesize controller = _controller;
 @synthesize clm = _clm;
+@synthesize acceptedSessions = _acceptedSessions;
 
 -(CLLocationManager *) clm
 {
@@ -41,12 +44,29 @@
     self.tableView.backgroundView = nil;
 }
 
+
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"show session map"]){
+        [segue.destinationViewController setSessions:self.acceptedSessions];
+    }
+}
+
 -(NSMutableArray*) activeSessions
 {
     if(_activeSessions == nil){
         _activeSessions = [[NSMutableArray alloc]init];
     }
     return _activeSessions;
+}
+
+-(NSMutableArray*) acceptedSessions
+{
+    if(_acceptedSessions == nil){
+        _acceptedSessions = [[NSMutableArray alloc]init];
+    }
+    return _acceptedSessions;
 }
 
 
@@ -63,6 +83,7 @@
         [self updateSessionTable];
         [self.tableView reloadData];
     });
+    [self.acceptedSessions removeAllObjects];
 }
 - (IBAction)donePressed:(UIBarButtonItem *)sender {
     [self startSessions];
@@ -71,8 +92,7 @@
 -(void) startSessions
 {
     [self.delegate sessionsTableViewControllerCreateSessions:self success:^{
-        self.clm.delegate = self;
-        [self.clm startUpdatingLocation];
+        [self setUpLocationManager];
         
     }failure:^(WebServiceResponse response){
         
@@ -162,6 +182,7 @@
         if (accepted)
         {
              // Set checkmark if the session is accepted
+            [self.acceptedSessions addObject:session];
             [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
         }
     }

@@ -333,7 +333,6 @@
     PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
     [query includeKey:SESSION_SENDER];
     [query whereKey:SESSION_SENDER equalTo:[PFUser currentUser]];
-    
     NSArray* result = [query findObjects];
     
     // Update session objects with the current position

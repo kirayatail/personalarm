@@ -7,18 +7,34 @@
 //
 
 #import "UserAnnotation.h"
+#import "NetworkConstants.h"
 
 @implementation UserAnnotation
 
+-(id) initWithSession:(PFObject *)session
+{
+    self = [super init];
+    if(self) {
+        self.session = session;
+    }
+    return self;
+}
+
 -(CLLocationCoordinate2D) coordinate
 {
-   return [self.dataSource userAnnotationDataSource:self getPositionForUser:self.user];
+    CLLocationCoordinate2D theCoordinate;
+    [self.session refresh];
+    theCoordinate.longitude = [[self.session objectForKey:SESSION_SENDER_LOCATION_LONGITUD]doubleValue];
+    theCoordinate.latitude = [[self.session objectForKey:SESSION_SENDER_LOCATION_LATITUD]doubleValue];
+    return theCoordinate;
 }
 
 -(NSString*) title
 {
-    [self.user fetchIfNeeded];
-    return self.user.username;
+    PFUser* user = [self.session objectForKey:SESSION_SENDER];
+    [user fetchIfNeeded];
+    return user.username;
 }
+
 
 @end
