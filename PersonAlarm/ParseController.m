@@ -81,7 +81,13 @@
         [friendRequest setObject:receiver forKey:FRIEND_REQUEST_RECEIVER];
         [friendRequest setObject:[NSNumber numberWithBool:NO] forKey:FRIEND_REQUEST_ACCEPTED];
         [friendRequest saveInBackground];
-        [self sendPushNotificationToUser:receiver];
+        
+        //Send push notification
+        PFUser* user =[PFUser currentUser];
+        [user fetchIfNeeded];
+        NSString* sender = user.username;
+        NSString* message = [sender stringByAppendingString:@" has sent you a friend request!"];
+        [self sendPushNotificationToUser:receiver withMessage:message];
         success();
     }
 }
@@ -224,7 +230,6 @@
             PFObject* notificationForFriend = [PFObject objectWithClassName:PARSECLASS_FRIENDSHIPS_DELETED];
             
             [currentUser fetchIfNeeded];
-            NSLog(@"Username: %@", currentUser.username);
             
             [notificationForFriend setObject:currentUser forKey:FRIENDSHIPS_DELETED_SENDER];
             [notificationForFriend setObject:friend forKey:FRIENDSHIPS_DELETED_RECEIVER];
@@ -270,7 +275,7 @@
 {
     PFUser* currentUser = [PFUser currentUser];
     //TODO: Update current friends
-
+    [currentUser fetchIfNeeded];
     
     PFRelation* friendsRelation = [currentUser relationforKey:RELATIONS_FRIEND];
     PFQuery* queryFriends = [friendsRelation query];
@@ -286,6 +291,8 @@
                 [session setObject:currentUser forKey:SESSION_SENDER];
                 [session setObject:[NSNumber numberWithBool:NO] forKey:SESSION_ACCEPTED];
                 [session saveInBackground];
+                NSString* message = [currentUser.username stringByAppendingString:@" wants to start a session with you"];
+                [self sendPushNotificationToUser:theFriend withMessage:message];
             }
         }
     }];
@@ -316,16 +323,23 @@
 }
 
 
-#pragma mark Push Notification
--(void) sendPushNotificationToUser:(PFUser*) user
-{
-    PFPush *push = [[PFPush alloc] init];
-    [push setChannel:user.objectId];
-    [push setMessage:@"Friend request!"];
-    [push sendPushInBackground];
-    
-}
 
+
+
+#pragma mark Push Notification
+
+
+-(void) sendPushNotificationToUser:(PFUser*) user withMessage:(NSString*) message
+{
+    [user fetchIfNeeded];
+    PFPush *push = [[PFPush alloc] init];
+    NSString* userPrefix = @"User_";
+    NSString* objectID = user.objectId;
+    NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
+    [push setChannel:uniqueChannelName];
+    [push setMessage:message];
+    [push sendPushInBackground];
+}
 #pragma mark UpdateCurrentPosition
 + (void) updateCurrentPosition:(CLLocation *)currentPosition
 {
@@ -347,6 +361,8 @@
         [session saveInBackground];
     }
 }
+
+
 
 
 @end

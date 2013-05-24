@@ -182,6 +182,7 @@
         cellText = friend.username;
     } else if(indexPath.section == SECTION_PENDING_FRIEND) {
         PFObject* friendRequest = [self.friendRequests objectAtIndex:indexPath.row];
+        [friendRequest fetchIfNeeded];
         PFUser* friend = [friendRequest objectForKey:FRIEND_REQUEST_SENDER];
         [friend fetchIfNeeded];
         cellText = friend.username;
@@ -215,7 +216,6 @@
             
         } else if(indexPath.section == SECTION_PENDING_FRIEND){
             //Decline Friend Request
-           
             PFObject* friendRequest = [self.friendRequests objectAtIndex:indexPath.row];
             [self.delegate friendsViewController:self declineFriendRequest:friendRequest success:^{
                 [self.friendRequests removeObjectAtIndex:indexPath.row];

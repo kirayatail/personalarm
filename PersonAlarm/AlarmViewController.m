@@ -150,6 +150,13 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    //Register the user to push notifications
+    PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+    NSString* userPrefix = @"User_";
+    NSString* objectID = [PFUser currentUser].objectId;
+    NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
+    [currentInstallation addUniqueObject:uniqueChannelName forKey:@"channels"];
+    [currentInstallation saveInBackground];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -189,6 +196,15 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+   
+    //Register the user to push notifications
+    PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+    NSString* userPrefix = @"User_";
+    NSString* objectID = [PFUser currentUser].objectId;
+    NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
+    [currentInstallation addUniqueObject:uniqueChannelName forKey:@"channels"];
+    [currentInstallation saveInBackground];
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

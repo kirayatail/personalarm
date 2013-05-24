@@ -171,6 +171,7 @@
     
     if (indexPath.section == SECTION_FOLLOWING_YOU) {
         PFObject* session = [self.activeSessions objectAtIndex:indexPath.row];
+        [session fetchIfNeeded];
         PFUser* follower = [session objectForKey:SESSION_RECEIVER];
         
         [follower fetchIfNeeded];
@@ -178,6 +179,7 @@
         [cell.textLabel setText:follower.username];
     } else if (indexPath.section == SECTION_SESSION_REQUESTS) {
         PFObject* session = [self.pendingSessions objectAtIndex:indexPath.row];
+        [session fetchIfNeeded];
         PFUser* sender = [session objectForKey:SESSION_SENDER];
         
         [sender fetchIfNeeded];

@@ -34,15 +34,30 @@
 -(void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
 
+    PFInstallation* currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
     if([PFUser currentUser]){
         //Register the user to push notifications
-        PFInstallation* currentInstallation = [PFInstallation currentInstallation];
-        [currentInstallation setDeviceTokenFromData:deviceToken];
-        [currentInstallation addUniqueObject:[PFUser currentUser].objectId forKey:@"channels"];
+        NSString* userPrefix = @"User_";
+        PFUser* user = [PFUser currentUser];
+        [user fetchIfNeeded];
+        NSString* objectID = user.objectId;
+        NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
+        [currentInstallation addUniqueObject:uniqueChannelName forKey:@"channels"];
         [currentInstallation saveInBackground];
     }
 }
 
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //Receieve and handle push notification when the application is running (and in background?)
+    //TODO: Sessions and shit. FAAAAAAK THIIIZ
+    UITabBarController* rootVC =(UITabBarController*) self.window.rootViewController;
+    NSArray* viewControllers = rootVC.viewControllers;
+    UIViewController* friendsVC = [viewControllers objectAtIndex:2];
+    friendsVC.tabBarItem.badgeValue = @"1";
+}
 
 							
 - (void)applicationWillResignActive:(UIApplication *)application

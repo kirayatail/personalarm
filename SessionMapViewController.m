@@ -52,8 +52,10 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
-                                                      selector: @selector(updateMap) userInfo: nil repeats: YES];
+//    [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
+//                                                          selector: @selector(updateMap) userInfo: nil repeats: YES];
+    
+    
 
 
     
@@ -65,8 +67,7 @@
         [self.mapView removeAnnotations:self.annotations];
         [self.mapView addAnnotations:self.annotations];
     }
-  
-    [self.mapView setCenterCoordinate:self.mapView.region.center animated:NO];
+    NSLog(@"Updated map");
 }
 
 -(NSMutableArray*) annotations
