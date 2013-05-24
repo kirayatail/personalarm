@@ -7,6 +7,7 @@
 //
 
 #import "LocationController.h"
+#import "ParseController.h"
 @interface LocationController () <CLLocationManagerDelegate>
 
 @property(nonatomic) BOOL isBroadcasting;
@@ -22,7 +23,8 @@
 
 -(id)init{
     if(self = [super init]){
-        this.clm = [[CLLocationManager alloc] init];
+        self.clm = [[CLLocationManager alloc] init];
+        [self.clm setDelegate:self];
     }
     
     return self;
@@ -38,14 +40,21 @@
 }
 
 -(void)startBroadcast{
-    
+    self.isBroadcasting = YES;
+    [self.clm startUpdatingLocation];
 }
 
 -(void)stopBroadcast{
-    
+    self.isBroadcasting = NO;
+    [self.clm stopUpdatingLocation];
 }
 
-
-
+-(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation* currentPosition = [locations lastObject];
+    if(self.isBroadcasting){
+        [ParseController updateCurrentPosition:currentPosition];
+    }
+}
 
 @end
