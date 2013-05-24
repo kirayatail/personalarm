@@ -25,6 +25,7 @@
     if(self = [super init]){
         self.clm = [[CLLocationManager alloc] init];
         [self.clm setDelegate:self];
+        self.clm.distanceFilter = 30; //30 meters
     }
     
     return self;

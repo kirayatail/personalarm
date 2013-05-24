@@ -8,6 +8,7 @@
 
 #import "SessionsTableViewController.h"
 #import "ParseController.h"
+#import "LocationController.h"
 
 @interface SessionsTableViewController ()
 @property (nonatomic, strong) NSMutableArray* activeSessions;
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray* acceptedSessions;
 @property (nonatomic, strong) ParseController* controller;
 @property (nonatomic, strong) CLLocationManager* clm;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sessionButton;
 
 @end
 
@@ -86,25 +88,29 @@
     [self.acceptedSessions removeAllObjects];
 }
 - (IBAction)donePressed:(UIBarButtonItem *)sender {
+    
     [self startSessions];
 }
 
 -(void) startSessions
 {
+    self.sessionButton.title = @"Stop Session";
     [self.delegate sessionsTableViewControllerCreateSessions:self success:^{
-        [self setUpLocationManager];
+        LocationController* locationController = [LocationController sharedLocationController];
+        if(locationController.isBroadcasting){
+            //DO naaasing
+        } else{
+            [locationController startBroadcast];
+        }
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+     [defaults setBool:YES forKey:PA_NSUDEFAULTS_ACTIVESESSION];
+     
         
     }failure:^(WebServiceResponse response){
-        
+        //Handle error
     }];
 }
 
--(void) setUpLocationManager
-{
-    self.clm.distanceFilter = 50;
-    self.clm.delegate = self;
-    [self.clm startUpdatingLocation];
-}
 
 
 -(void) updateSessionTable
@@ -246,13 +252,5 @@
     }
 }
 
-#pragma mark CLLocationManagerDelegate methods
-
--(void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    CLLocation* currentPosition = [locations lastObject];
-    
-    [ParseController updateCurrentPosition:currentPosition];
-}
 
 @end

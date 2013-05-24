@@ -390,7 +390,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Sessions" id="vq1-nC-abv">
-                                    <barButtonItem key="leftBarButtonItem" title="I'm done!" id="D9c-T5-Ffs">
+                                    <barButtonItem key="leftBarButtonItem" title="Start Session" id="D9c-T5-Ffs">
                                         <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="donePressed:" destination="yNU-GZ-OMj" id="otA-Lr-hda"/>
@@ -433,6 +433,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Sessions" id="Ht9-eA-XRT"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="sessionButton" destination="D9c-T5-Ffs" id="Cim-49-Tno"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inj-Cq-MUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

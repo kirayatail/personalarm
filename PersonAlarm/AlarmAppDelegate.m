@@ -8,15 +8,26 @@
 
 #import "AlarmAppDelegate.h"
 #import <Parse/Parse.h>
+#import "NetworkConstants.h"
+#import "LocationController.h"
 
 
 @implementation AlarmAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    //Register for Parse
     [Parse setApplicationId:@"nJBlt4J0vsGWzNbDmOAaRluQi8bN0SB4M73asOCH" clientKey:@"fsCqbOS73hOBz3ZqdFVCNCRnPguWpqL6RXbdQQ7E"];
+    //Register for Push Notifications 
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
+    
+    NSUserDefaults *numbers = [NSUserDefaults standardUserDefaults];
+    BOOL userHasActiveSession = [numbers boolForKey:PA_NSUDEFAULTS_ACTIVESESSION];
+    if(userHasActiveSession){
+        //Start updating the location
+        LocationController* controller = [LocationController sharedLocationController];
+        [controller startBroadcast];
+    }
     return YES;
 }
 

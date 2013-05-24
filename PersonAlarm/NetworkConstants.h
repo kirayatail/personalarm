@@ -34,6 +34,9 @@ typedef enum WebServiceResponses{
 #define SESSION_SENDER_LOCATION_LONGITUD @"Location_Longitud"
 #define SESSION_SENDER_LOCATION_LATITUD @"Location_Latitud"
 
+//Used in NSUserDefaults, YES if the user has started a Session
+#define PA_NSUDEFAULTS_ACTIVESESSION @"SessionActive"
+
 
 
 #endif
