@@ -128,6 +128,10 @@
             [self updateSessionButton];
             [self.tableView reloadData];
         });
+        LocationController* controller = [LocationController sharedLocationController];
+        if(controller.isBroadcasting){
+            [controller stopBroadcast];
+        }
     }failure:^(WebServiceResponse response){
         
     }];
