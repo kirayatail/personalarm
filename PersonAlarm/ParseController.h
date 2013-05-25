@@ -13,7 +13,7 @@
 #import "SessionsTableViewController.h"
 #import "UserAnnotation.h"
 #import <Parse/Parse.h>
-@interface ParseController : NSObject<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate, SessionsTableViewControllerDelegate, UserAnnotationDataSource>
+@interface ParseController : NSObject<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate, SessionsTableViewControllerDelegate>
 
 + (void) updateCurrentPosition:(CLLocation *)currentPosition;
 

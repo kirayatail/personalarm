@@ -390,10 +390,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Sessions" id="vq1-nC-abv">
-                                    <barButtonItem key="leftBarButtonItem" title="Start Session" id="D9c-T5-Ffs">
-                                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <barButtonItem key="leftBarButtonItem" title="Start Sessions" id="B8g-lM-ueE">
                                         <connections>
-                                            <action selector="donePressed:" destination="yNU-GZ-OMj" id="otA-Lr-hda"/>
+                                            <action selector="donePressed:" destination="yNU-GZ-OMj" id="XXO-S3-Y5X"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" image="earth-icon.png" style="plain" id="Gkq-Yc-IQm">
@@ -434,7 +433,7 @@
                     <navigationItem key="navigationItem" title="Sessions" id="Ht9-eA-XRT"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="sessionButton" destination="D9c-T5-Ffs" id="Cim-49-Tno"/>
+                        <outlet property="sessionButton" destination="B8g-lM-ueE" id="4GX-wa-LWN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inj-Cq-MUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,6 +548,63 @@
         <image name="panic-button.png" width="341" height="352"/>
         <image name="sessions-icon-30.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AddFriendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFriendViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="resultButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="AlarmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="alarmSwitch" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="CallSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CallSettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FriendsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="MessageSettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageSettingsViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SessionMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="SessionsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SessionsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="donePressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="sessionButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="SettingsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

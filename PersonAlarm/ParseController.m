@@ -274,7 +274,6 @@
 -(void) sessionsTableViewControllerCreateSessions:(SessionsTableViewController *)sessionsTVC success:(CreateSessionsSuccess)result failure:(ActiveSessionsFailure)response
 {
     PFUser* currentUser = [PFUser currentUser];
-    //TODO: Update current friends
     [currentUser fetchIfNeeded];
     
     PFRelation* friendsRelation = [currentUser relationforKey:RELATIONS_FRIEND];
@@ -297,6 +296,27 @@
         }
     }];
     result();
+}
+
+-(void) sessionsTableViewControllerDeleteSessions:(SessionsTableViewController *)stvc success:(DeleteSessionsSuccess)success failure:(DeleteSessionsFailure)response
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFQuery* query = [PFQuery queryWithClassName:PARSECLASS_SESSION];
+    [query includeKey:SESSION_SENDER];
+    [query whereKey:SESSION_SENDER equalTo:currentUser];
+    [query findObjectsInBackgroundWithBlock:^(NSArray* result, NSError* error){
+        if(error){
+            NSLog(@"Error in deleteSessions: %@", error.localizedDescription);
+        } else {
+            for(PFObject* session in result){
+                [session deleteInBackground];
+            }
+            success();
+        }
+    }];
+
+    
+    
 }
 
 

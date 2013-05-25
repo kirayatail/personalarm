@@ -15,7 +15,6 @@
 @property (nonatomic, strong) NSMutableArray* pendingSessions;
 @property (nonatomic, strong) NSMutableArray* acceptedSessions;
 @property (nonatomic, strong) ParseController* controller;
-@property (nonatomic, strong) CLLocationManager* clm;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sessionButton;
 
 @end
@@ -24,17 +23,10 @@
 @synthesize activeSessions = _activeSessions;
 @synthesize pendingSessions = _pendingSessions;
 @synthesize controller = _controller;
-@synthesize clm = _clm;
 @synthesize acceptedSessions = _acceptedSessions;
 
--(CLLocationManager *) clm
-{
-    if (_clm == nil)
-    {
-        _clm = [[CLLocationManager alloc] init];
-    }
-    return _clm;
-}
+#define BUTTON_START @"Start Sessions"
+#define BUTTON_STOP @"Stop Sessions"
 
 - (void)viewDidLoad
 {
@@ -44,6 +36,25 @@
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"switch-background.png"]];
     self.tableView.backgroundView = nil;
+    [self updateSessionButton];
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
+    
+    [super viewWillAppear:animated];
+    
+    dispatch_queue_t queue = dispatch_queue_create("FetchSessionsQueue", NULL);
+    
+    dispatch_async(queue, ^(void){
+        [self updateSessionTable];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
+    });
+    [self.acceptedSessions removeAllObjects];
 }
 
 
@@ -72,46 +83,66 @@
 }
 
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self.tableView reloadData];
-    [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
-    
-    [super viewWillAppear:animated];
-    
-    dispatch_queue_t queue = dispatch_queue_create("FetchSessionsQueue", NULL);
-   
-    dispatch_async(queue, ^(void){
-        [self updateSessionTable];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-
-    });
-    [self.acceptedSessions removeAllObjects];
-}
 - (IBAction)donePressed:(UIBarButtonItem *)sender {
-    
-    [self startSessions];
+    if([sender.title isEqualToString:BUTTON_START]){
+        [self startSessions];
+    } else if([sender.title isEqualToString:BUTTON_STOP]){
+        [self stopSessions];
+    }
 }
 
 -(void) startSessions
 {
     self.sessionButton.title = @"Stop Session";
     [self.delegate sessionsTableViewControllerCreateSessions:self success:^{
+       //Success
         LocationController* locationController = [LocationController sharedLocationController];
         if(locationController.isBroadcasting){
             //DO naaasing
         } else{
             [locationController startBroadcast];
         }
-     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-     [defaults setBool:YES forKey:PA_NSUDEFAULTS_ACTIVESESSION];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:YES forKey:PA_NSUDEFAULTS_ACTIVESESSION];
+        [defaults synchronize];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateSessionButton];
+            [self.tableView reloadData];
+        });
+
      
         
     }failure:^(WebServiceResponse response){
         //Handle error
     }];
+}
+
+-(void) stopSessions
+{
+    [self.delegate sessionsTableViewControllerDeleteSessions:self success:^{
+        [self.activeSessions removeAllObjects];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:NO forKey:PA_NSUDEFAULTS_ACTIVESESSION];
+        [defaults synchronize];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateSessionButton];
+            [self.tableView reloadData];
+        });
+    }failure:^(WebServiceResponse response){
+        
+    }];
+}
+
+//Called when a Session is started or stopped 
+-(void) updateSessionButton
+{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    BOOL userHasActiveSession = [defaults boolForKey:PA_NSUDEFAULTS_ACTIVESESSION];
+    if(userHasActiveSession){
+        [self.sessionButton setTitle:BUTTON_STOP];
+    } else  {
+        [self.sessionButton setTitle:BUTTON_START];
+    }
 }
 
 
@@ -123,9 +154,12 @@
             self.activeSessions = [result mutableCopy];
         } else
      {
+         [self.activeSessions removeAllObjects];
          //No one is following. 
      }
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }failure:^(WebServiceResponse response){
         //Handle error
     }];
@@ -136,8 +170,11 @@
             self.pendingSessions = [result mutableCopy];
         } else
         {
-            // No pending sessions
+            [self.pendingSessions removeAllObjects]; 
         }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     } failure:^(WebServiceResponse response){
         // Handle error
     }];
@@ -197,9 +234,6 @@
             [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
         }
     }
-    
-    // Configure the cell...
-    
     return cell;
 }
 
