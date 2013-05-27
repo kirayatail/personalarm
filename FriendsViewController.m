@@ -53,6 +53,8 @@
         });
         
     });
+    //Remove badges
+    self.parentViewController.tabBarItem.badgeValue = nil;
 }
 
 

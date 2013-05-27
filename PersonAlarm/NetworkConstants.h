@@ -38,5 +38,11 @@ typedef enum WebServiceResponses{
 #define PA_NSUDEFAULTS_ACTIVESESSION @"SessionActive"
 
 
+//Push notifications
+#define PA_PUSH_TYPE @"PushType"
+#define PA_PUSH_FRIEND_REQUEST @"Friend"
+#define PA_PUSH_SESSION_REQUEST @"Session"
+#define PA_PUSH_ALARM_ACTIVATE @"Alarm"
+
 
 #endif

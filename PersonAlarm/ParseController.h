@@ -16,5 +16,6 @@
 @interface ParseController : NSObject<AlarmViewControllerDelegate, AddFriendViewControllerDelegate, FriendsViewControllerDelegate, SessionsTableViewControllerDelegate>
 
 + (void) updateCurrentPosition:(CLLocation *)currentPosition;
+-(void) activateAlarm;
 
 @end

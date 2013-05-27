@@ -73,6 +73,9 @@
     self.delegate = self.parseController;  
 }
 - (IBAction)alarmDidActivate:(UIButton *)sender {
+    
+    ParseController* pc = [[ParseController alloc]init];
+    [pc activateAlarm];
 //    if (!self.alarmIsActive) {
 //        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
 //        [sender setBackgroundImage:switchOnImage forState:UIControlStateNormal];

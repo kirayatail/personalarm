@@ -55,6 +55,9 @@
         
     });
     [self.acceptedSessions removeAllObjects];
+    //Remove badges
+//    self.tabBarItem.badgeValue = nil;
+    self.parentViewController.tabBarItem.badgeValue = nil;
 }
 
 

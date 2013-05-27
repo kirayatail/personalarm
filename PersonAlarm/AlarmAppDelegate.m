@@ -28,6 +28,10 @@
         LocationController* controller = [LocationController sharedLocationController];
         [controller startBroadcast];
     }
+    
+    
+    //Remove the badges
+    application.applicationIconBadgeNumber = 0;
     return YES;
 }
 
@@ -51,12 +55,23 @@
 
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    //Receieve and handle push notification when the application is running (and in background?)
-    //TODO: Sessions and shit. FAAAAAAK THIIIZ
-    UITabBarController* rootVC =(UITabBarController*) self.window.rootViewController;
-    NSArray* viewControllers = rootVC.viewControllers;
-    UIViewController* friendsVC = [viewControllers objectAtIndex:2];
-    friendsVC.tabBarItem.badgeValue = @"1";
+    //Handle push notification when the application is running
+    NSString* type = [userInfo objectForKey:PA_PUSH_TYPE]; //TODO: SET PUSH TYPE
+    if([type isEqualToString:PA_PUSH_SESSION_REQUEST]){
+        //Hansle session request
+        UITabBarController* rootVC =(UITabBarController*) self.window.rootViewController;
+        NSArray* viewControllers = rootVC.viewControllers;
+        UIViewController* sessionsVC = [viewControllers objectAtIndex:1];
+        sessionsVC.tabBarItem.badgeValue = @"1";
+    } else if([type isEqualToString:PA_PUSH_FRIEND_REQUEST]){
+        //Handle Friend Request
+        UITabBarController* rootVC =(UITabBarController*) self.window.rootViewController;
+        NSArray* viewControllers = rootVC.viewControllers;
+        UIViewController* friendsVC = [viewControllers objectAtIndex:2];
+        friendsVC.tabBarItem.badgeValue = @"1";
+    } else if([type isEqualToString:PA_PUSH_ALARM_ACTIVATE]){
+        [PFPush handlePush:userInfo];
+    }
 }
 
 							

@@ -87,7 +87,7 @@
         [user fetchIfNeeded];
         NSString* sender = user.username;
         NSString* message = [sender stringByAppendingString:@" has sent you a friend request!"];
-        [self sendPushNotificationToUser:receiver withMessage:message];
+        [self sendPushNotificationToUser:receiver withmessage:message andPushType:PA_PUSH_FRIEND_REQUEST];
         success();
     }
 }
@@ -291,7 +291,7 @@
                 [session setObject:[NSNumber numberWithBool:NO] forKey:SESSION_ACCEPTED];
                 [session saveInBackground];
                 NSString* message = [currentUser.username stringByAppendingString:@" wants to start a session with you"];
-                [self sendPushNotificationToUser:theFriend withMessage:message];
+                [self sendPushNotificationToUser:theFriend withmessage:message andPushType:PA_PUSH_SESSION_REQUEST];
             }
         }
     }];
@@ -322,17 +322,54 @@
 
 #pragma mark Push Notification
 
+//Deprecated
+//-(void) sendPushNotificationToUser:(PFUser*) user withMessage:(NSString*) message
+//{
+//    [user fetchIfNeeded];
+//    PFPush *push = [[PFPush alloc] init];
+//    NSString* userPrefix = @"User_";
+//    NSString* objectID = user.objectId;
+//    NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
+//    [push setChannel:uniqueChannelName];
+//    [push setMessage:message];
+//    [push sendPushInBackground];
+//}
 
--(void) sendPushNotificationToUser:(PFUser*) user withMessage:(NSString*) message
+-(void) sendPushNotificationToUser:(PFUser*)user withmessage:(NSString*)message andPushType:(NSString*)pushType;
 {
-    [user fetchIfNeeded];
+    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
+                          message, @"alert",
+                          @"Increment", @"badge",
+                          pushType, PA_PUSH_TYPE,
+                          nil];
     PFPush *push = [[PFPush alloc] init];
     NSString* userPrefix = @"User_";
     NSString* objectID = user.objectId;
     NSString* uniqueChannelName = [userPrefix stringByAppendingString:objectID];
     [push setChannel:uniqueChannelName];
-    [push setMessage:message];
+    [push setData:data];
     [push sendPushInBackground];
+    
+}
+
+#pragma mark Alarm
+-(void) activateAlarm
+{
+    PFUser* currentUser = [PFUser currentUser];
+    PFRelation* friendsRelation = [currentUser relationforKey:RELATIONS_FRIEND];
+    PFQuery* queryFriends = [friendsRelation query];
+    [queryFriends findObjectsInBackgroundWithBlock:^(NSArray* result, NSError* error){
+        if(error){
+            NSLog(@"Error #3 in friendsViewControllerGetFriends: %@", error.localizedDescription);
+            //Handle error
+        } else {
+            for(PFUser* user in result){
+                [currentUser fetchIfNeeded];
+                NSString* message = [currentUser.username stringByAppendingString:@"'s alarm has been activated!"];
+                [self sendPushNotificationToUser:user withmessage:message andPushType:PA_PUSH_ALARM_ACTIVATE];
+            }
+        }
+    }];
 }
 #pragma mark UpdateCurrentPosition
 + (void) updateCurrentPosition:(CLLocation *)currentPosition
@@ -355,6 +392,8 @@
         [session saveInBackground];
     }
 }
+
+
 
 
 
