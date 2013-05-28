@@ -125,6 +125,7 @@
     //Let the sender know that the receiver has accepted the FriendRequest
     [friendRequest setObject:[NSNumber numberWithBool:YES] forKey:FRIEND_REQUEST_ACCEPTED];
     [friendRequest saveInBackground];
+    success();
     
     
 }
@@ -205,6 +206,7 @@
             PFRelation* friends = [currentUser relationforKey:RELATIONS_FRIEND];
             [friendToBeDeleted fetchIfNeeded];
             [friends removeObject:friendToBeDeleted];
+            [deletedFriendShip deleteInBackground];
         } 
         [currentUser saveInBackground];
 

@@ -31,30 +31,34 @@
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"switch-background.png"]];
     self.tableView.backgroundView = nil;
+    
 }
 - (IBAction)refresh:(UIBarButtonItem *)sender {
-    [self updateFriends];
-    [self updatePendingFriends];
+    [self refreshTableView];
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackOpaque];
 
-
+    [self refreshTableView];
     [super viewWillAppear:animated];
-    dispatch_queue_t queue = dispatch_queue_create("FetchFriendsQueue", NULL);
-    
-    dispatch_async(queue, ^(void){
-        [self updateFriends];
-        [self updatePendingFriends];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-        
-    });
+//    [self.tableView reloadData];
     //Remove badges
     self.parentViewController.tabBarItem.badgeValue = nil;
+}
+
+-(void) refreshTableView
+{
+    dispatch_queue_t queue = dispatch_queue_create("FetchFriendsQueue", NULL);
+    dispatch_async(queue, ^(void){
+        [self updatePendingFriends];
+        [self updateFriends];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView reloadData];
+//        });
+        
+    });
 }
 
 
@@ -81,15 +85,19 @@
     [self.delegate friendsViewControllerGetFriendRequests:self success:^(NSArray* friendRequests){
         if([friendRequests count] > 0){
             fvc.friendRequests = [friendRequests mutableCopy];
-            //Update tableView
-            [fvc.tableView reloadData];
+//            //Update tableView
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [fvc.tableView reloadData];
+            });
+//            [fvc.tableView reloadData];
         } else {
             //There is no pending Friends on remote server
             //Delete the local list of Friend requests
             if([fvc.friendRequests count] > 0){
                 [fvc.friendRequests removeAllObjects];
-                //Update tableView
-                [fvc.tableView reloadData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [fvc.tableView reloadData];
+                });
             } else {
                 //FriendRequests is already emtpy, do nothing..
             }
@@ -105,12 +113,19 @@
             fvc.friends = [[NSMutableArray alloc] init];
             fvc.friends = [friends mutableCopy];
             //Update tableView
-            [fvc.tableView reloadData];
-        } else if ([fvc.friends count] > 0) {
-            [fvc.friends removeAllObjects];
-            [fvc.tableView reloadData];
-        } else {
-            // DO NASING
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [fvc.tableView reloadData];
+            });
+
+        } else{
+            if([fvc.friends count] >0){
+                [fvc.friends removeAllObjects];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [fvc.tableView reloadData];
+                });} else{
+                    //DO nasing
+                }
+
         }
     }failure:^(WebServiceResponse response) {
         // Handle error
@@ -140,10 +155,11 @@
 }
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(section ==0) {
+    if(section ==SECTION_FRIEND) {
         return [self.friends count];
-    } else if (section == 1) {
+    } else if (section == SECTION_PENDING_FRIEND) {
         return [self.friendRequests count];
+
     } else {
         return 0;
     }
@@ -161,13 +177,20 @@
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     if (indexPath.section ==  SECTION_FRIEND)
     {
         //TODO: Handle event
     } else if(indexPath.section == SECTION_PENDING_FRIEND){
         PFObject *friendRequest = [self.friendRequests objectAtIndex:indexPath.row];
+        __block FriendsViewController* fvc = self;
         [self.delegate friendsViewController:self acceptFriendRequest:friendRequest success:^{
-                [self updateFriends];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                    [fvc refreshTableView];
+            });
+            
+            
+   
         } failure:^(WebServiceResponse response) {
             //TODO: Handle error
         }];
