@@ -341,7 +341,7 @@
 {
     NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
                           message, @"alert",
-                          @"Increment", @"badge",
+                          @"1", @"badge",
                           pushType, PA_PUSH_TYPE,
                           nil];
     PFPush *push = [[PFPush alloc] init];
