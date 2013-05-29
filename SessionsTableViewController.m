@@ -295,6 +295,7 @@
         [session setObject:[NSNumber numberWithBool:YES] forKey:SESSION_ACCEPTED];
         
         [session saveInBackground];
+        [self.tableView reloadData];
     }
 }
 

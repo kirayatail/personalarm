@@ -20,6 +20,7 @@
 @property (nonatomic, strong) HTTPController* httpController;
 @property (nonatomic, strong) ParseController* parseController;
 @property BOOL alarmIsActive;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 
@@ -44,7 +45,7 @@
     
     [self.view addSubview:backgroundImage];
     [self.view sendSubviewToBack:backgroundImage];
-    
+    self.messageLabel.hidden = YES;
     /* ---------------------- */
     
     /* Set up alarm switch */
@@ -72,10 +73,14 @@
     self.parseController = [[ParseController alloc]init];
     self.delegate = self.parseController;  
 }
+
+
 - (IBAction)alarmDidActivate:(UIButton *)sender {
     
     ParseController* pc = [[ParseController alloc]init];
     [pc activateAlarm];
+    sender.enabled = NO;
+    self.messageLabel.hidden = NO;
 //    if (!self.alarmIsActive) {
 //        UIImage* switchOnImage = [UIImage imageNamed:@"Switch-on.png"];
 //        [sender setBackgroundImage:switchOnImage forState:UIControlStateNormal];

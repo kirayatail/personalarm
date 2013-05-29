@@ -18,7 +18,9 @@
 		3D97BAD7173A421100B35326 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D97BAD6173A421100B35326 /* StoreKit.framework */; };
 		3D97BAD9173A43A500B35326 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D97BAD8173A43A500B35326 /* Accounts.framework */; };
 		3D97BADC173A4A0400B35326 /* ParseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D97BADB173A4A0400B35326 /* ParseController.m */; };
-		3D97C28C17538D90004673CC /* panic-button .png in Resources */ = {isa = PBXBuildFile; fileRef = 3D97C28B17538D90004673CC /* panic-button .png */; };
+		3DAC6EE01755E32600C89930 /* friends-icon-20.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC6EDD1755E32600C89930 /* friends-icon-20.png */; };
+		3DAC6EE11755E32600C89930 /* friends-icon-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC6EDE1755E32600C89930 /* friends-icon-30.png */; };
+		3DAC6EE21755E32600C89930 /* panic-button .png in Resources */ = {isa = PBXBuildFile; fileRef = 3DAC6EDF1755E32600C89930 /* panic-button .png */; };
 		3DB3452316D3FEA100DCEDE8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */; };
 		3DB3452416D3FEA100DCEDE8 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */; };
 		3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DF65D75174CFD2600631D27 /* earth-icon.png */; };
@@ -136,7 +138,9 @@
 		3D97BAD8173A43A500B35326 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		3D97BADA173A4A0400B35326 /* ParseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseController.h; sourceTree = "<group>"; };
 		3D97BADB173A4A0400B35326 /* ParseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseController.m; sourceTree = "<group>"; };
-		3D97C28B17538D90004673CC /* panic-button .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "panic-button .png"; sourceTree = "<group>"; };
+		3DAC6EDD1755E32600C89930 /* friends-icon-20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends-icon-20.png"; sourceTree = "<group>"; };
+		3DAC6EDE1755E32600C89930 /* friends-icon-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends-icon-30.png"; sourceTree = "<group>"; };
+		3DAC6EDF1755E32600C89930 /* panic-button .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "panic-button .png"; sourceTree = "<group>"; };
 		3DB3452116D3FEA100DCEDE8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		3DB3452216D3FEA100DCEDE8 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		3DF65D75174CFD2600631D27 /* earth-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "earth-icon.png"; sourceTree = "<group>"; };
@@ -372,7 +376,9 @@
 		5DC425B5173CF6CA001F7087 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3D97C28B17538D90004673CC /* panic-button .png */,
+				3DAC6EDD1755E32600C89930 /* friends-icon-20.png */,
+				3DAC6EDE1755E32600C89930 /* friends-icon-30.png */,
+				3DAC6EDF1755E32600C89930 /* panic-button .png */,
 				3DF65D75174CFD2600631D27 /* earth-icon.png */,
 				5D28087D1744CEC200E96F04 /* alarm-icon-30.png */,
 				5D28087F1744CEC200E96F04 /* sessions-icon-30.png */,
@@ -518,7 +524,9 @@
 				5D2808841744D09800E96F04 /* Icon.png in Resources */,
 				5D2808861744D09C00E96F04 /* Icon@2x.png in Resources */,
 				3DF65D76174CFD2600631D27 /* earth-icon.png in Resources */,
-				3D97C28C17538D90004673CC /* panic-button .png in Resources */,
+				3DAC6EE01755E32600C89930 /* friends-icon-20.png in Resources */,
+				3DAC6EE11755E32600C89930 /* friends-icon-30.png in Resources */,
+				3DAC6EE21755E32600C89930 /* panic-button .png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
