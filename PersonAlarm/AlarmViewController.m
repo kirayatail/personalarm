@@ -46,6 +46,7 @@
     [self.view addSubview:backgroundImage];
     [self.view sendSubviewToBack:backgroundImage];
     self.messageLabel.hidden = YES;
+    self.alarmSwitch.enabled = YES;
     /* ---------------------- */
     
     /* Set up alarm switch */

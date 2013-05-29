@@ -12,6 +12,7 @@
 
 @property(nonatomic) BOOL isBroadcasting;
 @property(nonatomic, retain) CLLocationManager *clm;
+@property (nonatomic, strong) NSDate* oldTime;
 
 @end
 
@@ -25,7 +26,8 @@
     if(self = [super init]){
         self.clm = [[CLLocationManager alloc] init];
         [self.clm setDelegate:self];
-        self.clm.distanceFilter = 30; //30 meters
+        self.clm.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        //        self.clm.distanceFilter = 30; //30 meters
     }
     
     return self;
@@ -54,7 +56,21 @@
 {
     CLLocation* currentPosition = [locations lastObject];
     if(self.isBroadcasting){
-        [ParseController updateCurrentPosition:currentPosition];
+        if(self.oldTime == nil){
+            self.oldTime = [NSDate date];
+            [ParseController updateCurrentPosition:currentPosition];
+        } else {
+            NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+            NSDateComponents *components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+                                                       fromDate:self.oldTime
+                                                         toDate:[NSDate date]
+                                                        options:0];
+            double seconds = components.second;
+            if(seconds > 10 ){ //Update every 10 seconds
+                [ParseController updateCurrentPosition:currentPosition];
+            }
+            
+        }
     }
 }
 

@@ -44,7 +44,7 @@
                                                      toDate:[NSDate date]
                                                     options:0];
         double seconds = components.second;
-        if(seconds > 20 ){ //Update every 20 seconds
+        if(seconds > 10 ){ //Update every 10 seconds
             [self.session refreshInBackgroundWithBlock:^(PFObject* object, NSError* error){
                 if(error){
                     NSLog(@"UserAnnotation: %@", error.localizedDescription);
